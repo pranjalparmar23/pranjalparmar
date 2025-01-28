@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init("ZbircUJpI-iinTOYu");
+    })();
+    </script>
 </head>
 <body>
     <!--navbar-->
@@ -46,7 +54,7 @@
                     <h3>Frontend Developer</h3>
                     <p class="desc">A quick learner and innovative problem-solver. I excel in projects ranging from Web Development, MERN Stack and Data Analysis, showcasing adaptability and collaboration. Passionate about impactful solutions, that thrive on challenges and continuous growth.</p>
                     <div class="btn-sci">
-                        <a href="https://drive.google.com/uc?export=download&id=1UtxH3_F6Eq5vCRflukRtyuLSFhS-TpHv" class="btn" download="Pranjal Resume.pdf">Download CV</a>
+                        <a href="https://drive.google.com/file/d/1dp8AC5P9x1SfJUa4dS8FFbR8pbtCygPq/view?usp=sharing" class="btn" download="Pranjal Parmar Resume.pdf">Download CV</a>
                         <div class="sci">
                             <a href="https://github.com/pranjalparmar23">
                                 <i class='bx bxl-github' ></i>
@@ -116,30 +124,42 @@
                             <h4>Dec 2023 - Feb 2024</h4>
                             <h4>Data Analytics</h4>
                             <h4>YBI Foundation</h4>
-                            <p><i class='bx bxl-github' ></i> Servo Prediction - The model evaluation metrics provide insights into the performance of the linear regression model in predicting
+                            <p><a href="https://github.com/pranjalparmar23/ServoPrediction">
+                                <i class='bx bxl-github' ></i></a>
+                                Servo Prediction - The model evaluation metrics provide insights into the performance of the linear regression model in predicting
                                 the rise time of the servo system. The scatter plot visually represents the agreement between the actual and
-                                predicted values. </p>
+                                predicted values. 
+                            </p>
                         </div>
                         <div class="tab-item resume-item">
                             <h4>Dec 2023 - Jan 2024</h4>
                             <h4>MERN Stack Developer</h4>
                             <h4>KJSIT</h4>
-                            <p><i class='bx bxl-github' ></i> Doctor’s Appointment System - Developed a responsive and user-friendly web application for scheduling doctor appointments using React 
-                            framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available. </p>
+                            <p><a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-">
+                                <i class='bx bxl-github' ></i></a> 
+                                Doctor’s Appointment System - Developed a responsive and user-friendly web application for scheduling doctor appointments using React 
+                                framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available. 
+                            </p>
                         </div>
                         <div class="tab-item resume-item">
                             <h4>May 2023 - July 2024</h4>
                             <h4>MERN Stack Developer</h4>
                             <h4>KJSIT</h4>
-                            <p><i class='bx bxl-github' ></i> Internship Portal - Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading
-                            certificates and fostering a user-friendly experience. Teachers can update internships availability as well. </p>
+                            <p><a href="https://github.com/pranjalparmar23/internshipportal">
+                                <i class='bx bxl-github' ></i></a>  
+                                Internship Portal - Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading
+                                certificates and fostering a user-friendly experience. Teachers can update internships availability as well. 
+                            </p>
                         </div>
                         <div class="tab-item resume-item">
                             <h4>Dec 2022 - July 2023</h4>
                             <h4>Web Development</h4>
                             <h4>KJSIT</h4>
-                            <p><i class='bx bxl-github' ></i> College Siksha - Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with
-                            register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.</p>
+                            <p><a href="https://github.com/pranjalparmar23/college-shiksha">
+                                <i class='bx bxl-github' ></i></a>  
+                                College Siksha - Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with
+                                register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.
+                            </p>
                         </div>
                     </div>
 
@@ -214,7 +234,7 @@
                         <div class="tab-item resume-item">
                             <img src="images/kjsit.jpg" alt="">
                             <h4>2021-2025</h4>
-                            <h4>CGPA - 9.06</h4>
+                            <h4>CGPA - 9.15</h4>
                             <h4>K. J. SOMAIYA INSTITUTE OF TECHNOLOGY</h4>
                             <p>B.TECH IN INFORMATION TECHNOLOGY</p>
                         
@@ -394,14 +414,14 @@
                     <form action="" class="contact-form">
                         <h3>Let's Connect Together!</h3>
                         <div class="field-box">
-                            <input type="text" placeholder="Full Name" required>
-                            <input type="email" placeholder="Email Id" required>
-                            <input type="text" placeholder="Phone Number" required>
-                            <input type="text" placeholder="Message Subject" required>
-                            <textarea name="" id="" placeholder="Your Message" required></textarea>
+                            <input type="text" id="name" name="name" placeholder="Full Name" required>
+                            <input type="email" id="email" name= "email" placeholder="Email Id" required>
+                            <input type="text" id="number" name="number" placeholder="Phone Number" required>
+                            <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
+                            <textarea type="text" name="message" id="message" placeholder="Your Message" required></textarea>
                         </div>
                         <div class="contact-btn">
-                            <button type="submit" class="btn">Send Message</button>
+                            <button type="submit" onclick="sendMail()" class="btn">Send Message</button>
                         </div>
                     </form>
                 </div>

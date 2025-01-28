@@ -40,3 +40,13 @@ resumeLists.forEach((list, idx) => {
 setTimeout(() => {
     sections[4].classList.remove('active');
 }, 1500);
+
+function sendMail(){
+    let parms = {
+        name : document.getElementById("name").value,
+        email : document.getElementById("email").value,
+        subject : document.getElementById("subject").value,
+        message : document.getElementById("message").value,
+    }
+    emailjs.send("service_mb9qdl8","template_dipcxnp",parms).then(alert("Email Sent!!"));
+}
