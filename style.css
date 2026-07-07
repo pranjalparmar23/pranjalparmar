@@ -375,6 +375,15 @@ a:hover .tooltip,
 .resume-box.skills .resume-item:hover i{
     color: var(--main-color);
 }
+.resume-box.skills .resume-item svg.skill-svg{
+    width: 8rem;
+    height: 8rem;
+    fill: var(--white-color);
+    transition: .3s;
+}
+.resume-box.skills .resume-item:hover svg.skill-svg{
+    fill: var(--main-color);
+}
 .resume-box.skills .resume-item p{
     margin-top: 0;
 }
@@ -427,6 +436,11 @@ a:hover .tooltip,
 }
 .projects-item .work-info h4{
     line-height: 1;
+}
+.projects-item .work-info .duration{
+    color: var(--main-color);
+    font-size: 1.4rem;
+    margin-top: -.5rem;
 }
 .projects-item .work-info .tech-used{
     color: var(--main-color);

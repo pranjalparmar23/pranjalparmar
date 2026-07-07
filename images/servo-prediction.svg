@@ -1,0 +1,58 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgSV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171f2b"/>
+      <stop offset="100%" stop-color="#1f2733"/>
+    </linearGradient>
+    <radialGradient id="glowSV" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgSV)"/>
+  <rect width="600" height="600" fill="url(#glowSV)"/>
+
+  <!-- chart axes -->
+  <g stroke="#7c8594" stroke-width="2">
+    <line x1="190" y1="270" x2="190" y2="130"/>
+    <line x1="190" y1="270" x2="400" y2="270"/>
+  </g>
+
+  <!-- scatter points -->
+  <g fill="#fff">
+    <circle cx="215" cy="230" r="5"/>
+    <circle cx="240" cy="245" r="5"/>
+    <circle cx="255" cy="205" r="5"/>
+    <circle cx="280" cy="215" r="5"/>
+    <circle cx="300" cy="185" r="5"/>
+    <circle cx="320" cy="200" r="5"/>
+    <circle cx="345" cy="165" r="5"/>
+    <circle cx="365" cy="178" r="5"/>
+    <circle cx="380" cy="150" r="5"/>
+  </g>
+
+  <!-- regression line -->
+  <line x1="200" y1="250" x2="390" y2="145" stroke="#0ef" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- servo gear -->
+  <g transform="translate(430 210)" fill="#0ef" opacity="0.9">
+    <circle r="22"/>
+    <g fill="#171f2b">
+      <circle r="8"/>
+    </g>
+    <g stroke="#0ef" stroke-width="6" stroke-linecap="round">
+      <line x1="0" y1="-30" x2="0" y2="-24"/>
+      <line x1="0" y1="24" x2="0" y2="30"/>
+      <line x1="-30" y1="0" x2="-24" y2="0"/>
+      <line x1="30" y1="0" x2="24" y2="0"/>
+      <line x1="-21" y1="-21" x2="-17" y2="-17"/>
+      <line x1="21" y1="21" x2="17" y2="17"/>
+      <line x1="-21" y1="21" x2="-17" y2="17"/>
+      <line x1="21" y1="-21" x2="17" y2="-17"/>
+    </g>
+  </g>
+
+  <text x="300" y="335" font-family="Poppins, sans-serif" font-size="32" font-weight="700" fill="#fff" text-anchor="middle">SERVO PREDICTION</text>
+  <text x="300" y="367" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">LINEAR REGRESSION MODEL EVALUATION</text>
+  <text x="300" y="395" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">PYTHON &#8226; MATPLOTLIB &#8226; SEABORN</text>
+</svg>
