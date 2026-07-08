@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
+    <title>Pranjal Parmar | Frontend Developer & AI Engineer</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
     (function(){
       emailjs.init("ZbircUJpI-iinTOYu");
@@ -18,525 +15,499 @@
     </script>
 </head>
 <body>
+
     <!--navbar-->
-    <nav class="nav">
-        <ul class="nav-list">
-            <li class="active">
-                <i class='bx bx-home' ></i>
-                <span class="tooltip">Home</span>
-            </li>
-            <li>
-                <i class='bx bx-user' ></i>
-                <span class="tooltip">About</span>
-            </li>
-            <li>
-                <i class='bx bx-detail'></i>
-                <span class="tooltip">Skills</span>
-            </li>
-            <li>
-                <i class='bx bx-briefcase'></i>
-                <span class="tooltip">Projects</span>
-            </li>
-            <li>
-                <i class='bx bx-envelope' ></i>
-                <span class="tooltip">Contact</span>
-            </li>
-        </ul>
-    </nav> 
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#home" class="brand">Pranjal<span>.</span></a>
 
-    <div class="container">
-        <div class="box">
-            <!--home section-->
-            <section class="section home active">
-                <div class="home-info">
-                    <h3>Hello I'm</h3>
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="https://drive.google.com/file/d/1OpX972Hh4WclJVpQ78UE9ZMCDN-Iaxdn/view?usp=sharing" class="btn btn-sm nav-cta" download="Pranjal Parmar Resume.pdf">Resume</a>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!--hero section-->
+        <section class="hero" id="home">
+            <div class="hero-glow"></div>
+            <div class="section-inner hero-inner">
+                <div class="hero-text">
+                    <span class="eyebrow">Hello, I'm</span>
                     <h1>Pranjal Parmar</h1>
-                    <h3>Frontend Developer & AI Engineer</h3>
-                    <p class="desc">A quick learner and innovative problem-solver. I build intelligent AI agents and multi-agent systems using LangChain and LangGraph, alongside modern React and Angular applications backed by Java/Spring Boot. Passionate about impactful solutions, that thrive on challenges and continuous growth.</p>
-                    <div class="btn-sci">
-                        <a href="https://drive.google.com/file/d/1OpX972Hh4WclJVpQ78UE9ZMCDN-Iaxdn/view?usp=sharing" class="btn" download="Pranjal Parmar Resume.pdf">Download CV</a>
-                        <div class="sci">
-                            <a href="https://github.com/pranjalparmar23">
-                                <i class='bx bxl-github' ></i>
-                                <span class="tooltip">Github</span>
-                            </a>
-                            <a href="mailto:pranjal23parmar@gmail.com">
-                                <i class='bx bx-envelope'></i>
-                                <span class="tooltip">Email-Id</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/pranjal-parmar-4a580322a/">
-                                <i class='bx bxl-linkedin' ></i>
-                                <span class="tooltip">LinkedIn</span>
-                            </a>
-                            <a href="https://leetcode.com/u/pranjalparmar23/">
-                                <i class='bx bx-code' ></i>
-                                <span class="tooltip">Leetcode</span>
-                            </a>
-                            <a href="https://x.com/pranjalparmar23?t=1Y0I451-J3LORaAwz_klew&s=08">
-                                <i class='bx bxl-twitter' ></i>
-                                <span class="tooltip">Twitter</span>
-                            </a>
-                            <a href="https://www.instagram.com/pranjalparmar23?igsh=ZjQxdmR6YXUxZm5t">
-                                <i class='bx bxl-instagram' ></i>
-                                <span class="tooltip">Instagram</span>
-                            </a>
+                    <h2 class="hero-role">
+                        <span class="role-part">Frontend Developer</span>
+                        <span class="role-sep">&#8226;</span>
+                        <span class="role-part">AI Engineer</span>
+                    </h2>
+                    <p class="hero-desc">I build intelligent AI agents and multi-agent systems using LangChain and LangGraph, alongside modern React and Angular applications backed by Java/Spring Boot. When I'm not shipping code, I'm solving DSA problems and sharpening my problem-solving edge.</p>
+
+                    <div class="hero-stats">
+                        <div class="stat-chip">
+                            <i class='bx bx-briefcase'></i>
+                            <div><h4>Mphasis</h4><span>Associate SWE</span></div>
+                        </div>
+                        <div class="stat-chip">
+                            <i class='bx bx-folder'></i>
+                            <div><h4>9+</h4><span>Projects</span></div>
+                        </div>
+                        <div class="stat-chip">
+                            <i class='bx bx-code-alt'></i>
+                            <div><h4>25+</h4><span>Technologies</span></div>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Let's Connect</a>
+                    </div>
+
+                    <div class="social-row">
+                        <a href="https://github.com/pranjalparmar23" target="_blank" rel="noopener"><i class='bx bxl-github'></i><span class="tooltip">GitHub</span></a>
+                        <a href="mailto:pranjal23parmar@gmail.com"><i class='bx bx-envelope'></i><span class="tooltip">Email</span></a>
+                        <a href="https://www.linkedin.com/in/pranjal-parmar-4a580322a/" target="_blank" rel="noopener"><i class='bx bxl-linkedin'></i><span class="tooltip">LinkedIn</span></a>
+                        <a href="https://leetcode.com/u/pranjalparmar23/" target="_blank" rel="noopener"><i class='bx bx-code'></i><span class="tooltip">LeetCode</span></a>
+                        <a href="https://x.com/pranjalparmar23?t=1Y0I451-J3LORaAwz_klew&s=08" target="_blank" rel="noopener"><i class='bx bxl-twitter'></i><span class="tooltip">Twitter</span></a>
+                        <a href="https://www.instagram.com/pranjalparmar23?igsh=ZjQxdmR6YXUxZm5t" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i><span class="tooltip">Instagram</span></a>
+                    </div>
+                </div>
+
+                <div class="hero-photo">
+                    <div class="photo-ring">
+                        <img src="images/img.jpeg" alt="Pranjal Parmar">
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-cue" aria-label="Scroll down">
+                <i class='bx bx-chevron-down'></i>
+            </a>
+        </section>
+
+        <!--about section-->
+        <section class="section" id="about">
+            <div class="section-inner">
+                <p class="section-tag">Get to know me</p>
+                <h2 class="section-title">About Me</h2>
+
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <p class="desc">An agile and innovative problem-solver, I blend frontend engineering with AI engineering — building AI agents and multi-agent systems with LangChain and LangGraph, RAG pipelines, and full-stack web applications using React, Angular and the MERN stack, consistently delivering impactful solutions.</p>
+                        <p class="desc">Outside of shipping features, I spend my time solving DSA problems on LeetCode, sharpening my problem-solving fundamentals. With a proven ability to adapt and collaborate seamlessly, I thrive in dynamic environments that challenge me to push boundaries and drive continuous growth. Passion lies in reading books, playing cricket, and dancing down the town — with a blend of leadership qualities and being a strong team player.</p>
+
+                        <div class="about-tags">
+                            <span class="tag">AI Agents</span>
+                            <span class="tag">Full-Stack Development</span>
+                            <span class="tag">DSA & Problem Solving</span>
+                            <span class="tag">Team Player</span>
+                        </div>
+
+                        <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                    </div>
+
+                    <div class="quick-facts">
+                        <div class="fact">
+                            <i class='bx bx-user'></i>
+                            <div><span>Name</span><h5>Pranjal Parmar</h5></div>
+                        </div>
+                        <div class="fact">
+                            <i class='bx bx-briefcase'></i>
+                            <div><span>Role</span><h5>Associate Software Engineer, Mphasis</h5></div>
+                        </div>
+                        <div class="fact">
+                            <i class='bx bxs-graduation'></i>
+                            <div><span>Education</span><h5>B.Tech IT, K. J. Somaiya Institute of Technology</h5></div>
+                        </div>
+                        <div class="fact">
+                            <i class='bx bx-envelope'></i>
+                            <div><span>Email</span><h5>pranjal23parmar@gmail.com</h5></div>
+                        </div>
+                        <div class="fact">
+                            <i class='bx bx-code-curly'></i>
+                            <div><span>Focus</span><h5>AI Agents &amp; React/Angular Applications</h5></div>
                         </div>
                     </div>
                 </div>
-                <div class="img-wrapper">
-                    <div class="img-box home-img">
-                        <img src="images/img.jpeg" alt="">
-                    </div>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <!--about section-->
-            <section class="section about">
-                <div class="img-wrapper">
-                    <div class="img-box about-img">
-                        <img src="images/img.jpeg" alt="">
-                    </div>
-                </div>
-                <div class="about-info">
-                    <h2 class="title">About Me</h2>
-                    <h3>Frontend Developer & AI Engineer!</h3>
-                    <p class="desc">An agile and innovative problem-solver, I blend frontend engineering with AI engineering — building AI agents and
-                    multi-agent systems with LangChain and LangGraph, RAG pipelines, and full-stack web applications using React, Angular and the MERN stack,
-                    consistently delivering impactful solutions. With a proven ability to adapt and collaborate seamlessly, I thrive in dynamic environments
-                    that challenge me to push boundaries and drive continuous growth. Passion lies in reading books, playing cricket, dancing down the town.
-                    Blend of having leadership qualities and working as team member too. Never forget to serve for country as well.</p>
-                    <a href="#" class="btn">View More</a>
-                </div>
-            </section>
+        <!--experience section-->
+        <section class="section section-alt" id="experience">
+            <div class="section-inner">
+                <p class="section-tag">Where I've worked</p>
+                <h2 class="section-title">Experience</h2>
 
-            <!--resume section-->
-            <section class="section resume">
-                <h2 class="title">Resume</h2>
-                <div class="tab-box">
-                    <div class="tab-list resume-list active">
-                        <h3>Experience</h3>
-                    </div>
-                    <div class="tab-list resume-list">
-                        <h3>Skills</h3>
-                    </div>
-                    <div class="tab-list resume-list">
-                        <h3>Education</h3>
-                    </div>
-                </div>
-                <div class="tab-wrapper">
-                    <div class="tab-grid resume-box experience active">
-                        <div class="tab-item resume-item">
-                            <h4>Sept 2025 - Present</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Sept 2025 - Present</span>
                             <h4>Associate Software Engineer</h4>
-                            <h4>Mphasis</h4>
-                            <p><a href="https://github.com/pranjalparmar23">
-                                <i class='bx bxl-github' ></i></a>
-                                Trained extensively in Java Full Stack Development and now building AI-powered projects — designing multi-agent
-                                systems with LangChain and LangGraph, and integrating LLMs with full-stack web applications.
-                            </p>
+                            <h5>Mphasis</h5>
+                            <p>Trained extensively in Java Full Stack Development and now building AI-powered projects — designing multi-agent systems with LangChain and LangGraph, and integrating LLMs with full-stack web applications.</p>
                         </div>
-                        <div class="tab-item resume-item">
-                            <h4>March 2025 - June 2025</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">March 2025 - June 2025</span>
                             <h4>Associate Software Engineer Trainee</h4>
-                            <h4>Mphasis</h4>
-                            <p><a href="https://github.com/pranjalparmar2301">
-                                <i class='bx bxl-github' ></i></a>
-                                Worked as a Java Full Stack Developer with hands-on experience in working on frontend frameworks like Angular and
-                                integrated it with backend development using Spring Boot.
-                            </p>
+                            <h5>Mphasis</h5>
+                            <p>Worked as a Java Full Stack Developer with hands-on experience in working on frontend frameworks like Angular and integrated it with backend development using Spring Boot.</p>
                         </div>
-                        <div class="tab-item resume-item">
-                            <h4>Dec 2023 - Feb 2024</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Dec 2023 - Feb 2024</span>
                             <h4>Data Analytics</h4>
-                            <h4>YBI Foundation</h4>
-                            <p><a href="https://github.com/pranjalparmar23/ServoPrediction">
-                                <i class='bx bxl-github' ></i></a>
-                                Servo Prediction - The model evaluation metrics provide insights into the performance of the linear regression model in predicting
-                                the rise time of the servo system. The scatter plot visually represents the agreement between the actual and
-                                predicted values. 
-                            </p>
+                            <h5>YBI Foundation</h5>
+                            <p>Servo Prediction - The model evaluation metrics provide insights into the performance of the linear regression model in predicting the rise time of the servo system. The scatter plot visually represents the agreement between the actual and predicted values.</p>
                         </div>
-                        <div class="tab-item resume-item">
-                            <h4>Dec 2023 - Jan 2024</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Dec 2023 - Jan 2024</span>
                             <h4>MERN Stack Developer</h4>
-                            <h4>KJSIT</h4>
-                            <p><a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-">
-                                <i class='bx bxl-github' ></i></a> 
-                                Doctor’s Appointment System - Developed a responsive and user-friendly web application for scheduling doctor appointments using React 
-                                framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available. 
-                            </p>
+                            <h5>KJSIT</h5>
+                            <p>Doctor's Appointment System - Developed a responsive and user-friendly web application for scheduling doctor appointments using React framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available.</p>
                         </div>
-                        <div class="tab-item resume-item">
-                            <h4>May 2023 - July 2024</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">May 2023 - July 2024</span>
                             <h4>MERN Stack Developer</h4>
-                            <h4>KJSIT</h4>
-                            <p><a href="https://github.com/pranjalparmar23/internshipportal">
-                                <i class='bx bxl-github' ></i></a>  
-                                Internship Portal - Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading
-                                certificates and fostering a user-friendly experience. Teachers can update internships availability as well. 
-                            </p>
+                            <h5>KJSIT</h5>
+                            <p>Internship Portal - Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading certificates and fostering a user-friendly experience. Teachers can update internships availability as well.</p>
                         </div>
-                        <div class="tab-item resume-item">
-                            <h4>Dec 2022 - July 2023</h4>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">Dec 2022 - July 2023</span>
                             <h4>Web Development</h4>
-                            <h4>KJSIT</h4>
-                            <p><a href="https://github.com/pranjalparmar23/college-shiksha">
-                                <i class='bx bxl-github' ></i></a>  
-                                College Siksha - Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with
-                                register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="tab-grid resume-box skills">
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-html5'></i>
-                            <p>HTML5</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-css3' ></i>
-                            <p>CSS3</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-javascript' ></i>
-                            <p>JAVASCRIPT</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-java' ></i>
-                            <p>JAVA</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-python' ></i>
-                            <p>PYTHON</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-react' ></i>
-                            <p>REACT.JS</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-tailwind-css' ></i>
-                            <p>TAILWIND CSS</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxs-data' ></i>
-                            <p>MYSQL</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-mongodb' ></i>
-                            <p>MONGODB</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxs-data' ></i>
-                            <p>SQLITE</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-php' ></i>
-                            <p>PHP</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-figma' ></i>
-                            <p>FIGMA</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-git' ></i>
-                            <p>GIT/GITHUB</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-django' ></i>
-                            <p>DJANGO</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-python' ></i>
-                            <p>STREAMLIT</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-flask' ></i>
-                            <p>FLASK</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-typescript' ></i>
-                            <p>TYPESCRIPT</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-angular' ></i>
-                            <p>ANGULAR</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-spring-boot' ></i>
-                            <p>SPRING BOOT</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-docker' ></i>
-                            <p>DOCKER</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bxl-postgresql' ></i>
-                            <p>POSTGRESQL</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <svg class="skill-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></svg>
-                            <p>REDIS</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <svg class="skill-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/></svg>
-                            <p>FASTAPI</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <svg class="skill-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"/></svg>
-                            <p>LANGCHAIN</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bx-sitemap' ></i>
-                            <p>LANGGRAPH</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bx-vector' ></i>
-                            <p>CHROMADB</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <i class='bx bx-brain' ></i>
-                            <p>AI AGENTS / LLM</p>
-                        </div>
-                    </div>
-
-                    <div class="tab-grid resume-box education">
-                        <div class="tab-item resume-item">
-                            <img src="images/kjsit.jpg" alt="">
-                            <h4>2021-2025</h4>
-                            <h4>CGPA - 9.26</h4>
-                            <h4>K. J. SOMAIYA INSTITUTE OF TECHNOLOGY</h4>
-                            <p>B.TECH IN INFORMATION TECHNOLOGY</p>
-                        
-                        </div>
-                        <div class="tab-item resume-item">
-                            <img src="images/kjssc.jpg" alt="">
-                            <h4>2019-2021</h4>
-                            <h4>CGPA - 10</h4>
-                            <h4>K. J. SOMAIYA COLLEGE OF SCIENCE AND COMMERCE</h4>
-                            <p>HIGHER SECONDARY SCHOOL CERTIFICATE</p>
-                        </div>
-                        <div class="tab-item resume-item">
-                            <img src="images/st. mary's.jpg" alt="">
-                            <h4>2007-2019</h4>
-                            <h4>CGPA - 9.28</h4>
-                            <h4>ST. MARY'S MULTIPURPOSE HIGH SCHOOL</h4>
-                            <p>SECONDARY SCHOOL CERTIFICATE</p>
+                            <h5>KJSIT</h5>
+                            <p>College Siksha - Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!--projects section-->
-            <section class="section projects">
-                <h2 class="title">Projects</h2>
-                <div class="tab-box">
-                    <div class="tab-list projects-list active">
-                        <h3>My Projects</h3>
+        <!--education section-->
+        <section class="section" id="education">
+            <div class="section-inner">
+                <p class="section-tag">Academic background</p>
+                <h2 class="section-title">Education</h2>
+
+                <div class="timeline timeline-education">
+                    <div class="timeline-item">
+                        <span class="timeline-dot timeline-avatar"><img src="images/kjsit.jpg" alt=""></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2021 - 2025</span>
+                            <h4>K. J. Somaiya Institute of Technology</h4>
+                            <p>B.Tech in Information Technology</p>
+                            <span class="cgpa-badge">CGPA 9.26</span>
+                        </div>
                     </div>
-                </div>
-                <div class="tab-wrapper">
-                    <div class="tab-grid projects-box work active">
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/ai-talent-hub.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>AI Recruitment and Multi-Agent Interview Preparation Platform</h4>
-                                <p>A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized
-                                learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and
-                                hiring recommendations. Independent LangGraph agents orchestrate the workflows with a RAG retrieval layer over ChromaDB.</p>
-                                <div class="tech-used">
-                                    <p>REACT, TYPESCRIPT, FASTAPI, PYTHON, LANGCHAIN, LANGGRAPH, CHROMADB, POSTGRESQL, REDIS, DOCKER</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/ai-talent-hub">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot timeline-avatar"><img src="images/kjssc.jpg" alt=""></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2019 - 2021</span>
+                            <h4>K. J. Somaiya College of Science and Commerce</h4>
+                            <p>Higher Secondary School Certificate</p>
+                            <span class="cgpa-badge">CGPA 10</span>
                         </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/juniorguidance.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Junior Guidance</h4>
-                                <p>Developed an article hub using Java as backend and Angular framework as frontend. This hub helps students and
-                                junior developers to gain knowledge about industry requirements with the help of seniors where they express their
-                                experience on this social platform.</p>
-                                <div class="tech-used">
-                                    <p>ANGULAR, TYPESCRIPT, JAVA, SPRING BOOT, MYSQL, DOCKER</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/juniorguidance">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/steel-manufacturing-defects.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Steel Manufacturing Defects</h4>
-                                <p>The Steel Manufacturing Defects project leverages deep learning models like ResNet50, CNN, and 
-                                ResUNet to analyze 13,000 images for defect detection. It aims to enhance accurately identifying defective and non-defective steel products.</p>
-                                <div class="tech-used">
-                                    <p>DJANGO, STREAMLIT, RESNET50, CNN, RESUNET, IMAGE PROCESSING, SQLITE</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/doctors-appointment.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Doctor's Appointment System</h4>
-                                <p>Developed a responsive and user-friendly web application for scheduling doctor appointments using React 
-                                framework. Also patients can visibily able to see that Doctor is available or not. Register and Login 
-                                functionalities available.</p>
-                                <div class="tech-used">
-                                    <p>MERN, CNN, TAILWIND CSS</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/internship-portal.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Internship Portal</h4>
-                                <p>Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading
-                                    certificates and fostering a user-friendly experience. Teachers can update internships availability as well.</p>
-                                <div class="tech-used">
-                                    <p>MERN, TAILWIND CSS</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/internshipportal">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/solar-panel-monitoring.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Solar Panel Cleaning and Monitoring System</h4>
-                                <p>Designed and implemented a solar panel cleaning and monitoring system with a customizable interface to optimize
-                                cleaning schedules and track performance metrics by monitoring pre- and post-cleaning readings of solar panels.</p>
-                                <div class="tech-used">
-                                    <p>IOT, HTML, CSS, JAVASCRIPT</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/Solar-Panel-Cleaning-and-Monitoring-System">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/college-siksha.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>College Siksha</h4>
-                                <p>Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with
-                                register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other 
-                                interactive functionalities.</p>
-                                <div class="tech-used">
-                                    <p>HTML, CSS, PHP</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/college-shiksha">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/brain-tumor-detection.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Brain Tumor Detection System</h4>
-                                <p>Project presents a web-based Brain Tumor Detection System leveraging a Convolutional Neural Network model. The
-                                system allows users to upload MRI scan images and personal details via a web interface.</p>
-                                <div class="tech-used">
-                                    <p>MERN, CNN, IMAGE PROCESSING, TAILWIND CSS</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/Vaishali021103/BrainTumor-Classification-DL">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-item projects-item">
-                            <div class="work-img">
-                                <img src="images/servo-prediction.svg" alt="">
-                            </div>
-                            <div class="work-info">
-                                <h4>Servo Prediction</h4>
-                                <p>The model evaluation metrics provide insights into the performance of the linear regression model in predicting
-                                the rise time of the servo system. The scatter plot visually represents the agreement between the actual and
-                                predicted values.</p>
-                                <div class="tech-used">
-                                    <p>LINEAR REGRESSION, PYTHON, MATPLOTLIB, SEABORN</p>
-                                </div>
-                                <div class="projects-icon work-icon">
-                                    <a href="https://github.com/pranjalparmar23/ServoPrediction">
-                                        <i class='bx bxl-github' ></i>
-                                        <span class="tooltip">Github Repository</span>
-                                    </a>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-dot timeline-avatar"><img src="images/st. mary's.jpg" alt=""></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2007 - 2019</span>
+                            <h4>St. Mary's Multipurpose High School</h4>
+                            <p>Secondary School Certificate</p>
+                            <span class="cgpa-badge">CGPA 9.28</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!--contact section-->
-            <section class="section contact active">
-                <h2 class="title">Contact</h2>
+        <!--skills section-->
+        <section class="section section-alt" id="skills">
+            <div class="section-inner">
+                <p class="section-tag">What I work with</p>
+                <h2 class="section-title">Skills &amp; Technologies</h2>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title"><i class='bx bx-code-alt'></i> Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tile"><i class='bx bxl-html5' style="color:#E34F26"></i><p>HTML5</p></div>
+                        <div class="skill-tile"><i class='bx bxl-css3' style="color:#1572B6"></i><p>CSS3</p></div>
+                        <div class="skill-tile"><i class='bx bxl-javascript' style="color:#F7DF1E"></i><p>JavaScript</p></div>
+                        <div class="skill-tile"><i class='bx bxl-typescript' style="color:#3178C6"></i><p>TypeScript</p></div>
+                        <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React.js</p></div>
+                        <div class="skill-tile"><i class='bx bxl-angular' style="color:#DD0031"></i><p>Angular</p></div>
+                        <div class="skill-tile"><i class='bx bxl-tailwind-css' style="color:#38BDF8"></i><p>Tailwind CSS</p></div>
+                        <div class="skill-tile"><i class='bx bxl-figma' style="color:#F24E1E"></i><p>Figma</p></div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title"><i class='bx bx-server'></i> Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tile"><i class='bx bxl-java' style="color:#ED8B00"></i><p>Java</p></div>
+                        <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                        <div class="skill-tile"><i class='bx bxl-php' style="color:#8892BF"></i><p>PHP</p></div>
+                        <div class="skill-tile"><i class='bx bxl-spring-boot' style="color:#6DB33F"></i><p>Spring Boot</p></div>
+                        <div class="skill-tile"><i class='bx bxl-django' style="color:#2CA55D"></i><p>Django</p></div>
+                        <div class="skill-tile"><i class='bx bxl-flask' style="color:#FFFFFF"></i><p>Flask</p></div>
+                        <div class="skill-tile"><svg class="skill-svg" style="color:#05998b" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/></svg><p>FastAPI</p></div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title"><i class='bx bx-brain'></i> AI / ML</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tile"><svg class="skill-svg" style="color:#2DD4BF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"/></svg><p>LangChain</p></div>
+                        <div class="skill-tile"><i class='bx bx-sitemap' style="color:#38BDF8"></i><p>LangGraph</p></div>
+                        <div class="skill-tile"><i class='bx bx-vector' style="color:#A855F7"></i><p>ChromaDB</p></div>
+                        <div class="skill-tile"><i class='bx bx-brain' style="color:#FBBF24"></i><p>AI Agents / LLM</p></div>
+                        <div class="skill-tile"><i class='bx bxl-python' style="color:#FF4B4B"></i><p>Streamlit</p></div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title"><i class='bx bxs-data'></i> Database</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tile"><i class='bx bxs-data' style="color:#4479A1"></i><p>MySQL</p></div>
+                        <div class="skill-tile"><i class='bx bxl-mongodb' style="color:#47A248"></i><p>MongoDB</p></div>
+                        <div class="skill-tile"><i class='bx bxs-data' style="color:#4C8EDA"></i><p>SQLite</p></div>
+                        <div class="skill-tile"><i class='bx bxl-postgresql' style="color:#4A90D9"></i><p>PostgreSQL</p></div>
+                        <div class="skill-tile"><svg class="skill-svg" style="color:#DC382D" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></svg><p>Redis</p></div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3 class="skills-category-title"><i class='bx bx-cloud'></i> Deployment</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tile"><i class='bx bxl-docker' style="color:#2496ED"></i><p>Docker</p></div>
+                        <div class="skill-tile"><i class='bx bxl-git' style="color:#F05032"></i><p>Git / GitHub</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--projects section-->
+        <section class="section" id="projects">
+            <div class="section-inner">
+                <p class="section-tag">Things I've built</p>
+                <h2 class="section-title">Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/ai-talent-hub.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>AI Recruitment and Multi-Agent Interview Preparation Platform</h4>
+                            <p>A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and hiring recommendations. Independent LangGraph agents orchestrate the workflows with a RAG retrieval layer over ChromaDB.</p>
+                            <div class="tech-used">
+                                <span>REACT</span><span>TYPESCRIPT</span><span>FASTAPI</span><span>PYTHON</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>CHROMADB</span><span>POSTGRESQL</span><span>REDIS</span><span>DOCKER</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/ai-talent-hub" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/juniorguidance.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Junior Guidance</h4>
+                            <p>Developed an article hub using Java as backend and Angular framework as frontend. This hub helps students and junior developers to gain knowledge about industry requirements with the help of seniors where they express their experience on this social platform.</p>
+                            <div class="tech-used">
+                                <span>ANGULAR</span><span>TYPESCRIPT</span><span>JAVA</span><span>SPRING BOOT</span><span>MYSQL</span><span>DOCKER</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/juniorguidance" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/steel-manufacturing-defects.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Steel Manufacturing Defects</h4>
+                            <p>The Steel Manufacturing Defects project leverages deep learning models like ResNet50, CNN, and ResUNet to analyze 13,000 images for defect detection. It aims to enhance accurately identifying defective and non-defective steel products.</p>
+                            <div class="tech-used">
+                                <span>DJANGO</span><span>STREAMLIT</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>IMAGE PROCESSING</span><span>SQLITE</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/doctors-appointment.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Doctor's Appointment System</h4>
+                            <p>Developed a responsive and user-friendly web application for scheduling doctor appointments using React framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available.</p>
+                            <div class="tech-used">
+                                <span>MERN</span><span>CNN</span><span>TAILWIND CSS</span>
+                            </div>
+                            <a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/internship-portal.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Internship Portal</h4>
+                            <p>Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading certificates and fostering a user-friendly experience. Teachers can update internships availability as well.</p>
+                            <div class="tech-used">
+                                <span>MERN</span><span>TAILWIND CSS</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/internshipportal" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/solar-panel-monitoring.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Solar Panel Cleaning and Monitoring System</h4>
+                            <p>Designed and implemented a solar panel cleaning and monitoring system with a customizable interface to optimize cleaning schedules and track performance metrics by monitoring pre- and post-cleaning readings of solar panels.</p>
+                            <div class="tech-used">
+                                <span>IOT</span><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/Solar-Panel-Cleaning-and-Monitoring-System" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/college-siksha.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>College Siksha</h4>
+                            <p>Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.</p>
+                            <div class="tech-used">
+                                <span>HTML</span><span>CSS</span><span>PHP</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/college-shiksha" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/brain-tumor-detection.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Brain Tumor Detection System</h4>
+                            <p>Project presents a web-based Brain Tumor Detection System leveraging a Convolutional Neural Network model. The system allows users to upload MRI scan images and personal details via a web interface.</p>
+                            <div class="tech-used">
+                                <span>MERN</span><span>CNN</span><span>IMAGE PROCESSING</span><span>TAILWIND CSS</span>
+                            </div>
+                            <a href="https://github.com/Vaishali021103/BrainTumor-Classification-DL" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-img">
+                            <img src="images/servo-prediction.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Servo Prediction</h4>
+                            <p>The model evaluation metrics provide insights into the performance of the linear regression model in predicting the rise time of the servo system. The scatter plot visually represents the agreement between the actual and predicted values.</p>
+                            <div class="tech-used">
+                                <span>LINEAR REGRESSION</span><span>PYTHON</span><span>MATPLOTLIB</span><span>SEABORN</span>
+                            </div>
+                            <a href="https://github.com/pranjalparmar23/ServoPrediction" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--contact section-->
+        <section class="section section-alt" id="contact">
+            <div class="section-inner">
+                <p class="section-tag">Get in touch</p>
+                <h2 class="section-title">Contact</h2>
+
                 <div class="contact-wrapper">
+                    <div class="contact-info-panel">
+                        <h3>Let's Talk</h3>
+                        <p class="desc">Have an opportunity, a project, or just want to say hi? My inbox is always open.</p>
+                        <div class="contact-info-list">
+                            <a href="mailto:pranjal23parmar@gmail.com" class="contact-info-item">
+                                <i class='bx bx-envelope'></i>
+                                <div><span>Email</span><h5>pranjal23parmar@gmail.com</h5></div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/pranjal-parmar-4a580322a/" class="contact-info-item">
+                                <i class='bx bxl-linkedin'></i>
+                                <div><span>LinkedIn</span><h5>pranjal-parmar</h5></div>
+                            </a>
+                            <a href="https://github.com/pranjalparmar23" class="contact-info-item">
+                                <i class='bx bxl-github'></i>
+                                <div><span>GitHub</span><h5>pranjalparmar23</h5></div>
+                            </a>
+                        </div>
+                    </div>
+
                     <form action="" class="contact-form">
                         <h3>Let's Connect Together!</h3>
                         <div class="field-box">
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
-                            <input type="email" id="email" name= "email" placeholder="Email Id" required>
+                            <input type="email" id="email" name="email" placeholder="Email Id" required>
                             <input type="text" id="number" name="number" placeholder="Phone Number" required>
                             <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
-                            <textarea type="text" name="message" id="message" placeholder="Your Message" required></textarea>
+                            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                         </div>
                         <div class="contact-btn">
-                            <button type="submit" onclick="sendMail()" class="btn">Send Message</button>
+                            <button type="submit" onclick="sendMail()" class="btn btn-primary">Send Message</button>
                         </div>
                     </form>
                 </div>
-            </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="section-inner footer-inner">
+            <a href="#home" class="brand">Pranjal<span>.</span></a>
+            <div class="footer-social">
+                <a href="https://github.com/pranjalparmar23" target="_blank" rel="noopener"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/pranjal-parmar-4a580322a/" target="_blank" rel="noopener"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://leetcode.com/u/pranjalparmar23/" target="_blank" rel="noopener"><i class='bx bx-code'></i></a>
+                <a href="mailto:pranjal23parmar@gmail.com"><i class='bx bx-envelope'></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Pranjal Parmar. All rights reserved.</p>
         </div>
-    </div>
+    </footer>
+
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>

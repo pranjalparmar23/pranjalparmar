@@ -1,45 +1,57 @@
-const navs = document.querySelectorAll('.nav-list li');
-const cube = document.querySelector('.box');
-const sections = document.querySelectorAll('.section');
-const resumeLists = document.querySelectorAll('.resume-list');
-const resumeBoxs = document.querySelectorAll('.resume-box');
+if('scrollRestoration' in history){
+    history.scrollRestoration = 'manual';
+}
 
-navs.forEach((nav, idx) => {
-    nav.addEventListener('click', () => {
-        document.querySelector('.nav-list li.active').classList.remove('active');
-        nav.classList.add('active');
+const navbar = document.getElementById('navbar');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+const navLinkItems = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('main .section, main .hero');
+const backToTop = document.getElementById('back-to-top');
 
-        cube.style.transform = `rotateY(${idx * -90}deg)`;
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    navToggle.classList.toggle('active');
+});
 
-        document.querySelector('.section.active').classList.remove('active');
-        sections[idx].classList.add('active');
+navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+    });
+});
 
-        const array = Array.from(sections);
-        const arrSecs = array.slice(1, -1);
-        arrSecs.forEach(arrSec => {
-            if(arrSec.classList.contains('active')){
-                sections[4].classList.add('action-contact');
-            }
-        });
-        if(sections[0].classList.contains('active')){
-            sections[4].classList.remove('action-contact');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            const id = entry.target.getAttribute('id');
+            navLinkItems.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
         }
     });
-});
+}, { rootMargin: '-40% 0px -55% 0px' });
 
-resumeLists.forEach((list, idx) => {
-    list.addEventListener('click', () => {
-        document.querySelector('.resume-list.active').classList.remove('active');
-        list.classList.add('active');
+sections.forEach(section => observer.observe(section));
 
-        document.querySelector('.resume-box.active').classList.remove('active');
-        resumeBoxs[idx].classList.add('active');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+        }
     });
-});
+}, { threshold: 0.15 });
 
-setTimeout(() => {
-    sections[4].classList.remove('active');
-}, 1500);
+document.querySelectorAll('.reveal, .timeline-item, .skill-tile, .project-card, .fact').forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+});
 
 function sendMail(){
     let parms = {
