@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowCS" cx="50%" cy="30%" r="55%">
+    <radialGradient id="glowCS" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,25 +12,23 @@
   <rect width="600" height="600" fill="url(#bgCS)"/>
   <rect width="600" height="600" fill="url(#glowCS)"/>
 
-  <!-- college building -->
-  <polygon points="300,110 400,165 200,165" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
-  <rect x="215" y="165" width="170" height="95" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
-  <g fill="#171f2b">
-    <rect x="230" y="180" width="16" height="45"/>
-    <rect x="262" y="180" width="16" height="45"/>
-    <rect x="322" y="180" width="16" height="45"/>
-    <rect x="354" y="180" width="16" height="45"/>
-  </g>
-  <rect x="292" y="200" width="16" height="60" fill="#0ef"/>
+  <!-- college building, centered as a group on canvas -->
+  <g transform="translate(0,115)">
+    <polygon points="300,110 400,165 200,165" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
+    <rect x="215" y="165" width="170" height="95" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
+    <g fill="#171f2b">
+      <rect x="230" y="180" width="16" height="45"/>
+      <rect x="262" y="180" width="16" height="45"/>
+      <rect x="322" y="180" width="16" height="45"/>
+      <rect x="354" y="180" width="16" height="45"/>
+    </g>
+    <rect x="292" y="200" width="16" height="60" fill="#0ef"/>
 
-  <!-- graduation cap -->
-  <g transform="translate(300 145)">
-    <polygon points="0,-14 40,0 0,14 -40,0" fill="#fff"/>
-    <rect x="-4" y="0" width="8" height="18" fill="#7c8594"/>
-    <circle cx="0" cy="20" r="4" fill="#0ef"/>
+    <!-- graduation cap -->
+    <g transform="translate(300 88)">
+      <polygon points="0,-14 40,0 0,14 -40,0" fill="#fff"/>
+      <rect x="-4" y="0" width="8" height="18" fill="#7c8594"/>
+      <circle cx="0" cy="20" r="4" fill="#0ef"/>
+    </g>
   </g>
-
-  <text x="300" y="325" font-family="Poppins, sans-serif" font-size="34" font-weight="700" fill="#fff" text-anchor="middle">COLLEGE SIKSHA</text>
-  <text x="300" y="357" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">COURSES &amp; COLLEGES ACROSS INDIA</text>
-  <text x="300" y="385" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">HTML &#8226; CSS &#8226; PHP</text>
 </svg>

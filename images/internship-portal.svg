@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowIP" cx="50%" cy="30%" r="55%">
+    <radialGradient id="glowIP" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,25 +12,23 @@
   <rect width="600" height="600" fill="url(#bgIP)"/>
   <rect width="600" height="600" fill="url(#glowIP)"/>
 
-  <!-- certificate -->
-  <rect x="205" y="120" width="190" height="140" rx="8" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
-  <rect x="230" y="145" width="140" height="10" rx="5" fill="#0ef"/>
-  <rect x="230" y="168" width="140" height="6" rx="3" fill="#7c8594"/>
-  <rect x="230" y="184" width="140" height="6" rx="3" fill="#7c8594"/>
-  <rect x="230" y="200" width="90" height="6" rx="3" fill="#7c8594"/>
+  <!-- certificate, seal and upload arrow, centered on canvas -->
+  <g transform="translate(0,94)">
+    <rect x="205" y="120" width="190" height="140" rx="8" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
+    <rect x="230" y="145" width="140" height="10" rx="5" fill="#0ef"/>
+    <rect x="230" y="168" width="140" height="6" rx="3" fill="#7c8594"/>
+    <rect x="230" y="184" width="140" height="6" rx="3" fill="#7c8594"/>
+    <rect x="230" y="200" width="90" height="6" rx="3" fill="#7c8594"/>
 
-  <!-- seal ribbon -->
-  <circle cx="360" cy="252" r="26" fill="#171f2b" stroke="#0ef" stroke-width="2.5"/>
-  <path d="M 348 264 L 348 292 L 360 282 L 372 292 L 372 264" fill="#0ef"/>
-  <path d="M 352 246 L 358 253 L 370 240" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- seal ribbon -->
+    <circle cx="360" cy="252" r="26" fill="#171f2b" stroke="#0ef" stroke-width="2.5"/>
+    <path d="M 348 264 L 348 292 L 360 282 L 372 292 L 372 264" fill="#0ef"/>
+    <path d="M 352 246 L 358 253 L 370 240" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- upload arrow -->
-  <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <line x1="240" y1="290" x2="240" y2="255"/>
-    <path d="M 228 267 L 240 253 L 252 267"/>
+    <!-- upload arrow -->
+    <g stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="240" y1="290" x2="240" y2="255"/>
+      <path d="M 228 267 L 240 253 L 252 267"/>
+    </g>
   </g>
-
-  <text x="300" y="340" font-family="Poppins, sans-serif" font-size="32" font-weight="700" fill="#fff" text-anchor="middle">INTERNSHIP PORTAL</text>
-  <text x="300" y="372" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">TRACK &amp; MANAGE INTERNSHIP STATUS</text>
-  <text x="300" y="400" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">MERN &#8226; TAILWIND CSS</text>
 </svg>

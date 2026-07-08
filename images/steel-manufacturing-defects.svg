@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowSM" cx="50%" cy="30%" r="55%">
+    <radialGradient id="glowSM" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,8 +12,8 @@
   <rect width="600" height="600" fill="url(#bgSM)"/>
   <rect width="600" height="600" fill="url(#glowSM)"/>
 
-  <!-- steel plate (enlarged + recentered to avoid crop clipping) -->
-  <g transform="translate(300,228) scale(1.18) translate(-300,-195)">
+  <!-- steel plate, enlarged + centered on canvas -->
+  <g transform="translate(300,300) scale(1.18) translate(-300,-195)">
     <rect x="175" y="120" width="250" height="150" rx="8" fill="#2d3542" stroke="#7c8594" stroke-width="1.5"/>
     <g stroke="#3a4453" stroke-width="1.5">
       <line x1="175" y1="150" x2="425" y2="150"/>
@@ -34,7 +34,4 @@
     <line x1="344" y1="195" x2="354" y2="195" stroke="#0ef" stroke-width="2.5"/>
     <circle cx="330" cy="195" r="4" fill="#0ef"/>
   </g>
-
-  <text x="300" y="350" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">STEEL MANUFACTURING DEFECTS</text>
-  <text x="300" y="386" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">AI-BASED DEFECT DETECTION</text>
 </svg>

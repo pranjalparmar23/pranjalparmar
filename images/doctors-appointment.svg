@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowDA" cx="50%" cy="30%" r="55%">
+    <radialGradient id="glowDA" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,30 +12,27 @@
   <rect width="600" height="600" fill="url(#bgDA)"/>
   <rect width="600" height="600" fill="url(#glowDA)"/>
 
-  <!-- calendar -->
-  <rect x="210" y="130" width="180" height="150" rx="10" fill="#2d3542" stroke="#7c8594" stroke-width="1.5"/>
-  <rect x="210" y="130" width="180" height="34" rx="10" fill="#0ef" opacity="0.9"/>
-  <rect x="238" y="118" width="10" height="26" rx="4" fill="#7c8594"/>
-  <rect x="352" y="118" width="10" height="26" rx="4" fill="#7c8594"/>
-  <g fill="#3a4453">
-    <rect x="228" y="182" width="26" height="20" rx="3"/>
-    <rect x="262" y="182" width="26" height="20" rx="3"/>
-    <rect x="296" y="182" width="26" height="20" rx="3"/>
-    <rect x="330" y="182" width="26" height="20" rx="3"/>
-    <rect x="228" y="210" width="26" height="20" rx="3"/>
-    <rect x="296" y="210" width="26" height="20" rx="3"/>
-    <rect x="330" y="210" width="26" height="20" rx="3"/>
+  <!-- calendar + medical badge, centered on canvas -->
+  <g transform="translate(0,96)">
+    <rect x="210" y="130" width="180" height="150" rx="10" fill="#2d3542" stroke="#7c8594" stroke-width="1.5"/>
+    <rect x="210" y="130" width="180" height="34" rx="10" fill="#0ef" opacity="0.9"/>
+    <rect x="238" y="118" width="10" height="26" rx="4" fill="#7c8594"/>
+    <rect x="352" y="118" width="10" height="26" rx="4" fill="#7c8594"/>
+    <g fill="#3a4453">
+      <rect x="228" y="182" width="26" height="20" rx="3"/>
+      <rect x="262" y="182" width="26" height="20" rx="3"/>
+      <rect x="296" y="182" width="26" height="20" rx="3"/>
+      <rect x="330" y="182" width="26" height="20" rx="3"/>
+      <rect x="228" y="210" width="26" height="20" rx="3"/>
+      <rect x="296" y="210" width="26" height="20" rx="3"/>
+      <rect x="330" y="210" width="26" height="20" rx="3"/>
+    </g>
+    <rect x="262" y="210" width="26" height="20" rx="3" fill="#0ef"/>
+    <path d="M 267 220 L 273 226 L 283 214" stroke="#171f2b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- medical badge -->
+    <circle cx="392" cy="266" r="24" fill="#171f2b" stroke="#0ef" stroke-width="2.5"/>
+    <rect x="386" y="254" width="12" height="24" rx="2" fill="#fff"/>
+    <rect x="380" y="260" width="24" height="12" rx="2" fill="#fff"/>
   </g>
-  <rect x="262" y="210" width="26" height="20" rx="3" fill="#0ef"/>
-  <path d="M 267 220 L 273 226 L 283 214" stroke="#171f2b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- medical badge -->
-  <circle cx="392" cy="266" r="24" fill="#171f2b" stroke="#0ef" stroke-width="2.5"/>
-  <rect x="386" y="254" width="12" height="24" rx="2" fill="#fff"/>
-  <rect x="380" y="260" width="24" height="12" rx="2" fill="#fff"/>
-
-  <text x="300" y="340" font-family="Poppins, sans-serif" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">DOCTOR'S APPOINTMENT</text>
-  <text x="300" y="372" font-family="Poppins, sans-serif" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">SYSTEM</text>
-  <text x="300" y="404" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">BOOK &amp; MANAGE APPOINTMENTS ONLINE</text>
-  <text x="300" y="432" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">MERN &#8226; TAILWIND CSS</text>
 </svg>

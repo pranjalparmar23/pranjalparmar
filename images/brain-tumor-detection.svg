@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowBT" cx="50%" cy="28%" r="55%">
+    <radialGradient id="glowBT" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,8 +12,8 @@
   <rect width="600" height="600" fill="url(#bgBT)"/>
   <rect width="600" height="600" fill="url(#glowBT)"/>
 
-  <!-- brain outline -->
-  <g transform="translate(0,14)">
+  <!-- brain outline, centered on canvas -->
+  <g transform="translate(300,300) scale(0.85) translate(-300,-222)">
     <path d="M 300 105
              C 260 105 235 128 232 155
              C 205 158 188 182 195 208
@@ -37,9 +37,4 @@
     <circle cx="345" cy="225" r="18" fill="none" stroke="#0ef" stroke-width="2" opacity="0.6"/>
     <circle cx="345" cy="225" r="26" fill="none" stroke="#0ef" stroke-width="1.4" opacity="0.35"/>
   </g>
-
-  <text x="300" y="368" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">BRAIN TUMOR</text>
-  <text x="300" y="400" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">DETECTION SYSTEM</text>
-  <text x="300" y="430" font-family="Poppins, sans-serif" font-size="14" fill="#0ef" text-anchor="middle" letter-spacing="0.5">MRI-BASED TUMOR CLASSIFICATION</text>
-  <text x="300" y="457" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">MERN &#8226; CNN &#8226; TAILWIND CSS</text>
 </svg>

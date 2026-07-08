@@ -4,7 +4,7 @@
       <stop offset="0%" stop-color="#171f2b"/>
       <stop offset="100%" stop-color="#1f2733"/>
     </linearGradient>
-    <radialGradient id="glowJG" cx="50%" cy="32%" r="55%">
+    <radialGradient id="glowJG" cx="50%" cy="50%" r="55%">
       <stop offset="0%" stop-color="#0ef" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
     </radialGradient>
@@ -12,39 +12,37 @@
   <rect width="600" height="600" fill="url(#bgJG)"/>
   <rect width="600" height="600" fill="url(#glowJG)"/>
 
-  <!-- decorative stacked article cards -->
-  <g opacity="0.9">
-    <rect x="150" y="120" width="160" height="115" rx="10" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
-    <rect x="172" y="143" width="116" height="9" rx="4.5" fill="#0ef"/>
-    <rect x="172" y="164" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
-    <rect x="172" y="178" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
-    <rect x="172" y="192" width="80" height="5.5" rx="2.5" fill="#7c8594"/>
+  <!-- decorative stacked article cards + mentorship figures, centered on canvas -->
+  <g transform="translate(0,107.5)">
+    <g opacity="0.9">
+      <rect x="150" y="120" width="160" height="115" rx="10" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
+      <rect x="172" y="143" width="116" height="9" rx="4.5" fill="#0ef"/>
+      <rect x="172" y="164" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
+      <rect x="172" y="178" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
+      <rect x="172" y="192" width="80" height="5.5" rx="2.5" fill="#7c8594"/>
 
-    <rect x="195" y="150" width="160" height="115" rx="10" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
-    <rect x="217" y="173" width="116" height="9" rx="4.5" fill="#0ef"/>
-    <rect x="217" y="194" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
-    <rect x="217" y="208" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
-    <rect x="217" y="222" width="80" height="5.5" rx="2.5" fill="#7c8594"/>
-  </g>
+      <rect x="195" y="150" width="160" height="115" rx="10" fill="#2d3542" stroke="#0ef" stroke-width="1.5"/>
+      <rect x="217" y="173" width="116" height="9" rx="4.5" fill="#0ef"/>
+      <rect x="217" y="194" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
+      <rect x="217" y="208" width="116" height="5.5" rx="2.5" fill="#7c8594"/>
+      <rect x="217" y="222" width="80" height="5.5" rx="2.5" fill="#7c8594"/>
+    </g>
 
-  <!-- mentorship arrow linking senior -> junior -->
-  <g stroke="#0ef" stroke-width="2.5" fill="none" stroke-linecap="round">
-    <path d="M 380 190 C 415 158, 445 158, 475 190" stroke-dasharray="5 7"/>
-    <path d="M 468 183 L 475 190 L 468 197"/>
-  </g>
+    <!-- mentorship arrow linking senior -> junior -->
+    <g stroke="#0ef" stroke-width="2.5" fill="none" stroke-linecap="round">
+      <path d="M 380 190 C 415 158, 445 158, 475 190" stroke-dasharray="5 7"/>
+      <path d="M 468 183 L 475 190 L 468 197"/>
+    </g>
 
-  <!-- senior figure -->
-  <g fill="#0ef">
-    <circle cx="380" cy="158" r="15"/>
-    <path d="M 353 208 Q 380 180 407 208 L 407 224 L 353 224 Z"/>
+    <!-- senior figure -->
+    <g fill="#0ef">
+      <circle cx="380" cy="158" r="15"/>
+      <path d="M 353 208 Q 380 180 407 208 L 407 224 L 353 224 Z"/>
+    </g>
+    <!-- junior figure -->
+    <g fill="#fff">
+      <circle cx="490" cy="158" r="15"/>
+      <path d="M 463 208 Q 490 180 517 208 L 517 224 L 463 224 Z"/>
+    </g>
   </g>
-  <!-- junior figure -->
-  <g fill="#fff">
-    <circle cx="490" cy="158" r="15"/>
-    <path d="M 463 208 Q 490 180 517 208 L 517 224 L 463 224 Z"/>
-  </g>
-
-  <text x="300" y="400" font-family="Poppins, sans-serif" font-size="38" font-weight="700" fill="#fff" text-anchor="middle">JUNIOR GUIDANCE</text>
-  <text x="300" y="432" font-family="Poppins, sans-serif" font-size="15" fill="#0ef" text-anchor="middle" letter-spacing="0.5">ARTICLE HUB FOR STUDENTS &amp; JUNIORS</text>
-  <text x="300" y="460" font-family="Poppins, sans-serif" font-size="12.5" fill="#7c8594" text-anchor="middle" letter-spacing="0.5">ANGULAR &#8226; SPRING BOOT &#8226; JAVA &#8226; MYSQL</text>
 </svg>
