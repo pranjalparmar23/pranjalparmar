@@ -166,11 +166,25 @@ p{
     width: 100%;
 }
 .nav-toggle{
+    position: relative;
+    z-index: 401;
     display: none;
     background: transparent;
     font-size: 3rem;
     color: var(--white-color);
     cursor: pointer;
+}
+.nav-toggle .icon-close{
+    display: none;
+}
+.nav-toggle.active .icon-menu{
+    display: none;
+}
+.nav-toggle.active .icon-close{
+    display: block;
+}
+.nav-toggle.active{
+    color: var(--white-color);
 }
 
 /* ---------- hero ---------- */
@@ -695,6 +709,86 @@ p{
     color: var(--accent-2);
 }
 
+/* ---------- publications ---------- */
+.publication-card{
+    display: flex;
+    gap: 2.4rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.4rem;
+    padding: 3rem;
+    transition: .3s;
+}
+.publication-card:hover{
+    border-color: var(--accent);
+    box-shadow: 0 1.6rem 3.2rem rgba(0,0,0,.35);
+}
+.publication-icon{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 1.2rem;
+    background: var(--gradient);
+    font-size: 3rem;
+    color: #fff;
+}
+.publication-body{
+    flex: 1;
+}
+.publication-venue{
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-2);
+    text-transform: uppercase;
+    letter-spacing: .03rem;
+    margin-bottom: 1rem;
+}
+.publication-body h4{
+    font-size: 2.1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+.publication-authors{
+    font-size: 1.4rem;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
+}
+.publication-authors strong{
+    color: var(--accent-2);
+}
+.publication-body > p:not(.publication-authors){
+    font-size: 1.45rem;
+    margin-bottom: 2rem;
+}
+.publication-stats{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2.4rem;
+}
+.publication-stats h5{
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.publication-stats span{
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+.publication-links{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
 /* ---------- contact ---------- */
 .contact-wrapper{
     display: flex;
@@ -881,6 +975,9 @@ p{
     html{ font-size: 55%; }
     .section-inner{ padding: 0 2.4rem; }
     .navbar-inner{ padding: 0 2.4rem; }
+    .publication-card{
+        flex-direction: column;
+    }
     .nav-links{
         position: fixed;
         top: 0;
