@@ -13,28 +13,30 @@
   <rect width="600" height="600" fill="url(#glowBT)"/>
 
   <!-- brain outline -->
-  <path d="M 300 105
-           C 260 105 235 128 232 155
-           C 205 158 188 182 195 208
-           C 180 222 180 250 200 262
-           C 195 285 212 308 238 310
-           C 245 328 268 338 290 330
-           C 300 340 320 340 330 330
-           C 352 338 375 328 382 310
-           C 408 308 425 285 420 262
-           C 440 250 440 222 425 208
-           C 432 182 415 158 388 155
-           C 385 128 340 105 300 105 Z"
-        fill="none" stroke="#0ef" stroke-width="2.5" opacity="0.9"/>
-  <path d="M 300 120 C 300 160 280 170 260 190 M 300 120 C 300 160 320 170 340 190
-           M 240 200 C 260 210 260 235 245 250 M 360 200 C 340 210 340 235 355 250
-           M 270 260 C 285 270 300 270 300 290 M 330 260 C 315 270 300 270 300 290"
-        fill="none" stroke="#0ef" stroke-width="1.4" opacity="0.55"/>
+  <g transform="translate(0,14)">
+    <path d="M 300 105
+             C 260 105 235 128 232 155
+             C 205 158 188 182 195 208
+             C 180 222 180 250 200 262
+             C 195 285 212 308 238 310
+             C 245 328 268 338 290 330
+             C 300 340 320 340 330 330
+             C 352 338 375 328 382 310
+             C 408 308 425 285 420 262
+             C 440 250 440 222 425 208
+             C 432 182 415 158 388 155
+             C 385 128 340 105 300 105 Z"
+          fill="none" stroke="#0ef" stroke-width="2.5" opacity="0.9"/>
+    <path d="M 300 120 C 300 160 280 170 260 190 M 300 120 C 300 160 320 170 340 190
+             M 240 200 C 260 210 260 235 245 250 M 360 200 C 340 210 340 235 355 250
+             M 270 260 C 285 270 300 270 300 290 M 330 260 C 315 270 300 270 300 290"
+          fill="none" stroke="#0ef" stroke-width="1.4" opacity="0.55"/>
 
-  <!-- highlighted tumor node -->
-  <circle cx="345" cy="225" r="10" fill="#0ef"/>
-  <circle cx="345" cy="225" r="18" fill="none" stroke="#0ef" stroke-width="2" opacity="0.6"/>
-  <circle cx="345" cy="225" r="26" fill="none" stroke="#0ef" stroke-width="1.4" opacity="0.35"/>
+    <!-- highlighted tumor node -->
+    <circle cx="345" cy="225" r="10" fill="#0ef"/>
+    <circle cx="345" cy="225" r="18" fill="none" stroke="#0ef" stroke-width="2" opacity="0.6"/>
+    <circle cx="345" cy="225" r="26" fill="none" stroke="#0ef" stroke-width="1.4" opacity="0.35"/>
+  </g>
 
   <text x="300" y="368" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">BRAIN TUMOR</text>
   <text x="300" y="400" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">DETECTION SYSTEM</text>

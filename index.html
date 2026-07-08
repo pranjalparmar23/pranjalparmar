@@ -216,9 +216,9 @@
                 <p class="section-tag">Academic background</p>
                 <h2 class="section-title">Education</h2>
 
-                <div class="timeline timeline-education">
+                <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-dot timeline-avatar"><img src="images/kjsit.jpg" alt=""></span>
+                        <span class="timeline-dot"></span>
                         <div class="timeline-card">
                             <span class="timeline-date">2021 - 2025</span>
                             <h4>K. J. Somaiya Institute of Technology</h4>
@@ -227,7 +227,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-dot timeline-avatar"><img src="images/kjssc.jpg" alt=""></span>
+                        <span class="timeline-dot"></span>
                         <div class="timeline-card">
                             <span class="timeline-date">2019 - 2021</span>
                             <h4>K. J. Somaiya College of Science and Commerce</h4>
@@ -236,7 +236,7 @@
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-dot timeline-avatar"><img src="images/st. mary's.jpg" alt=""></span>
+                        <span class="timeline-dot"></span>
                         <div class="timeline-card">
                             <span class="timeline-date">2007 - 2019</span>
                             <h4>St. Mary's Multipurpose High School</h4>
@@ -319,130 +319,167 @@
                 <p class="section-tag">Things I've built</p>
                 <h2 class="section-title">Projects</h2>
 
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="genai">GenAI</button>
+                    <button class="filter-btn" data-filter="java">Java</button>
+                    <button class="filter-btn" data-filter="ai-ml">AI-ML</button>
+                    <button class="filter-btn" data-filter="mern">MERN</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                    <button class="filter-btn" data-filter="web-dev">Web Development</button>
+                </div>
+
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div class="project-card" data-href="projects/ai-recruitment.html" data-category="genai">
                         <div class="project-img">
                             <img src="images/ai-talent-hub.svg" alt="">
                         </div>
                         <div class="project-body">
                             <h4>AI Recruitment and Multi-Agent Interview Preparation Platform</h4>
-                            <p>A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and hiring recommendations. Independent LangGraph agents orchestrate the workflows with a RAG retrieval layer over ChromaDB.</p>
+                            <p>A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and hiring recommendations.</p>
                             <div class="tech-used">
-                                <span>REACT</span><span>TYPESCRIPT</span><span>FASTAPI</span><span>PYTHON</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>CHROMADB</span><span>POSTGRESQL</span><span>REDIS</span><span>DOCKER</span>
+                                <span>REACT</span><span>FASTAPI</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>CHROMADB</span>
                             </div>
-                            <a href="https://github.com/pranjalparmar23/ai-talent-hub" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                            <div class="project-actions">
+                                <a href="projects/ai-recruitment.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/ai-talent-hub" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-href="projects/junior-guidance.html" data-category="java">
                         <div class="project-img">
                             <img src="images/juniorguidance.svg" alt="">
                         </div>
                         <div class="project-body">
                             <h4>Junior Guidance</h4>
-                            <p>Developed an article hub using Java as backend and Angular framework as frontend. This hub helps students and junior developers to gain knowledge about industry requirements with the help of seniors where they express their experience on this social platform.</p>
+                            <p>An article hub built with Java/Spring Boot and Angular that helps students and junior developers learn industry requirements through articles published by seniors.</p>
                             <div class="tech-used">
-                                <span>ANGULAR</span><span>TYPESCRIPT</span><span>JAVA</span><span>SPRING BOOT</span><span>MYSQL</span><span>DOCKER</span>
+                                <span>ANGULAR</span><span>JAVA</span><span>SPRING BOOT</span><span>MYSQL</span>
                             </div>
-                            <a href="https://github.com/pranjalparmar23/juniorguidance" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                            <div class="project-actions">
+                                <a href="projects/junior-guidance.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/juniorguidance" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-href="projects/steel-manufacturing.html" data-category="ai-ml">
                         <div class="project-img">
                             <img src="images/steel-manufacturing-defects.svg" alt="">
                         </div>
                         <div class="project-body">
                             <h4>Steel Manufacturing Defects</h4>
-                            <p>The Steel Manufacturing Defects project leverages deep learning models like ResNet50, CNN, and ResUNet to analyze 13,000 images for defect detection. It aims to enhance accurately identifying defective and non-defective steel products.</p>
+                            <p>Deep learning pipeline (ResNet50, CNN, ResUNet) analyzing 13,000 steel images to classify, segment, and localize manufacturing defects.</p>
                             <div class="tech-used">
-                                <span>DJANGO</span><span>STREAMLIT</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>IMAGE PROCESSING</span><span>SQLITE</span>
+                                <span>DJANGO</span><span>STREAMLIT</span><span>RESNET50</span><span>CNN</span>
                             </div>
-                            <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                            <div class="project-actions">
+                                <a href="projects/steel-manufacturing.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/doctors-appointment.svg" alt="">
-                        </div>
-                        <div class="project-body">
-                            <h4>Doctor's Appointment System</h4>
-                            <p>Developed a responsive and user-friendly web application for scheduling doctor appointments using React framework. Also patients can visibily able to see that Doctor is available or not. Register and Login functionalities available.</p>
-                            <div class="tech-used">
-                                <span>MERN</span><span>CNN</span><span>TAILWIND CSS</span>
-                            </div>
-                            <a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/internship-portal.svg" alt="">
-                        </div>
-                        <div class="project-body">
-                            <h4>Internship Portal</h4>
-                            <p>Implemented personalized user accounts allowing individuals to easily update and track their internship status, uploading certificates and fostering a user-friendly experience. Teachers can update internships availability as well.</p>
-                            <div class="tech-used">
-                                <span>MERN</span><span>TAILWIND CSS</span>
-                            </div>
-                            <a href="https://github.com/pranjalparmar23/internshipportal" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/solar-panel-monitoring.svg" alt="">
-                        </div>
-                        <div class="project-body">
-                            <h4>Solar Panel Cleaning and Monitoring System</h4>
-                            <p>Designed and implemented a solar panel cleaning and monitoring system with a customizable interface to optimize cleaning schedules and track performance metrics by monitoring pre- and post-cleaning readings of solar panels.</p>
-                            <div class="tech-used">
-                                <span>IOT</span><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span>
-                            </div>
-                            <a href="https://github.com/pranjalparmar23/Solar-Panel-Cleaning-and-Monitoring-System" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="images/college-siksha.svg" alt="">
-                        </div>
-                        <div class="project-body">
-                            <h4>College Siksha</h4>
-                            <p>Designed a website using HTML and CSS that shows courses and colleges available in India and abroad with register and login functionalities. Implemented a dynamic backend using PHP to handle user registration, login, and other interactive functionalities.</p>
-                            <div class="tech-used">
-                                <span>HTML</span><span>CSS</span><span>PHP</span>
-                            </div>
-                            <a href="https://github.com/pranjalparmar23/college-shiksha" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
+                    <div class="project-card" data-href="projects/brain-tumor.html" data-category="ai-ml">
                         <div class="project-img">
                             <img src="images/brain-tumor-detection.svg" alt="">
                         </div>
                         <div class="project-body">
                             <h4>Brain Tumor Detection System</h4>
-                            <p>Project presents a web-based Brain Tumor Detection System leveraging a Convolutional Neural Network model. The system allows users to upload MRI scan images and personal details via a web interface.</p>
+                            <p>A web-based Brain Tumor Detection System leveraging a CNN model, letting users upload MRI scans and personal details via a web interface.</p>
                             <div class="tech-used">
-                                <span>MERN</span><span>CNN</span><span>IMAGE PROCESSING</span><span>TAILWIND CSS</span>
+                                <span>MERN</span><span>CNN</span><span>TAILWIND CSS</span>
                             </div>
-                            <a href="https://github.com/Vaishali021103/BrainTumor-Classification-DL" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                            <div class="project-actions">
+                                <a href="projects/brain-tumor.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/Vaishali021103/BrainTumor-Classification-DL" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-href="projects/servo-prediction.html" data-category="ai-ml">
                         <div class="project-img">
                             <img src="images/servo-prediction.svg" alt="">
                         </div>
                         <div class="project-body">
                             <h4>Servo Prediction</h4>
-                            <p>The model evaluation metrics provide insights into the performance of the linear regression model in predicting the rise time of the servo system. The scatter plot visually represents the agreement between the actual and predicted values.</p>
+                            <p>A linear regression model predicting servo system rise time, with evaluation metrics visualizing actual vs. predicted values.</p>
                             <div class="tech-used">
-                                <span>LINEAR REGRESSION</span><span>PYTHON</span><span>MATPLOTLIB</span><span>SEABORN</span>
+                                <span>LINEAR REGRESSION</span><span>PYTHON</span><span>SEABORN</span>
                             </div>
-                            <a href="https://github.com/pranjalparmar23/ServoPrediction" class="project-link" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                            <div class="project-actions">
+                                <a href="projects/servo-prediction.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/ServoPrediction" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-href="projects/internship-portal.html" data-category="mern">
+                        <div class="project-img">
+                            <img src="images/internship-portal.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Internship Portal</h4>
+                            <p>Personalized accounts for students to track internship status and upload certificates; teachers manage internship availability.</p>
+                            <div class="tech-used">
+                                <span>MERN</span><span>TAILWIND CSS</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="projects/internship-portal.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/internshipportal" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-href="projects/doctors-appointment.html" data-category="mern">
+                        <div class="project-img">
+                            <img src="images/doctors-appointment.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Doctor's Appointment System</h4>
+                            <p>A responsive React app for scheduling doctor appointments with real-time availability, register and login functionality.</p>
+                            <div class="tech-used">
+                                <span>MERN</span><span>TAILWIND CSS</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="projects/doctors-appointment.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-href="projects/solar-panel.html" data-category="iot">
+                        <div class="project-img">
+                            <img src="images/solar-panel-monitoring.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>Solar Panel Cleaning and Monitoring System</h4>
+                            <p>An IoT system with a customizable interface to optimize cleaning schedules and track pre/post-cleaning performance metrics.</p>
+                            <div class="tech-used">
+                                <span>IOT</span><span>HTML</span><span>JAVASCRIPT</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="projects/solar-panel.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/Solar-Panel-Cleaning-and-Monitoring-System" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-href="projects/college-siksha.html" data-category="web-dev">
+                        <div class="project-img">
+                            <img src="images/college-siksha.svg" alt="">
+                        </div>
+                        <div class="project-body">
+                            <h4>College Siksha</h4>
+                            <p>A website showcasing courses and colleges across India and abroad, with a dynamic PHP backend for registration and login.</p>
+                            <div class="tech-used">
+                                <span>HTML</span><span>CSS</span><span>PHP</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="projects/college-siksha.html" class="project-link"><i class='bx bx-right-arrow-alt'></i> View Case Study</a>
+                                <a href="https://github.com/pranjalparmar23/college-shiksha" class="project-github" target="_blank" rel="noopener" aria-label="GitHub Repository"><i class='bx bxl-github'></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -460,7 +497,7 @@
                     <div class="publication-body">
                         <span class="publication-venue">ICETS 2025 &bull; International Conference on Emerging Technologies for Sustainable Development</span>
                         <h4>Automated Detection of Steel Manufacturing Defects Using Machine Learning Techniques</h4>
-                        <p class="publication-authors"><strong>Pranjal Parmar and Team</p>
+                        <p class="publication-authors"><strong>Pranjal Parmar and Team</strong></p>
                         <p>Companion research paper to the Steel Manufacturing Defects project. Proposes a machine learning pipeline — CNN for defect classification, ResUNet for image segmentation, and ResNet50 for defect localization — trained on a dataset of 12,997 steel images. The system moves quality control from traditional manual inspection (under 70% accuracy) to proactive, automated defect detection, reducing rework, waste, and production downtime.</p>
                         <div class="publication-stats">
                             <div><h5>88%</h5><span>ResNet50 Accuracy</span></div>

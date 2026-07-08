@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Guidance | Pranjal Parmar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="navbar-inner">
+            <a href="../index.html#projects" class="back-link"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-hero-detail">
+            <div class="hero-glow"></div>
+            <div class="section-inner">
+                <span class="category-badge">Java</span>
+                <h1>Junior Guidance</h1>
+                <p class="hero-desc">A full-stack article hub, built with Java/Spring Boot on the backend and Angular on the frontend, that helps students and junior developers understand real industry requirements through articles published by seniors on a role-based social platform.</p>
+                <div class="tech-used">
+                    <span>ANGULAR</span><span>TYPESCRIPT</span><span>ANGULAR MATERIAL</span><span>JAVA 21</span><span>SPRING BOOT</span><span>SPRING SECURITY (JWT)</span><span>SPRING DATA JPA</span><span>MYSQL</span><span>DOCKER</span><span>NGINX</span>
+                </div>
+                <div class="project-hero-actions">
+                    <a href="https://github.com/pranjalparmar23/juniorguidance" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                    <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Overview</p>
+                <h2 class="section-title">Project Overview</h2>
+                <p class="desc">Junior Guidance is a full-stack web application designed to help students and junior developers gain knowledge about industry requirements with the help of seniors, who share their real-world experience as published articles on the platform. It supports proper categorization of content and role-based access control, so admins and regular users see and manage articles differently.</p>
+                <p class="desc">The backend is a Spring Boot REST API secured with JWT-based authentication, backed by MySQL through Spring Data JPA. The frontend is an Angular single-page application styled with Angular Material, and the whole stack is containerized with Docker Compose behind Nginx.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Capabilities</p>
+                <h2 class="section-title">Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>JWT Authentication</h5><p>Secure, stateless login backed by Spring Security, protecting all REST endpoints.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Role-Based Access Control</h5><p>Separate Admin and User roles determine what content can be created, edited, or moderated.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Article Creation &amp; Publishing</h5><p>Seniors can write, publish, and update articles sharing real industry experience.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Category-Based Organization</h5><p>Articles are organized by category so juniors can browse guidance relevant to their goals.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>User Dashboard</h5><p>A personalized dashboard for tracking published articles and platform activity.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Responsive UI</h5><p>Built with Angular Material for a clean, consistent, mobile-friendly experience.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Under the hood</p>
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-tile"><i class='bx bxl-angular' style="color:#DD0031"></i><p>Angular</p></div>
+                    <div class="skill-tile"><i class='bx bxl-typescript' style="color:#3178C6"></i><p>TypeScript</p></div>
+                    <div class="skill-tile"><i class='bx bxl-java' style="color:#ED8B00"></i><p>Java 21</p></div>
+                    <div class="skill-tile"><i class='bx bxl-spring-boot' style="color:#6DB33F"></i><p>Spring Boot</p></div>
+                    <div class="skill-tile"><i class='bx bxs-data' style="color:#4479A1"></i><p>MySQL</p></div>
+                    <div class="skill-tile"><i class='bx bxl-docker' style="color:#2496ED"></i><p>Docker</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">System Design</p>
+                <h2 class="section-title">Architecture</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-layer'></i>
+                        <div><h5>Frontend</h5><p>Angular single-page application (junior-guidance/) styled with Angular Material, communicating with the backend over REST.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-server'></i>
+                        <div><h5>Backend</h5><p>Spring Boot REST API with Spring Data JPA for persistence and Spring Security (JWT) for stateless authentication and authorization.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bxs-data'></i>
+                        <div><h5>Database</h5><p>MySQL 8+ stores users, articles, and categories with role-based relationships.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bxl-docker'></i>
+                        <div><h5>Deployment</h5><p>Fully containerized with Docker Compose, served behind an Nginx reverse proxy.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Documentation</p>
+                <h2 class="section-title">Screenshots &amp; Development Phases</h2>
+                <div class="placeholder-card">
+                    <i class='bx bx-image-alt'></i>
+                    <h4>Screenshots and phase-by-phase breakdown coming soon</h4>
+                    <p>Product screenshots and a detailed development timeline for this project are being added.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="section-inner footer-inner">
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+            <a href="../index.html#projects" class="detail-footer-nav"><i class='bx bx-left-arrow-alt'></i> Back to all projects</a>
+            <p class="footer-copy">&copy; 2026 Pranjal Parmar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -24,7 +24,7 @@
   <rect x="292" y="200" width="16" height="60" fill="#0ef"/>
 
   <!-- graduation cap -->
-  <g transform="translate(300 88)">
+  <g transform="translate(300 145)">
     <polygon points="0,-14 40,0 0,14 -40,0" fill="#fff"/>
     <rect x="-4" y="0" width="8" height="18" fill="#7c8594"/>
     <circle cx="0" cy="20" r="4" fill="#0ef"/>

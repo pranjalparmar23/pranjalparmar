@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recruitment and Multi-Agent Interview Preparation Platform | Pranjal Parmar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="navbar-inner">
+            <a href="../index.html#projects" class="back-link"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-hero-detail">
+            <div class="hero-glow"></div>
+            <div class="section-inner">
+                <span class="category-badge">GenAI</span>
+                <h1>AI Recruitment and Multi-Agent Interview Preparation Platform</h1>
+                <p class="hero-desc">A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and hiring recommendations. Independent LangGraph agents orchestrate the workflows with a RAG retrieval layer over ChromaDB — running entirely on local, free-tier infrastructure.</p>
+                <div class="tech-used">
+                    <span>REACT</span><span>TYPESCRIPT</span><span>VITE</span><span>TAILWIND CSS</span><span>FASTAPI</span><span>PYTHON</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>CHROMADB</span><span>POSTGRESQL</span><span>REDIS</span><span>GROQ</span><span>DOCKER</span>
+                </div>
+                <div class="project-hero-actions">
+                    <a href="https://github.com/pranjalparmar23/ai-talent-hub" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                    <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Overview</p>
+                <h2 class="section-title">Project Overview</h2>
+                <p class="desc">Recruitment today runs on two disconnected experiences — candidates guessing what a resume needs, and recruiters manually sifting through applications. This platform builds a single system for both sides of the table. Candidates upload a resume and get an ATS match score, a skill-gap breakdown against a target job description, a personalized weekly learning roadmap, and a conversational AI mock interview coach. Recruiters upload a job description and get structured requirement extraction, an auto-ranked candidate pool, targeted interview questions per candidate, and a HIRE / CONSIDER / REJECT recommendation with reasoning.</p>
+                <p class="desc">Both flows are orchestrated by independent LangGraph state machines that coordinate specialized LLM agents, a RAG retrieval layer backed by ChromaDB, and a PostgreSQL + Redis data layer — deliberately built to run locally with no paid cloud services required.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Capabilities</p>
+                <h2 class="section-title">Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Resume Parsing &amp; ATS Scoring</h5><p>Groq's llama-3.3-70b-versatile extracts structured resume data and scores it against a target job description using keyword density analysis.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Skill Gap Analysis &amp; Learning Roadmap</h5><p>Side-by-side comparison of candidate skills vs. JD requirements, feeding a RAG-powered weekly learning plan with curated resources.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>AI Mock Interview Coach</h5><p>A conversational agent runs company and role-specific mock interviews, then scores technical depth, communication, and problem-solving.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>JD Analysis &amp; Candidate Ranking</h5><p>Extracts structured requirements from a job description and auto-ranks the candidate pool by fit score with a per-dimension breakdown.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Hiring Recommendation Engine</h5><p>Produces a HIRE / CONSIDER / REJECT decision with a confidence score and the reasoning behind it.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Multi-Agent Orchestration</h5><p>Independent LangGraph state machines coordinate specialized agents — Interview, Evaluation, Memory, and Retriever — over a shared RAG layer.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Under the hood</p>
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React</p></div>
+                    <div class="skill-tile"><i class='bx bxl-typescript' style="color:#3178C6"></i><p>TypeScript</p></div>
+                    <div class="skill-tile"><i class='bx bxl-tailwind-css' style="color:#38BDF8"></i><p>Tailwind CSS</p></div>
+                    <div class="skill-tile"><svg class="skill-svg" style="color:#05998b" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/></svg><p>FastAPI</p></div>
+                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                    <div class="skill-tile"><svg class="skill-svg" style="color:#2DD4BF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"/></svg><p>LangChain</p></div>
+                    <div class="skill-tile"><i class='bx bx-sitemap' style="color:#38BDF8"></i><p>LangGraph</p></div>
+                    <div class="skill-tile"><i class='bx bx-vector' style="color:#A855F7"></i><p>ChromaDB</p></div>
+                    <div class="skill-tile"><i class='bx bxl-postgresql' style="color:#4A90D9"></i><p>PostgreSQL</p></div>
+                    <div class="skill-tile"><svg class="skill-svg" style="color:#DC382D" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></svg><p>Redis</p></div>
+                    <div class="skill-tile"><i class='bx bxl-docker' style="color:#2496ED"></i><p>Docker</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">System Design</p>
+                <h2 class="section-title">Architecture</h2>
+                <p class="desc">A React (Vite + TypeScript + Tailwind + TanStack Query) frontend talks to a FastAPI backend exposing <code>/api/auth</code>, <code>/api/candidate</code>, <code>/api/recruiter</code> and <code>/api/admin</code> routes behind JWT middleware, rate limiting, and logging. Two independent LangGraph state machines drive the core flows:</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-git-branch'></i>
+                        <div><h5>Candidate Graph</h5><p>parse_resume &rarr; ats_check &rarr; skill_gap_analysis &rarr; generate_roadmap</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-git-branch'></i>
+                        <div><h5>Recruiter Graph</h5><p>analyze_jd &rarr; match_candidates &rarr; rank_candidates</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-layer'></i>
+                        <div><h5>Shared Agent Layer</h5><p>InterviewAgent, EvaluationAgent, and a Redis-backed MemoryAgent, plus a RetrieverAgent querying 5 ChromaDB collections via local sentence-transformers embeddings.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-data'></i>
+                        <div><h5>Data Layer</h5><p>PostgreSQL 16 (async via SQLAlchemy 2.0 + asyncpg) for persistent data, Redis 7 for sessions/cache, local filesystem for uploads.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Documentation</p>
+                <h2 class="section-title">Screenshots &amp; Development Phases</h2>
+                <div class="placeholder-card">
+                    <i class='bx bx-image-alt'></i>
+                    <h4>Screenshots and phase-by-phase breakdown coming soon</h4>
+                    <p>Product screenshots and a detailed development timeline for this project are being added.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="section-inner footer-inner">
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+            <a href="../index.html#projects" class="detail-footer-nav"><i class='bx bx-left-arrow-alt'></i> Back to all projects</a>
+            <p class="footer-copy">&copy; 2026 Pranjal Parmar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

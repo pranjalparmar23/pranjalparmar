@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Manufacturing Defects | Pranjal Parmar</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="navbar scrolled">
+        <div class="navbar-inner">
+            <a href="../index.html#projects" class="back-link"><i class='bx bx-arrow-back'></i> Back to Portfolio</a>
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-hero-detail">
+            <div class="hero-glow"></div>
+            <div class="section-inner">
+                <span class="category-badge">AI-ML</span>
+                <h1>Steel Manufacturing Defects</h1>
+                <p class="hero-desc">A deep learning pipeline that automates steel defect detection — classifying, segmenting, and localizing manufacturing flaws across nearly 13,000 images to move quality control from slow manual inspection to fast, automated analysis.</p>
+                <div class="tech-used">
+                    <span>DJANGO</span><span>STREAMLIT</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>IMAGE PROCESSING</span><span>SQLITE</span>
+                </div>
+                <div class="project-hero-actions">
+                    <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
+                    <a href="../index.html#publications" class="btn btn-outline"><i class='bx bxs-file-pdf'></i> Read the Published Paper</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Overview</p>
+                <h2 class="section-title">Project Overview</h2>
+                <p class="desc">Steel production is highly sensitive to changes in raw materials, process, and environment, which routinely introduces flaws like fractures, inclusions, and uneven thickness. Traditional manual inspection catches less than 70% of these defects and is too slow for high-volume manufacturing lines. This project builds an ML-based detection pipeline — combining CNN, ResUNet, and ResNet50 — trained on 12,997 real steel images to classify, segment, and localize defects automatically.</p>
+                <p class="desc">This project is also the subject of a published research paper, <a href="../index.html#publications">"Automated Detection of Steel Manufacturing Defects Using Machine Learning Techniques"</a>, presented at ICETS 2025.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Capabilities</p>
+                <h2 class="section-title">Key Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Binary Defect Classification</h5><p>A CNN model classifies steel images as defective or non-defective with 87% accuracy.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Image Segmentation</h5><p>ResUNet segments defect regions using Run-Length Encoding (RLE) for precise mask generation.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Defect Localization</h5><p>ResNet50 pinpoints the exact location of a defect on the steel surface with 88% accuracy.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Streamlit Upload Interface</h5><p>A simple web interface lets manufacturers upload an image and get an instant defect analysis.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-check-circle'></i>
+                        <div><h5>Large-Scale Training Data</h5><p>Trained and validated on 12,997 labeled steel images spanning varied lighting, surface types, and textures.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Under the hood</p>
+                <h2 class="section-title">Tech Stack</h2>
+                <div class="skills-grid">
+                    <div class="skill-tile"><i class='bx bxl-django' style="color:#2CA55D"></i><p>Django</p></div>
+                    <div class="skill-tile"><i class='bx bxl-python' style="color:#FF4B4B"></i><p>Streamlit</p></div>
+                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                    <div class="skill-tile"><i class='bx bxs-data' style="color:#4C8EDA"></i><p>SQLite</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">System Design</p>
+                <h2 class="section-title">Architecture</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class='bx bx-data'></i>
+                        <div><h5>1. Data Ingestion</h5><p>12,997 steel images collected and labeled as defective / non-defective.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-git-branch'></i>
+                        <div><h5>2. Classification</h5><p>CNN model classifies each image as defective or non-defective.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-layer'></i>
+                        <div><h5>3. Segmentation</h5><p>ResUNet segments the defect region using Run-Length Encoding.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class='bx bx-target-lock'></i>
+                        <div><h5>4. Localization</h5><p>ResNet50 detects the precise defect location for manufacturer review via the Streamlit interface.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Documentation</p>
+                <h2 class="section-title">Screenshots &amp; Development Phases</h2>
+                <div class="placeholder-card">
+                    <i class='bx bx-image-alt'></i>
+                    <h4>Screenshots and phase-by-phase breakdown coming soon</h4>
+                    <p>Product screenshots and a detailed development timeline for this project are being added.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="section-inner footer-inner">
+            <a href="../index.html" class="brand">Pranjal<span>.</span></a>
+            <a href="../index.html#projects" class="detail-footer-nav"><i class='bx bx-left-arrow-alt'></i> Back to all projects</a>
+            <p class="footer-copy">&copy; 2026 Pranjal Parmar. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

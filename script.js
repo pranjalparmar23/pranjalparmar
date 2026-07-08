@@ -53,6 +53,29 @@ document.querySelectorAll('.reveal, .timeline-item, .skill-tile, .project-card, 
     revealObserver.observe(el);
 });
 
+document.querySelectorAll('.project-card[data-href]').forEach(card => {
+    card.addEventListener('click', (e) => {
+        if(e.target.closest('a')) return;
+        window.location.href = card.dataset.href;
+    });
+});
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.classList.toggle('card-hidden', !show);
+        });
+    });
+});
+
 function sendMail(){
     let parms = {
         name : document.getElementById("name").value,
