@@ -48,12 +48,12 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal, .timeline-item, .skill-tile, .project-card, .fact').forEach(el => {
+document.querySelectorAll('.reveal, .timeline-item, .skill-tile, .project-card, .publication-card, .fact').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
 });
 
-document.querySelectorAll('.project-card[data-href]').forEach(card => {
+document.querySelectorAll('.project-card[data-href], .publication-card[data-href]').forEach(card => {
     card.addEventListener('click', (e) => {
         if(e.target.closest('a')) return;
         window.location.href = card.dataset.href;

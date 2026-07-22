@@ -275,6 +275,7 @@ p a:hover{
 .stat-chip{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.2rem;
     padding: 1.2rem 1.8rem;
     background: var(--surface);
@@ -757,6 +758,7 @@ p a:hover{
     border-radius: 1.4rem;
     padding: 3rem;
     transition: .3s;
+    cursor: pointer;
 }
 .publication-card:hover{
     border-color: var(--accent);
