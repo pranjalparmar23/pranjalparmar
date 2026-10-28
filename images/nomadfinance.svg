@@ -1,0 +1,33 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgNF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171f2b"/>
+      <stop offset="100%" stop-color="#1f2733"/>
+    </linearGradient>
+    <radialGradient id="glowNF" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0ef" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0ef" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bgNF)"/>
+  <rect width="600" height="600" fill="url(#glowNF)"/>
+
+  <!-- world route arcs: host country to home country -->
+  <g transform="translate(0,120)" fill="none" stroke="#0ef" stroke-width="1.5" opacity="0.8">
+    <path d="M150 230 Q300 90 450 230" stroke-dasharray="6 6"/>
+    <path d="M150 230 Q300 150 450 190" stroke-dasharray="6 6"/>
+  </g>
+  <g transform="translate(0,120)">
+    <circle cx="150" cy="230" r="16" fill="#2d3542" stroke="#0ef" stroke-width="2"/>
+    <circle cx="450" cy="230" r="16" fill="#2d3542" stroke="#0ef" stroke-width="2"/>
+    <circle cx="450" cy="190" r="12" fill="#2d3542" stroke="#fff" stroke-width="2"/>
+
+    <!-- shield with coin at center -->
+    <path d="M300 150 L350 168 V228 C350 262 328 284 300 296 C272 284 250 262 250 228 V168 Z" fill="#0ef" fill-opacity="0.12" stroke="#0ef" stroke-width="3"/>
+    <circle cx="300" cy="226" r="26" fill="#0ef"/>
+    <text x="300" y="236" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="#171f2b">$</text>
+  </g>
+
+  <text x="300" y="470" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="30" font-weight="600" fill="#fff">NomadFinance</text>
+  <text x="300" y="505" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="16" fill="#0ef">Financial safety net for migrant workers</text>
+</svg>
