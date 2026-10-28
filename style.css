@@ -1236,3 +1236,180 @@ p a:hover{
     height: 100%;
     border: 0;
 }
+
+/* NomadFinance case study */
+.shot{
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+.shot img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.shot figcaption{
+    padding: 1rem 1.5rem;
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    border-top: .1rem solid var(--border-color);
+}
+.shot-hero{
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+.pillar-row{
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+.pillar-row:nth-of-type(even) .shot{ order: 2; }
+.pillar-copy h3{
+    font-family: "Sora", sans-serif;
+    font-size: 2.2rem;
+    color: var(--white-color);
+    margin: .6rem 0 1rem;
+}
+.pillar-copy .q{
+    color: var(--accent-2);
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+.pillar-copy p, .pillar-copy li{
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+.pillar-copy ul{ margin: 1rem 0 1.2rem 0; }
+.pillar-copy li{
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: .5rem;
+}
+.pillar-copy li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.05rem;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background: var(--accent-2);
+}
+.pillar-meta{
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    padding-top: 1rem;
+    border-top: .1rem solid var(--border-color);
+}
+.pillar-meta code, .desc code{
+    color: var(--accent-2);
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 1.2rem;
+}
+.stat-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.stat-card{
+    padding: 2rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.2rem;
+}
+.stat-card strong{
+    display: block;
+    font-family: "Sora", sans-serif;
+    font-size: 2.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.stat-card span{
+    display: block;
+    margin-top: .4rem;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+.arch{
+    display: grid;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+.arch-layer{
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.2rem;
+    padding: 1.6rem 2rem;
+}
+.arch-layer.ai{ border-color: rgba(34,211,238,.45); }
+.arch-layer.data{ border-color: rgba(124,92,255,.5); }
+.arch-layer h5{
+    font-family: "Sora", sans-serif;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    margin-bottom: .3rem;
+}
+.arch-layer .sub{
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+.arch-chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+}
+.arch-chips span{
+    padding: .6rem 1.1rem;
+    border-radius: .8rem;
+    background: var(--bg-alt);
+    border: .1rem solid var(--border-color);
+    font-size: 1.25rem;
+    color: var(--white-color);
+}
+.arch-chips span em{
+    display: block;
+    font-style: normal;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+.arch-arrow{
+    text-align: center;
+    color: var(--accent-2);
+    font-size: 1.8rem;
+    line-height: 1;
+}
+.arch-side{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 1rem;
+}
+.flow-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 1.35rem;
+}
+.flow-table th, .flow-table td{
+    text-align: left;
+    padding: 1rem 1.2rem;
+    border-bottom: .1rem solid var(--border-color);
+    color: var(--text-muted);
+    vertical-align: top;
+}
+.flow-table th{ color: var(--white-color); font-weight: 600; }
+.flow-table td:first-child{ color: var(--white-color); white-space: nowrap; }
+.table-wrap{ overflow-x: auto; }
+@media (max-width: 860px){
+    .pillar-row{ grid-template-columns: 1fr; gap: 1.5rem; }
+    .pillar-row:nth-of-type(even) .shot{ order: 0; }
+}

@@ -21,15 +21,19 @@
             <div class="section-inner">
                 <span class="category-badge">GenAI</span>
                 <h1>NomadFinance: AI Financial Safety Net for Migrant Workers</h1>
-                <p class="hero-desc">Your pay. Your contract. Your money home. Protected. An AI-powered financial safety net for the world's 280 million migrant workers, built to work in their own language on the phone already in their pocket. Built for the Google Cloud AI Builder Cup 2026, BFSI track (JAPAC).</p>
+                <p class="hero-desc">Your pay. Your contract. Your money home. Protected. An AI-powered financial safety net for the world's 280 million migrant workers, built to work in their own language on the phone already in their pocket. Built for the Google Cloud AI Builder Cup 2026, BFSI track (JAPAC), by a team of three.</p>
                 <div class="tech-used">
-                    <span>REACT</span><span>TYPESCRIPT</span><span>TAILWIND CSS</span><span>FASTAPI</span><span>PYTHON</span><span>GEMINI</span><span>FIRESTORE</span><span>CLOUD RUN</span><span>FIREBASE</span><span>PWA</span>
+                    <span>REACT 18</span><span>TYPESCRIPT</span><span>VITE</span><span>TAILWIND CSS</span><span>PWA</span><span>FASTAPI</span><span>PYTHON 3.11</span><span>GEMINI</span><span>FIRESTORE</span><span>CLOUD RUN</span><span>FIREBASE</span><span>GITHUB ACTIONS</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/google-ai-builder-cup/NomadFinance" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="https://nomadfinance-prod.web.app" class="btn btn-outline" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Live App</a>
                     <a href="https://youtu.be/16NN_JAg16c" class="btn btn-outline" target="_blank" rel="noopener"><i class='bx bxl-youtube'></i> Watch Demo</a>
                 </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/nomadfinance/dashboard.png" alt="NomadFinance home dashboard showing quick actions for every pillar, the financial identity score, alerts, contracts checked and the live SGD to INR rate" loading="eager">
+                    <figcaption>The worker's home dashboard: one tap into every pillar, plus the live Singapore to India rate.</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -45,41 +49,139 @@
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">About 280 million people live and work outside the country they were born in. Together they send roughly $650 billion home every year, and about $41 billion of that is lost to fees. A worker who has just arrived somewhere new usually meets every problem alone: contracts in a language they cannot read, hidden exchange-rate markups, bad agencies, scam messages, and years of honest work that leave no financial record.</p>
-                <p class="desc">NomadFinance answers each of these with a Gemini-powered module, available in six languages as an installable PWA. The project lines up with UN Sustainable Development Goals 8 (decent work), 10 (reduced inequalities) and 16 (justice and strong institutions). I built it with two teammates, Devam and Aditya.</p>
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why NomadFinance Exists</h2>
+                <p class="desc">About 280 million people live and work outside the country they were born in. Together they send roughly $650 billion home every year, and about $41 billion of that disappears into fees. Fees are only the visible loss. A worker who has just arrived somewhere new usually meets every one of these problems alone:</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Contracts they cannot read</h5><p>The contract is in a language they do not understand, so they sign terms that are illegal where they work. <b>Contract Shield</b> reads it, checks every clause against local labor law and explains it in their language.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Hidden transfer costs</h5><p>Money transfers hide their real cost in exchange-rate markups and layered fees. <b>Remittance X-Ray</b> shows what each provider really charges and what the family actually receives.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Bad agencies, wage theft, illegal deductions</h5><p>Nobody warns the next worker. <b>Exploitation Radar</b> lets workers report anonymously and warns everyone on the same route.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>No financial record</h5><p>Years of honest work leave no record anywhere. <b>Financial Identity</b> builds a portable report a bank at home can read.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Scam messages</h5><p>Fake jobs, prizes, loans and messages pretending to be the worker's own bank. <b>Scam Check</b> explains the trick and what to do next.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Leaving with no plan</h5><p>No savings target and no idea what is fair. <b>Financial Coach</b> scores their preparedness and writes a 90-day plan.</p></div></div>
+                </div>
+                <p class="desc" style="margin-top:2rem">The project lines up with UN Sustainable Development Goals 8 (decent work), 10 (reduced inequalities, especially target 10.c on remittance costs) and 16 (justice and strong institutions).</p>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">The Six Pillars</h2>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Remittance X-Ray</h5><p>Ranks every provider by how much the family actually receives, using World Bank price data (221 provider records, 6 routes) and a four-provider live exchange-rate chain that fails over automatically.</p></div>
+                <p class="section-tag">The six pillars</p>
+                <h2 class="section-title">One Worker, Six Moments</h2>
+                <p class="desc">The demo data is built around Priya, a made-up domestic worker who leaves India for Singapore. Before she leaves, the Coach asks a few simple questions and gives her a 13-week plan. When the agency hands her a contract, Contract Shield finds the clause that lets the employer keep her passport. On payday, Remittance X-Ray shows which service leaves her family the most. When a message asks for her one-time code, Scam Check calls it out and she warns other workers anonymously. Every report feeds Exploitation Radar for the next worker, and when she goes home, Financial Identity turns her history into a PDF a bank can trust. Four pillars shipped in v1.0; Scam Check and Financial Coach joined in v2.0 behind feature flags.</p>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/remittance-xray.png" alt="Remittance X-Ray screen with six money routes and an amount field" loading="lazy">
+                        <figcaption>Remittance X-Ray: pick a route (SG to IN, SG to PH, AU to IN and more) and an amount.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 1</p>
+                        <h3>Remittance X-Ray</h3>
+                        <p class="q">What does sending money home really cost?</p>
+                        <ul>
+                            <li>Ranks every provider by the number that matters: how much your family receives, using the fee plus the hidden exchange-rate markup.</li>
+                            <li>Rate trends, the best day to send, and what a worker would have saved against the provider they used.</li>
+                            <li>A short recommendation in the worker's language; a provider flagged by Exploitation Radar is marked and passed over.</li>
+                            <li>A transfer log that feeds Financial Identity.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>Data:</b> World Bank <i>Remittance Prices Worldwide</i> (221 provider price records, 6 routes) and a four-provider live-rate chain (Frankfurter, ExchangeRate-API, CurrencyFreaks, Wise) that fails over automatically. <b>API:</b> <code>/api/v1/remittance/*</code></p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Contract Shield</h5><p>Upload a photo or PDF of a contract in any language. A Gemini pipeline reads it, compares each clause with 15 curated labor-law rules per host country, gives a Safe / Caution / Danger rating and writes a ready-to-send complaint letter.</p></div>
+                </div>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/contract-shield.png" alt="Contract Shield screen with a drag and drop upload area and a five step explanation" loading="lazy">
+                        <figcaption>Contract Shield: upload a PDF or photo (up to 10 MB), or take a picture, and choose the host country.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 2</p>
+                        <h3>Contract Shield</h3>
+                        <p class="q">Is this contract fair where I work?</p>
+                        <ul>
+                            <li>A step-by-step Gemini pipeline reads the text, detects the language, country and type of job, then compares each clause with the host country's labor law.</li>
+                            <li>A Safe / Caution / Danger rating with risky clauses shown beside a plain-language translation in six languages.</li>
+                            <li>A ready-to-send complaint letter addressed to the right authority for that country.</li>
+                            <li>Clearly illegal clauses are reported to Radar automatically and anonymously; the stated salary becomes a verified income entry in Financial Identity.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>Data:</b> 15 hand-curated labor-law rules for each of the 6 host countries (90 in total), drawn from ILO NATLEX. A careful draft for orientation, not legal advice. <b>API:</b> <code>/api/v1/contracts/*</code></p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Exploitation Radar</h5><p>Anonymous reports about agencies and employers, matched by meaning with vector search, shown on a heat map with risk profiles. A scheduled job spots surges and alerts workers on the same route.</p></div>
+                </div>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/exploitation-radar.png" alt="Exploitation Radar map with reported money routes and a ranked list of routes by number of reports" loading="lazy">
+                        <figcaption>Exploitation Radar: a heat map where thicker, redder lines mean more reports, with a route-by-route list.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 3</p>
+                        <h3>Exploitation Radar</h3>
+                        <p class="q">Who else has been hurt by this agency?</p>
+                        <ul>
+                            <li>A shared, anonymous memory for workers: report an agency, employer or money-transfer operator.</li>
+                            <li>Gemini checks each report for spam and duplicates and sorts it into a type of abuse; reports about the same business are matched by meaning with vector search.</li>
+                            <li>Each business gets a risk profile and community rating. A scheduled job spots sudden surges every six hours and alerts workers following that route.</li>
+                            <li>Reporters are stored only as a keyed hash, never as an account id.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>Filters:</b> money transfer service, recruitment agency, employer. <b>API:</b> <code>/api/v1/radar/*</code></p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Financial Identity Builder</h5><p>Turns logged income, bills, savings and transfers into a score and a plain-language story, with a PDF report that a bank or micro-lender at home can read.</p></div>
+                </div>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/financial-identity.png" alt="Financial Identity screen with a score card and four factor bars" loading="lazy">
+                        <figcaption>Financial Identity: a score built from income stability, savings rate, remittance and on-time bills.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 4</p>
+                        <h3>Financial Identity Builder</h3>
+                        <p class="q">Proof of a working life.</p>
+                        <ul>
+                            <li>Workers log income, bills (snap a photo and Gemini reads it), savings and transfers.</li>
+                            <li>Every week the history becomes a score and a plain-language story, with a timeline of progress and one activity feed.</li>
+                            <li>A PDF report for banks and micro-lenders at home; the download link works for 24 hours.</li>
+                            <li>Opt-in only: Coach plan check-ins and scam-check activity can appear as numbers and dates, never message text, and turning it off removes them from the next report straight away.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>Job:</b> <code>fib-recompute</code> every Sunday 02:00 UTC. <b>API:</b> <code>/api/v1/fib/*</code></p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Scam Check</h5><p>Paste a message or upload a screenshot to get a verdict, the pressure tactics used, suspicious links and numbers (never opened) and three plain next steps. It scored 1.000 F1 on a 120-message, six-language golden set.</p></div>
+                </div>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/financial-coach.png" alt="Financial Coach screen showing a ready 90-day plan, six interview steps and answers the app already knows" loading="lazy">
+                        <figcaption>Financial Coach: a six-step interview that already knows the worker's country, job, pay, remittances and savings.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 5 &middot; v2.0, flag <code>coach</code></p>
+                        <h3>Financial Coach</h3>
+                        <p class="q">Am I ready to leave?</p>
+                        <ul>
+                            <li>A friendly interview, one question at a time in short plain sentences, by tap, amount, typing or voice.</li>
+                            <li>Remembers what the app already knows and asks the worker to confirm instead of repeating questions.</li>
+                            <li>A preparedness score from 0 to 100 over five factors, and a 13-week plan with a monthly budget, the cheapest way to send money home, and a debt and emergency-fund plan. The PDF comes in six languages.</li>
+                            <li>Check-ins at day 30, 60 and 90 by push notification. Works with a weak signal: answers typed offline are sent once when the signal returns.</li>
+                            <li>Stays in its lane: it will not recommend a loan, an investment or an app, and it responds with care to a worker in distress.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>API:</b> <code>/api/v2/coach/*</code> &middot; the score is plain Python with no model in it</p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Financial Coach</h5><p>A friendly interview that produces a 0 to 100 preparedness score and a 13-week plan with budget, cheapest remittance route and debt plan, plus day 30, 60 and 90 check-ins.</p></div>
+                </div>
+
+                <div class="pillar-row">
+                    <figure class="shot">
+                        <img src="../images/nomadfinance/scam-check.png" alt="Scam Check screen with a paste-text box and a screenshot option" loading="lazy">
+                        <figcaption>Scam Check: paste a message or upload a screenshot. Personal details are hidden before the check.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Pillar 6 &middot; v2.0, flag <code>scam</code></p>
+                        <h3>Scam Check</h3>
+                        <p class="q">Is this message a trick?</p>
+                        <ul>
+                            <li>A verdict and risk meter with the giveaway words highlighted, which of 8 scam types and 6 pressure tactics it uses, and how many similar scams are already known.</li>
+                            <li>Links, phone numbers, e-mail addresses and chat handles found in the message, with warnings such as "link shortener". They are listed but never opened or contacted.</li>
+                            <li>Three plain next steps that the phone can read aloud, and a one-tap anonymous warning to other workers after a confirmation sheet showing exactly what would be shared.</li>
+                            <li>The same message checked twice is answered instantly from the saved check with no AI call; each worker gets 20 new checks an hour.</li>
+                        </ul>
+                        <p class="pillar-meta"><b>Evaluation:</b> 1.000 F1 on 120 labelled messages in six languages. <b>API:</b> <code>/api/v2/scam/*</code></p>
                     </div>
                 </div>
             </div>
@@ -87,25 +189,166 @@
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Trust &amp; Safety</p>
+                <p class="section-tag">System design</p>
+                <h2 class="section-title">Architecture</h2>
+                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API keeps its data in Firestore, asks Gemini to read, sort, translate and explain, and lets Cloud Scheduler run the background jobs. Every route checks the caller's Firebase sign-in first.</p>
+
+                <div class="arch">
+                    <div class="arch-layer">
+                        <h5>Migrant worker</h5>
+                        <p class="sub">Any language, any phone. Installable PWA, offline cache, voice input and read-aloud.</p>
+                    </div>
+                    <div class="arch-arrow">&#8595;</div>
+                    <div class="arch-layer">
+                        <h5>Frontend: Firebase Hosting &middot; React 18 PWA</h5>
+                        <p class="sub">Vite, TypeScript (strict), Tailwind. Sign-in with Firebase Auth (Google or phone code), 6 languages, light and dark. A FlagGate asks <code>GET /api/v2/flags</code> before showing the v2.0 pillars.</p>
+                        <div class="arch-chips">
+                            <span>Remittance X-Ray</span><span>Contract Shield</span><span>Exploitation Radar</span><span>Financial Identity</span><span>Financial Coach <em>flag: coach</em></span><span>Scam Check <em>flag: scam</em></span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">&#8595;</div>
+                    <div class="arch-layer">
+                        <h5>Backend: Cloud Run <code>nomadfinance-api</code> &middot; FastAPI &middot; 0 to 2 instances</h5>
+                        <p class="sub">1 vCPU, 512 MiB. Middleware on every request: request log, security headers, CORS, rate limit, body-size cap, token check.</p>
+                        <div class="arch-chips">
+                            <span>API v1 <em>/api/v1: remittance, contracts, radar, fib, users</em></span>
+                            <span>API v2 <em>/api/v2: coach, scam, flags</em></span>
+                            <span>require_flag <em>60 s cache; off = 404</em></span>
+                            <span>Internal routes <em>only the scheduler's signed token</em></span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">&#8595;</div>
+                    <div class="arch-layer">
+                        <h5>Services: one folder per pillar</h5>
+                        <div class="arch-chips">
+                            <span>Remittance engine</span><span>Contract pipeline</span><span>Radar <em>intake, clustering, alerts</em></span><span>Financial Identity <em>profile, story, PDF</em></span><span>Coach <em>interview, score, plan</em></span><span>Scam analysis</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">&#8595;</div>
+                    <div class="arch-layer ai">
+                        <h5>Gemini (<code>google-genai</code>): one model per tier</h5>
+                        <p class="sub">The code asks for a tier; the model behind each tier is an environment variable, so a retired model is a one-line change. Every answer must fit a Pydantic model, with retries, a 30-second timeout, token usage logged per feature, a daily budget per feature and PII redaction on Coach and Scam text.</p>
+                        <div class="arch-chips">
+                            <span>Reasoning <em>gemini-3.5-flash: contract comparison, complaint letters, Identity story, Coach plan, scam explanations</em></span>
+                            <span>Extraction <em>gemini-3.5-flash-lite: photos and PDFs, bills, screenshots, radar reports</em></span>
+                            <span>Classification <em>gemini-3.1-flash-lite: scam verdicts, radar checks, translation, Coach replies</em></span>
+                            <span>Embedding <em>gemini-embedding-001: 768-number vectors</em></span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">&#8595;</div>
+                    <div class="arch-layer data">
+                        <h5>Data: Firestore (<code>asia-south1</code>) &middot; Cloud Storage &middot; Secret Manager</h5>
+                        <div class="arch-chips">
+                            <span>Worker records <em>users/uid: contracts, transfers, income, bills, savings, coach, scam checks</em></span>
+                            <span>Reference data <em>corridors, rates, labor laws, complaint templates, cost baselines</em></span>
+                            <span>Radar <em>reports, embeddings, entities, alerts</em></span>
+                            <span>Scam knowledge <em>taxonomy, 480 templates (vector), indicators, stats</em></span>
+                            <span>Operations <em>feature flags, Gemini usage</em></span>
+                            <span>Cloud Storage <em>bill photos, evidence, Identity and Coach PDFs</em></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-side" style="margin-top:1.5rem">
+                    <div class="arch-layer">
+                        <h5>Cloud Scheduler: 5 jobs</h5>
+                        <p class="sub">Calls protected <code>/api/v1/internal/*</code> routes with a Google-signed token.</p>
+                        <div class="arch-chips">
+                            <span>refresh-rates <em>every 2 hours</em></span><span>radar-aggregation <em>every 6 hours</em></span><span>scam-stats <em>daily 01:30 UTC</em></span><span>coach-checkins <em>daily 02:00 UTC</em></span><span>fib-recompute <em>Sundays 02:00 UTC</em></span>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h5>Live exchange rates</h5>
+                        <p class="sub">Tried in order, first to return every pair wins.</p>
+                        <div class="arch-chips">
+                            <span>1 Frankfurter</span><span>2 ExchangeRate-API</span><span>3 CurrencyFreaks</span><span>4 Wise</span>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h5>Notifications and operations</h5>
+                        <div class="arch-chips">
+                            <span>Firebase Cloud Messaging <em>radar alerts, Coach check-ins</em></span><span>Cloud Logging and Monitoring <em>metrics, dashboard, quota alerts</em></span>
+                        </div>
+                    </div>
+                    <div class="arch-layer">
+                        <h5>CI/CD: GitHub Actions</h5>
+                        <p class="sub">Keyless sign-in to Google through Workload Identity Federation. Merging to <code>main</code> deploys the backend, frontend, security rules and scheduler jobs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Pillars working together</p>
+                <h2 class="section-title">Cross-Pillar Data Flow</h2>
+                <p class="desc">The pillars feed each other. A flow into Exploitation Radar is always anonymous: no account id and no raw message. Flows that involve the Coach or Scam Check need the worker's confirmation or opt-in.</p>
+                <div class="table-wrap">
+                    <table class="flow-table">
+                        <thead><tr><th>From</th><th>To</th><th>What flows</th></tr></thead>
+                        <tbody>
+                            <tr><td>Remittance X-Ray</td><td>Financial Identity</td><td>Every logged transfer</td></tr>
+                            <tr><td>Contract Shield</td><td>Exploitation Radar</td><td>Danger clauses, anonymously</td></tr>
+                            <tr><td>Contract Shield</td><td>Financial Identity</td><td>The stated salary becomes verified income</td></tr>
+                            <tr><td>Exploitation Radar</td><td>Remittance X-Ray</td><td>Flagged transfer operators are marked and passed over in advice</td></tr>
+                            <tr><td>Exploitation Radar</td><td>Contract Shield</td><td>Flagged employers and agencies</td></tr>
+                            <tr><td>Scam Check</td><td>Exploitation Radar</td><td>One-tap anonymous report, worker confirms</td></tr>
+                            <tr><td>Exploitation Radar</td><td>Scam Check</td><td>"Seen N times on your route" (counts only)</td></tr>
+                            <tr><td>Remittance, Contract, Identity</td><td>Financial Coach</td><td>Cheapest provider, salary, employer, legal recruitment-fee cap, pay and savings (worker confirms)</td></tr>
+                            <tr><td>Financial Coach</td><td>Financial Identity</td><td>Plan targets become goals; check-ins appear on opt-in</td></tr>
+                            <tr><td>Financial Identity</td><td>Bank or micro-lender</td><td>A portable PDF report and activity feed</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Trust &amp; safety</p>
                 <h2 class="section-title">Built to Be Trusted</h2>
+                <p class="desc">People act on what this app tells them, so the design leans hard on safety.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-shield-quarter'></i>
-                        <div><h5>The AI never invents a number</h5><p>The Coach score is plain Python, and every figure in a plan is derived from stored data and verified by code. A plan that fails the check is refused.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-shield-quarter'></i>
-                        <div><h5>Messages are data, never instructions</h5><p>User content is passed to Gemini as delimited data. A red-team run of 15 prompt-injection attacks in all six languages was resisted every time.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-shield-quarter'></i>
-                        <div><h5>Private by design</h5><p>Personal identifiers are masked before anything is saved or logged, contract files and screenshots are read once and discarded, and radar reporters are stored only as a keyed hash.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-shield-quarter'></i>
-                        <div><h5>Ships dark, rolls back instantly</h5><p>New modules sit behind Firestore feature flags. With a flag off, routes return 404 and the code is never downloaded, so rollback needs no deploy.</p></div>
-                    </div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>The AI never invents a number</h5><p>The Coach score is plain Python with no model in it. Every figure in a plan is derived from the worker's answers or stored data and checked by code, and a plan that fails the check is refused. Translated plans and the Identity report's activity paragraph get the same number check.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>Facts come from curated data</h5><p>Labor-law rules, scam types and tactics, 480 scam templates and cost-of-living baselines load from reviewed files. Each baseline figure carries its source link and the date it was read.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>Messages are data, never instructions</h5><p>Anything a worker pastes or uploads is passed to Gemini as delimited data. A red-team run of 15 prompt-injection attacks in all six languages was judged on content every time, and no system prompt leaked. Links in scam messages are never fetched.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>Private by design</h5><p>Phone numbers, e-mails, IDs, account numbers and links are masked before anything is saved or logged. Contract files and scam screenshots are read once and thrown away. Radar reports carry no account id and no raw message, and a worker can delete their account and everything under it.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-toggle-right'></i><div><h5>New features ship dark</h5><p>The two v2.0 modules sit behind feature flags in Firestore. With a flag off, their routes answer a plain 404 and their code is never downloaded. Rollback is "flag off", with no deploy.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-wallet'></i><div><h5>Cost and quota safe</h5><p>A per-feature daily Gemini budget degrades to a calm "try again later" instead of failing, repeat questions come from a cache, and every endpoint has a rate limit.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-mobile-alt'></i><div><h5>Built for real phones</h5><p>An installable PWA tested at 360 px wide, in light and dark mode and on a slow network, with voice input, read-aloud and an offline answer queue. Screens were run through the axe accessibility checker and walked with a keyboard.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-info-circle'></i><div><h5>Honest about limits</h5><p>Plans carry a "not professional financial advice" note, and the labor-law data says it is a curated draft. Known limits are stated openly.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Coverage</p>
+                <h2 class="section-title">Where It Works</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>6 countries</strong><span>Host countries: Singapore, South Korea, Malaysia, Japan, Hong Kong, Australia</span></div>
+                    <div class="stat-card"><strong>6 routes</strong><span>SG to PH, SG to IN, AU to IN, MY to ID, JP to PH, AU to PH</span></div>
+                    <div class="stat-card"><strong>6 languages</strong><span>English, Hindi, Tagalog, Bahasa Indonesia, Nepali, Bengali. All 1,331 interface strings exist in all six.</span></div>
+                    <div class="stat-card"><strong>5 home countries</strong><span>Philippines, India, Indonesia, Nepal and Bangladesh are covered at sign-up</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Quality</p>
+                <h2 class="section-title">By the Numbers</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>1.000 F1</strong><span>Scam Check on a 120-message golden set (84 scams, 36 genuine) in six languages; the bar was 0.85 overall and 0.75 per language</span></div>
+                    <div class="stat-card"><strong>15 of 15</strong><span>Prompt-injection attacks resisted, in all six languages</span></div>
+                    <div class="stat-card"><strong>90 rules</strong><span>Hand-curated labor-law rules, 15 for each host country</span></div>
+                    <div class="stat-card"><strong>221 records</strong><span>World Bank provider price records across the 6 routes</span></div>
+                    <div class="stat-card"><strong>480 templates</strong><span>Reference scam templates, 10 per language per type, behind 8 scam types and 6 tactics</span></div>
+                    <div class="stat-card"><strong>12 personas</strong><span>Coach regression runner plays multi-turn conversations through the real routes</span></div>
+                    <div class="stat-card"><strong>0 serious</strong><span>Accessibility issues found by axe on every signed-in screen, phone and desktop, light and dark</span></div>
+                    <div class="stat-card"><strong>0 open</strong><span>High or Critical security findings after an OWASP API Top 10 review of the v2 routes</span></div>
+                    <div class="stat-card"><strong>4,000+ tests</strong><span>Backend tests, plus 1,600+ frontend tests and 14 browser test files on a phone and a desktop profile</span></div>
+                    <div class="stat-card"><strong>11 workflows</strong><span>GitHub Actions for CI, security scans, deploys and manual evaluations</span></div>
                 </div>
             </div>
         </section>
@@ -115,44 +358,34 @@
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
                 <div class="skills-grid">
-                    <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React</p></div>
+                    <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React 18</p></div>
                     <div class="skill-tile"><i class='bx bxl-typescript' style="color:#3178C6"></i><p>TypeScript</p></div>
                     <div class="skill-tile"><i class='bx bxl-tailwind-css' style="color:#38BDF8"></i><p>Tailwind CSS</p></div>
                     <div class="skill-tile"><svg class="skill-svg" style="color:#05998b" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"/></svg><p>FastAPI</p></div>
-                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python 3.11</p></div>
                     <div class="skill-tile"><i class='bx bxs-bot' style="color:#4285F4"></i><p>Gemini</p></div>
                     <div class="skill-tile"><i class='bx bxl-firebase' style="color:#FFCA28"></i><p>Firebase</p></div>
                     <div class="skill-tile"><i class='bx bxl-google-cloud' style="color:#4285F4"></i><p>Cloud Run</p></div>
                     <div class="skill-tile"><i class='bx bx-data' style="color:#FBBC04"></i><p>Firestore</p></div>
+                    <div class="skill-tile"><i class='bx bx-vector' style="color:#A855F7"></i><p>Vector Search</p></div>
                     <div class="skill-tile"><i class='bx bxl-docker' style="color:#2496ED"></i><p>Docker</p></div>
                     <div class="skill-tile"><i class='bx bxl-github' style="color:#ffffff"></i><p>GitHub Actions</p></div>
                 </div>
+                <p class="desc" style="margin-top:2rem">Also in the stack: Pydantic structured output, Firebase Cloud Messaging, Cloud Scheduler, Secret Manager, Artifact Registry, Cloud Logging and Monitoring, Workload Identity Federation, Playwright, pytest, Vitest, ruff, black, mypy and Locust.</p>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">System Design</p>
-                <h2 class="section-title">Architecture</h2>
-                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API stores data in Firestore (including vector search over report and scam embeddings), uses Gemini to read, sort, translate and explain, and relies on Cloud Scheduler for background jobs. Every route checks the caller's Firebase sign-in first.</p>
+                <p class="section-tag">Delivery</p>
+                <h2 class="section-title">Decisions, Testing and Deployment</h2>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-layer'></i>
-                        <div><h5>One model per job</h5><p>Code asks for a tier (reasoning, extraction, classification or embedding), and the Gemini model behind each tier is an environment variable. Every answer must fit a Pydantic model, with retries and per-feature token logging.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-time-five'></i>
-                        <div><h5>Five scheduled jobs</h5><p>Exchange-rate refresh, radar surge aggregation, scam statistics, Coach check-ins and Financial Identity recompute, each behind a Google-signed token.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-test-tube'></i>
-                        <div><h5>Tested and deployed with CI/CD</h5><p>4,000+ backend tests, 1,600+ frontend tests and 14 browser test files, with 11 GitHub Actions workflows deploying through Workload Identity Federation and no stored keys.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-world'></i>
-                        <div><h5>Six languages, six countries</h5><p>English, Hindi, Tagalog, Bahasa Indonesia, Nepali and Bengali, covering Singapore, South Korea, Malaysia, Japan, Hong Kong and Australia as host countries.</p></div>
-                    </div>
+                    <div class="feature-item"><i class='bx bx-bookmark'></i><div><h5>Documented decisions</h5><p>Six architecture decision records cover Firestore over Postgres, the multi-model Gemini strategy, no mock data (live data only), PWA over native, the six-country JAPAC scope, and the exchange-rate provider failover chain.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-test-tube'></i><div><h5>Tested at every layer</h5><p>Backend unit and API tests with Gemini replaced by recorded answers, integration tests against the Firestore and Auth emulators, frontend component tests, security-rule tests, and Playwright browser tests on phone and desktop profiles. Real-Gemini checks (the scam golden set and the Coach regression) are run by hand, on purpose.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-rocket'></i><div><h5>Merging to main deploys</h5><p>Backend CI, Frontend CI and Data scripts CI run on every pull request with coverage gates. The backend builds an image, pushes it to Artifact Registry, deploys Cloud Run and checks <code>/health</code>. The frontend builds and deploys Firebase Hosting, and rules and scheduler jobs have their own workflows. Nobody holds a cloud key.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-undo'></i><div><h5>Three rollback levers</h5><p>Switch the feature flag off, redeploy the previous Cloud Run revision, or roll back the Hosting release.</p></div></div>
                 </div>
+                <p class="desc" style="margin-top:2rem">Built by Devam, Aditya and Pranjal for the Google Cloud AI Builder Cup 2026, under the google-ai-builder-cup organisation. Released as v2.0.0 under the MIT license.</p>
             </div>
         </section>
     </main>
