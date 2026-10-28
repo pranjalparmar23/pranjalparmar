@@ -21,13 +21,12 @@
             <div class="section-inner">
                 <span class="category-badge">GenAI</span>
                 <h1>NomadFinance: AI Financial Safety Net for Migrant Workers</h1>
-                <p class="hero-desc">Your pay. Your contract. Your money home. Protected. An AI-powered financial safety net for the world's 280 million migrant workers, built to work in their own language on the phone already in their pocket. Built for the Google Cloud AI Builder Cup 2026, BFSI track (JAPAC), by a team of three.</p>
+                <p class="hero-desc">Your pay. Your contract. Your money home. Protected. An AI-powered financial safety net for the world's 280 million migrant workers, built to work in their own language on the phone already in their pocket. Built for the Google Cloud AI Builder Cup 2026, BFSI track (JAPAC), as a team project with Devam and Aditya.</p>
                 <div class="tech-used">
                     <span>REACT 18</span><span>TYPESCRIPT</span><span>VITE</span><span>TAILWIND CSS</span><span>PWA</span><span>FASTAPI</span><span>PYTHON 3.11</span><span>GEMINI</span><span>FIRESTORE</span><span>CLOUD RUN</span><span>FIREBASE</span><span>GITHUB ACTIONS</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/google-ai-builder-cup/NomadFinance" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
-                    <a href="https://nomadfinance-prod.web.app" class="btn btn-outline" target="_blank" rel="noopener"><i class='bx bx-link-external'></i> Live App</a>
                     <a href="https://youtu.be/16NN_JAg16c" class="btn btn-outline" target="_blank" rel="noopener"><i class='bx bxl-youtube'></i> Watch Demo</a>
                 </div>
                 <figure class="shot shot-hero">
@@ -191,90 +190,139 @@
             <div class="section-inner">
                 <p class="section-tag">System design</p>
                 <h2 class="section-title">Architecture</h2>
-                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API keeps its data in Firestore, asks Gemini to read, sort, translate and explain, and lets Cloud Scheduler run the background jobs. Every route checks the caller's Firebase sign-in first.</p>
+                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API keeps its data in Firestore, asks Gemini to read, sort, translate and explain, and lets Cloud Scheduler run the background jobs. Every route checks the caller's Firebase sign-in first. Dashed outlines mark modules that ship behind a feature flag. The diagram below is the team's own system architecture, use the zoom buttons or drag to pan.</p>
+                <h3 class="diagram-title">System architecture</h3>
+                <div class="mermaid-wrap wide"><pre class="mermaid">
+%% NomadFinance system architecture, v2.0.0 (read against the code and the live project on 2026-10-11).
+%% Dashed outlines = shipped, but behind a feature flag (config/feature_flags): off means the route answers 404.
+%% Model tiers are shown by role; the model behind each tier is an environment variable (ADR-002).
+flowchart LR
+    User(["Migrant worker&lt;br/&gt;any language, any phone"])
 
-                <div class="arch">
-                    <div class="arch-layer">
-                        <h5>Migrant worker</h5>
-                        <p class="sub">Any language, any phone. Installable PWA, offline cache, voice input and read-aloud.</p>
-                    </div>
-                    <div class="arch-arrow">&#8595;</div>
-                    <div class="arch-layer">
-                        <h5>Frontend: Firebase Hosting &middot; React 18 PWA</h5>
-                        <p class="sub">Vite, TypeScript (strict), Tailwind. Sign-in with Firebase Auth (Google or phone code), 6 languages, light and dark. A FlagGate asks <code>GET /api/v2/flags</code> before showing the v2.0 pillars.</p>
-                        <div class="arch-chips">
-                            <span>Remittance X-Ray</span><span>Contract Shield</span><span>Exploitation Radar</span><span>Financial Identity</span><span>Financial Coach <em>flag: coach</em></span><span>Scam Check <em>flag: scam</em></span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">&#8595;</div>
-                    <div class="arch-layer">
-                        <h5>Backend: Cloud Run <code>nomadfinance-api</code> &middot; FastAPI &middot; 0 to 2 instances</h5>
-                        <p class="sub">1 vCPU, 512 MiB. Middleware on every request: request log, security headers, CORS, rate limit, body-size cap, token check.</p>
-                        <div class="arch-chips">
-                            <span>API v1 <em>/api/v1: remittance, contracts, radar, fib, users</em></span>
-                            <span>API v2 <em>/api/v2: coach, scam, flags</em></span>
-                            <span>require_flag <em>60 s cache; off = 404</em></span>
-                            <span>Internal routes <em>only the scheduler's signed token</em></span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">&#8595;</div>
-                    <div class="arch-layer">
-                        <h5>Services: one folder per pillar</h5>
-                        <div class="arch-chips">
-                            <span>Remittance engine</span><span>Contract pipeline</span><span>Radar <em>intake, clustering, alerts</em></span><span>Financial Identity <em>profile, story, PDF</em></span><span>Coach <em>interview, score, plan</em></span><span>Scam analysis</span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">&#8595;</div>
-                    <div class="arch-layer ai">
-                        <h5>Gemini (<code>google-genai</code>): one model per tier</h5>
-                        <p class="sub">The code asks for a tier; the model behind each tier is an environment variable, so a retired model is a one-line change. Every answer must fit a Pydantic model, with retries, a 30-second timeout, token usage logged per feature, a daily budget per feature and PII redaction on Coach and Scam text.</p>
-                        <div class="arch-chips">
-                            <span>Reasoning <em>gemini-3.5-flash: contract comparison, complaint letters, Identity story, Coach plan, scam explanations</em></span>
-                            <span>Extraction <em>gemini-3.5-flash-lite: photos and PDFs, bills, screenshots, radar reports</em></span>
-                            <span>Classification <em>gemini-3.1-flash-lite: scam verdicts, radar checks, translation, Coach replies</em></span>
-                            <span>Embedding <em>gemini-embedding-001: 768-number vectors</em></span>
-                        </div>
-                    </div>
-                    <div class="arch-arrow">&#8595;</div>
-                    <div class="arch-layer data">
-                        <h5>Data: Firestore (<code>asia-south1</code>) &middot; Cloud Storage &middot; Secret Manager</h5>
-                        <div class="arch-chips">
-                            <span>Worker records <em>users/uid: contracts, transfers, income, bills, savings, coach, scam checks</em></span>
-                            <span>Reference data <em>corridors, rates, labor laws, complaint templates, cost baselines</em></span>
-                            <span>Radar <em>reports, embeddings, entities, alerts</em></span>
-                            <span>Scam knowledge <em>taxonomy, 480 templates (vector), indicators, stats</em></span>
-                            <span>Operations <em>feature flags, Gemini usage</em></span>
-                            <span>Cloud Storage <em>bill photos, evidence, Identity and Coach PDFs</em></span>
-                        </div>
-                    </div>
-                </div>
+    subgraph FE["FRONTEND - Firebase Hosting - React 18 PWA"]
+        Web["Sign-in with Firebase Auth, dashboard, installable,&lt;br/&gt;offline cache, 6 languages, light and dark.&lt;br/&gt;FlagGate asks GET /api/v2/flags"]
+        PgCore["Remittance X-Ray, Contract Shield,&lt;br/&gt;Exploitation Radar, Financial Identity"]
+        PgNew["Financial Coach, Scam Check"]
+    end
 
-                <div class="arch-side" style="margin-top:1.5rem">
-                    <div class="arch-layer">
-                        <h5>Cloud Scheduler: 5 jobs</h5>
-                        <p class="sub">Calls protected <code>/api/v1/internal/*</code> routes with a Google-signed token.</p>
-                        <div class="arch-chips">
-                            <span>refresh-rates <em>every 2 hours</em></span><span>radar-aggregation <em>every 6 hours</em></span><span>scam-stats <em>daily 01:30 UTC</em></span><span>coach-checkins <em>daily 02:00 UTC</em></span><span>fib-recompute <em>Sundays 02:00 UTC</em></span>
-                        </div>
-                    </div>
-                    <div class="arch-layer">
-                        <h5>Live exchange rates</h5>
-                        <p class="sub">Tried in order, first to return every pair wins.</p>
-                        <div class="arch-chips">
-                            <span>1 Frankfurter</span><span>2 ExchangeRate-API</span><span>3 CurrencyFreaks</span><span>4 Wise</span>
-                        </div>
-                    </div>
-                    <div class="arch-layer">
-                        <h5>Notifications and operations</h5>
-                        <div class="arch-chips">
-                            <span>Firebase Cloud Messaging <em>radar alerts, Coach check-ins</em></span><span>Cloud Logging and Monitoring <em>metrics, dashboard, quota alerts</em></span>
-                        </div>
-                    </div>
-                    <div class="arch-layer">
-                        <h5>CI/CD: GitHub Actions</h5>
-                        <p class="sub">Keyless sign-in to Google through Workload Identity Federation. Merging to <code>main</code> deploys the backend, frontend, security rules and scheduler jobs.</p>
-                    </div>
-                </div>
+    User --&gt; Web
+    Web --&gt; PgCore
+    Web -. "flag coach, flag scam" .-&gt; PgNew
+
+    subgraph BE["BACKEND - Cloud Run nomadfinance-api - FastAPI - 0 to 2 instances"]
+        MW["Middleware: request log, security headers, CORS,&lt;br/&gt;rate limit, body-size cap, token check"]
+        V1["API v1 - /api/v1&lt;br/&gt;remittance, contracts, radar, fib, users"]
+        V2["API v2 - /api/v2&lt;br/&gt;coach, scam, flags"]
+        FLG["require_flag&lt;br/&gt;60 s cache, off = 404"]
+        INT["Internal routes - /api/v1/internal&lt;br/&gt;only the scheduler's signed token"]
+        GC["Gemini client: tiers, retries, token log,&lt;br/&gt;daily budget per feature.&lt;br/&gt;PII redaction for Coach and Scam text"]
+    end
+
+    PgCore --&gt; MW
+    PgNew --&gt; MW
+    MW --&gt; V1
+    MW --&gt; V2
+    V2 --&gt; FLG
+
+    subgraph SV["SERVICES"]
+        RX["Remittance engine"]
+        CS["Contract pipeline"]
+        RD["Radar:&lt;br/&gt;intake, clustering, alerts"]
+        FI["Financial Identity:&lt;br/&gt;profile, story, PDF"]
+        CO["Coach:&lt;br/&gt;interview, score, plan"]
+        SA["Scam analysis"]
+    end
+
+    V1 --&gt; RX
+    V1 --&gt; CS
+    V1 --&gt; RD
+    V1 --&gt; FI
+    FLG --&gt; CO
+    FLG --&gt; SA
+
+    subgraph AI["GEMINI - one model per tier"]
+        G1["Reasoning&lt;br/&gt;contract comparison, complaint letters,&lt;br/&gt;Identity story, Coach plan, scam explainer"]
+        G2["Extraction&lt;br/&gt;photos and PDFs: contracts, bills,&lt;br/&gt;screenshots, radar reports"]
+        G3["Classification&lt;br/&gt;scam verdict, radar checks, categories,&lt;br/&gt;translation, recommendations, Coach replies"]
+        G4["Embedding&lt;br/&gt;768-number vectors"]
+    end
+
+    SV --&gt; GC
+    GC --&gt; G1
+    GC --&gt; G2
+    GC --&gt; G3
+    GC --&gt; G4
+
+    subgraph DB["FIRESTORE - (default) - Native - asia-south1"]
+        D1[("Worker records - users/uid&lt;br/&gt;contracts, transfers, income, bills, savings,&lt;br/&gt;financial_profile, notifications,&lt;br/&gt;coach_sessions, coach_plans, scam_checks")]
+        D4[("Reference data&lt;br/&gt;corridors, rates_cache, rates_history, labor_laws,&lt;br/&gt;complaint_templates, cost_baselines")]
+        D5[("Radar&lt;br/&gt;radar_reports, report_embeddings,&lt;br/&gt;radar_entities, radar_alerts")]
+        D6[("Scam knowledge&lt;br/&gt;scam_taxonomy, scam_patterns - vector,&lt;br/&gt;scam_indicators, scam_stats")]
+        D7[("Operations&lt;br/&gt;config/feature_flags, gemini_usage")]
+    end
+
+    RX --&gt; D4
+    RX --&gt; D1
+    CS --&gt; D1
+    CS --&gt; D4
+    RD --&gt; D5
+    FI --&gt; D1
+    CO --&gt; D1
+    CO --&gt; D4
+    SA --&gt; D1
+    SA --&gt; D6
+    SA -. "similar reports, one-tap report" .-&gt; D5
+    FLG --&gt; D7
+    GC --&gt; D7
+    Web -. "own data only, security rules" .-&gt; DB
+
+    ST[("Cloud Storage&lt;br/&gt;bill photos, radar evidence,&lt;br/&gt;Identity and Coach PDFs")]
+    FI --&gt; ST
+    CO --&gt; ST
+    RD --&gt; ST
+
+    SM["Secret Manager&lt;br/&gt;gemini-api-key, radar-reporter-hash-secret,&lt;br/&gt;currencyfreaks-api-key"] -. "mounted as env vars" .-&gt; BE
+
+    SCH["CLOUD SCHEDULER - 5 jobs&lt;br/&gt;refresh-rates, every 2 hours&lt;br/&gt;radar-aggregation, every 6 hours&lt;br/&gt;scam-stats, daily 01:30 UTC&lt;br/&gt;coach-checkins, daily 02:00 UTC&lt;br/&gt;fib-recompute, Sundays 02:00 UTC"]
+    SCH --&gt; INT
+    INT --&gt; RX
+    INT --&gt; RD
+    INT --&gt; SA
+    INT --&gt; CO
+    INT --&gt; FI
+
+    FCM["Firebase Cloud Messaging&lt;br/&gt;radar alerts, Coach check-ins"]
+    RD --&gt; FCM
+    CO --&gt; FCM
+    FCM --&gt; User
+
+    FXP["Live FX rates - failover&lt;br/&gt;Frankfurter, ExchangeRate-API,&lt;br/&gt;CurrencyFreaks, Wise"]
+    RX -. "cron refresh" .-&gt; FXP
+    DS["data-scripts loaders - run by hand&lt;br/&gt;World Bank prices, ILO labor laws,&lt;br/&gt;cost baselines, scam templates, demo data"]
+    DS --&gt; D4
+    DS --&gt; D6
+    DS -. "demo and map data" .-&gt; D5
+
+    LOG["Cloud Logging, log-based metrics,&lt;br/&gt;dashboard, daily-limit alerts"]
+    CI["GitHub Actions - keyless sign-in to Google&lt;br/&gt;deploys backend, frontend,&lt;br/&gt;rules and scheduler jobs"]
+    BE -. "structured logs" .-&gt; LOG
+    CI -.-&gt; BE
+    CI -.-&gt; FE
+    CI -. "firestore.rules, storage.rules" .-&gt; DB
+    CI -.-&gt; SCH
+
+    classDef userStyle fill:#4285F4,stroke:#1a73e8,color:#fff
+    classDef aiStyle fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef dbStyle fill:#34A853,stroke:#188038,color:#fff
+    classDef extStyle fill:#FBBC04,stroke:#f9ab00,color:#000
+    classDef flagged stroke-dasharray:5 3,stroke-width:2px
+
+    class User userStyle
+    class G1,G2,G3,G4 aiStyle
+    class D1,D4,D5,D6,D7,ST dbStyle
+    class FXP,DS extStyle
+    class PgNew,FLG,CO,SA,D6 flagged
+</pre></div>
             </div>
         </section>
 
@@ -282,28 +330,358 @@
             <div class="section-inner">
                 <p class="section-tag">Pillars working together</p>
                 <h2 class="section-title">Cross-Pillar Data Flow</h2>
-                <p class="desc">The pillars feed each other. A flow into Exploitation Radar is always anonymous: no account id and no raw message. Flows that involve the Coach or Scam Check need the worker's confirmation or opt-in.</p>
-                <div class="table-wrap">
-                    <table class="flow-table">
-                        <thead><tr><th>From</th><th>To</th><th>What flows</th></tr></thead>
-                        <tbody>
-                            <tr><td>Remittance X-Ray</td><td>Financial Identity</td><td>Every logged transfer</td></tr>
-                            <tr><td>Contract Shield</td><td>Exploitation Radar</td><td>Danger clauses, anonymously</td></tr>
-                            <tr><td>Contract Shield</td><td>Financial Identity</td><td>The stated salary becomes verified income</td></tr>
-                            <tr><td>Exploitation Radar</td><td>Remittance X-Ray</td><td>Flagged transfer operators are marked and passed over in advice</td></tr>
-                            <tr><td>Exploitation Radar</td><td>Contract Shield</td><td>Flagged employers and agencies</td></tr>
-                            <tr><td>Scam Check</td><td>Exploitation Radar</td><td>One-tap anonymous report, worker confirms</td></tr>
-                            <tr><td>Exploitation Radar</td><td>Scam Check</td><td>"Seen N times on your route" (counts only)</td></tr>
-                            <tr><td>Remittance, Contract, Identity</td><td>Financial Coach</td><td>Cheapest provider, salary, employer, legal recruitment-fee cap, pay and savings (worker confirms)</td></tr>
-                            <tr><td>Financial Coach</td><td>Financial Identity</td><td>Plan targets become goals; check-ins appear on opt-in</td></tr>
-                            <tr><td>Financial Identity</td><td>Bank or micro-lender</td><td>A portable PDF report and activity feed</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <p class="desc">The pillars feed each other. A flow into Exploitation Radar is always anonymous: no account id and no raw message. Solid lines are v1.0 flows that are always on; dotted lines involve a flag-gated v2.0 module.</p>
+                <h3 class="diagram-title">Cross-pillar data flow</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+%% Cross-pillar data flow, v2.0.0 (edges read against backend/app/services and the frontend).
+%% Solid line = a v1.0 flow, always on. Dotted line = a flow that involves a flag-gated v2.0 module.
+%% Dashed outline = the module sits behind its feature flag.
+%% A flow into Exploitation Radar is anonymous: no account id, no raw message.
+flowchart TB
+    U(["Migrant worker"])
+
+    U --&gt; P1["Remittance X-Ray"]
+    U --&gt; P2["Contract Shield"]
+    U --&gt; P3["Exploitation Radar"]
+    U --&gt; P4["Financial Identity"]
+    U -. "flag coach" .-&gt; P5["Financial Coach"]
+    U -. "flag scam" .-&gt; P6["Scam Check"]
+
+    P1 -- "every logged transfer" --&gt; P4
+    P2 -- "danger clauses, anonymous" --&gt; P3
+    P2 -- "stated salary becomes verified income" --&gt; P4
+    P3 -- "flagged transfer operators" --&gt; P1
+    P3 -- "flagged employers and agencies" --&gt; P2
+
+    P1 -. "cheapest provider and quote" .-&gt; P5
+    P5 -. "deep link with route and amount" .-&gt; P1
+    P3 -. "flagged operators passed over in the plan" .-&gt; P5
+    P2 -. "salary and employer - worker confirms" .-&gt; P5
+    P2 -. "legal recruitment-fee cap" .-&gt; P5
+    P4 -. "pay, savings, transfers - worker confirms" .-&gt; P5
+    P5 -. "plan targets become goals" .-&gt; P4
+    P5 -. "plan check-ins - opt-in" .-&gt; P4
+
+    P6 -. "one-tap report - anonymous, worker confirms" .-&gt; P3
+    P3 -. "seen N times on your route - counts only" .-&gt; P6
+    P6 -. "scam-check activity - opt-in" .-&gt; P4
+
+    P4 --&gt; OUT(["Portable Financial Identity&lt;br/&gt;PDF and activity feed"])
+    OUT --&gt; MFI["Bank or micro-lender&lt;br/&gt;in the home country"]
+
+    classDef pillar fill:#4285F4,stroke:#1a73e8,color:#fff
+    classDef output fill:#34A853,stroke:#188038,color:#fff
+    classDef flagged stroke-dasharray:5 3,stroke-width:2px
+    class P1,P2,P3,P4,P5,P6 pillar
+    class P5,P6 flagged
+    class OUT output
+</pre></div>
             </div>
         </section>
 
         <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Under each pillar</p>
+                <h2 class="section-title">Pipelines</h2>
+                <p class="desc">One pipeline diagram per pillar, taken from the project's documentation.</p>
+                <h3 class="diagram-title">Remittance X-Ray</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U([Worker])
+
+    U --&gt;|1 - Select Corridor + Amount| API[Cloud Run API]
+
+    API --&gt;|Step 1| S1[Verify Auth - Firebase]
+    S1 --&gt;|Step 2| S2[Fetch Provider Fees - Firestore corridors]
+    S2 --&gt;|Step 3| S3[Fetch Live FX Rate - Firestore rates_cache]
+    S3 --&gt;|Step 4| S4[Fetch Historical Rates - rates_history]
+
+    S4 --&gt;|Step 5| S5[Calculate True Total Cost per Provider]
+    S5 --&gt;|Step 6| S6[Rank by Recipient Receives Most]
+    S6 --&gt;|Step 7| S7[Detect Rate Trends - Best Day to Send]
+    S7 --&gt;|Step 8| S8[Compute Historical Savings vs Choice]
+    S8 --&gt;|Step 9| S9[Write Recommendation in the User's Language - Classification tier]
+
+    S9 --&gt; R[Comparison Table + Trend Chart + Savings Insight]
+    R --&gt; U
+
+    U -.Log Transfer.-&gt; H[(Firestore - users transfers)]
+    H -.Feeds.-&gt; FI[Financial Identity Builder]
+
+    %% Behind the flag coach: the Coach reads the cheapest provider and deep-links back in.
+    S6 -.Cheapest provider.-&gt; CO[Financial Coach]
+    CO -.Deep link with corridor + amount.-&gt; U
+
+    subgraph CRON[Background Cron - Every 2 Hours]
+        CS[Cloud Scheduler]
+        CS --&gt;|Trigger| RF[refresh-rates endpoint]
+        RF --&gt;|Fetch| FR[Frankfurter API]
+        FR --&gt;|On failure| ER[ExchangeRate-API]
+        ER --&gt;|On failure| CF[CurrencyFreaks, then Wise if configured]
+        FR --&gt;|Write current| RC[(rates_cache)]
+        FR --&gt;|Append point| RH[(rates_history)]
+        ER --&gt;|Write current| RC
+        CF --&gt;|Write current| RC
+    end
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    classDef ext fill:#FBBC04,stroke:#f9ab00,color:#000
+    class S9 gemini
+    class S2,S3,S4,H,RC,RH data
+    class FR,ER,CF ext
+</pre></div>
+                <h3 class="diagram-title">Contract Shield</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U([Worker])
+
+    U --&gt;|1 - Upload contract PDF or photo| API[Cloud Run API]
+
+    API --&gt;|Step 1| S1[Verify Auth - Firebase]
+    S1 --&gt;|Step 2| S2[Read the File Clause by Clause - Extraction tier, vision]
+    S2 -.Text blocks only, the file is not kept.-&gt; X[(Firestore - contracts extraction)]
+    S2 --&gt;|Step 3| S3[Detect Language + Country + Type - Extraction tier]
+    S3 --&gt;|Step 4| S4[Fetch Labor Laws - Firestore]
+    S4 --&gt;|Step 5| S5[Clause-by-Clause Comparison - Reasoning tier]
+    S5 --&gt;|Step 6| S6[Flag Concerning Clauses]
+    S6 --&gt;|Step 7| S7[Compute Contract Health Score]
+    S7 --&gt;|Step 8, if a term is dangerous| S8[Write Complaint Letter - Reasoning tier]
+    S7 --&gt;|Step 9| S9[Translate Report to the Worker's Language - Classification tier]
+    S8 --&gt;|Step 9| S9
+
+    S9 --&gt; R[Side-by-Side Report + Complaint Letter]
+    R --&gt; U
+
+    S7 -.Save Analysis.-&gt; L[(Firestore - users contracts)]
+    S6 -.Anonymized Signal.-&gt; RD[Feeds Exploitation Radar]
+
+    %% Behind the flag coach: the Coach prefills salary and employer, and reads the legal fee cap.
+    L -.Latest salary + employer, user confirms.-&gt; CO[Financial Coach]
+    S4 -.Legal fee cap.-&gt; CO
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    class S2,S3,S5,S8,S9 gemini
+    class S4,L,X data
+</pre></div>
+                <h3 class="diagram-title">Exploitation Radar</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U([Worker])
+
+    U --&gt;|1 - Submit Report - operator agency or employer| API[Cloud Run API]
+
+    API --&gt;|Step 1| S1[Verify Auth - App Check when enabled]
+    S1 --&gt;|Step 2| S2[Extract Entity Name + Corridor + Type - Extraction tier]
+    S2 --&gt;|Step 3| S3[Validate Report - spam duplicate - Classification tier]
+    S3 --&gt;|Step 4| S4[Categorize Violation Type - Classification tier]
+    S4 --&gt;|Step 5| S5[Generate Embedding - Embedding model]
+    S5 --&gt;|Step 6| S6[Similarity Search - Firestore Vector]
+    S6 --&gt;|Step 7| S7[Save Report - radar_reports]
+    S7 --&gt;|Step 8| S8[Update Entity Risk Profile - radar_entities]
+    S8 --&gt;|Step 9| S9[Recompute Community Rating]
+
+    S9 --&gt; R[Report Confirmation]
+    R --&gt; U
+
+    subgraph AGG[Radar Aggregation - Every 6 Hours Cron]
+        CS[Cloud Scheduler]
+        CS --&gt; AG[aggregate-radar endpoint]
+        AG --&gt;|Detect surges| AL[Generate Alerts]
+        AL --&gt;|Write| RA[(radar_alerts by corridor)]
+        AL --&gt;|Push| FCM[Firebase Cloud Messaging]
+        FCM --&gt;|Notify| SUB[Subscribed Workers]
+    end
+
+    subgraph MAP[Heat Map View]
+        U --&gt;|View Corridor| HM[Fetch Aggregated Data]
+        HM --&gt; LEAF[react-leaflet + OpenStreetMap]
+        LEAF --&gt; U
+    end
+
+    S7 -.Data.-&gt; HM
+
+    %% Behind the flag scam: a scam check becomes a report that skips steps 2 to 4, because
+    %% the verdict is already structured and there is no free text to validate.
+    SCAM[Scam Analyzer] -.Anonymised scam report.-&gt; S5
+    S6 -.Seen N times in your corridor.-&gt; SCAM
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    classDef ext fill:#FBBC04,stroke:#f9ab00,color:#000
+    class S2,S3,S4,S5 gemini
+    class S7,S8,RA,HM data
+    class LEAF ext
+</pre></div>
+                <h3 class="diagram-title">Financial Identity</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+flowchart LR
+    U([Worker])
+
+    U --&gt;|Log Activity| IN{Input Type}
+
+    IN --&gt;|Income Entry| E1[Add Income Record]
+    IN --&gt;|Transfer Log| E2[Add Remittance - auto from Pillar 1]
+    IN --&gt;|Bill Payment| E3[Upload Bill Photo]
+    IN --&gt;|Savings| E4[Log Savings]
+
+    E1 --&gt; API[Cloud Run API]
+    E2 --&gt; API
+    E3 --&gt; API
+    E4 --&gt; API
+
+    API --&gt;|Step 1| S1[Verify Auth - Firebase]
+
+    S1 --&gt;|Bill Path - Step 2a| S2a[Extract Bill Data - Extraction tier, vision]
+    S2a --&gt; S3[Save to Firestore]
+    S1 --&gt;|Other Paths - Step 2b| S2b[Validate Input - Pydantic]
+    S2b --&gt; S3
+
+    S3 --&gt;|Step 3| S4[Categorize Transaction - Classification tier]
+    S4 --&gt;|Step 4| S5[Update Financial Timeline - Firestore]
+
+    S5 --&gt; R[Activity Logged]
+    R --&gt; U
+
+    subgraph SCORE[Financial Score Recompute - Weekly Cron]
+        CS[Cloud Scheduler] --&gt; RC[recompute-fib-profiles endpoint]
+        RC --&gt; ALL[Fetch All User Activity]
+        ALL --&gt; METRICS[Compute Metrics]
+        METRICS --&gt; SYN[Synthesize Financial Narrative - Reasoning tier]
+        SYN --&gt; PROF[(financial_profile)]
+    end
+
+    %% Behind the flags coach and scam: plan targets become goals, and opt-in activity signals
+    %% feed the narrative and the unified activity feed.
+    COACH[Financial Coach] -.Plan targets as goals.-&gt; PROF
+    COACH -.Plan adherence, opt-in.-&gt; METRICS
+    SCAMA[Scam Analyzer] -.Scam-check activity, opt-in.-&gt; METRICS
+
+    U --&gt;|Request Portable Report| EXP[Export Financial Identity]
+    EXP --&gt; PROF
+    PROF --&gt; PDF[Generate PDF - weasyprint]
+    PDF --&gt; DL[Download or Share Link]
+    DL --&gt; U
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    class S2a,S4,SYN gemini
+    class S3,S5,PROF,METRICS data
+</pre></div>
+                <h3 class="diagram-title">Financial Coach</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+%% Behind the feature flag "coach".
+flowchart LR
+    U([Worker - Before Departure])
+
+    U --&gt;|1 - Start or resume interview| API[Cloud Run API - api v2 coach]
+
+    API --&gt;|Step 1| S1[Verify Auth + require_flag coach]
+    S1 --&gt;|Step 2| S2[Load or Create Session - one active per user]
+    S2 --&gt;|Step 3| S3[Redact PII + Guardrails - fixed rules, then a Classification tier scope check]
+    S3 --&gt;|Step 4| S4[Extract Slot Updates + Confidence - Classification tier]
+    S4 --&gt;|Step 5| S5[Apply Slots + Advance Stage - state machine]
+    S5 --&gt;|Step 6| S6[Stream Coach Reply over SSE - Classification tier by default]
+    S6 --&gt;|token events| U
+
+    S2 &lt;-.Load and save slots + transcript.-&gt; CS[(Firestore - users coach_sessions)]
+    S5 -.Save slots + stage.-&gt; CS
+    CTR[(Firestore - users contracts)] -.Salary + employer, user confirms.-&gt; S2
+    PRF[(Firestore - users profile)] -.Country + kind of work, offered at start.-&gt; S2
+    FIB[(Firestore - users income, savings, transfers)] -.Pay, savings, account, money sent home, offered at start.-&gt; S2
+    S2 --&gt;|New session carries known - worker keeps or changes each row| K1[POST sessions known - kept rows become confirmed answers, no Gemini call]
+    K1 -.Save kept slots.-&gt; CS
+
+    S5 --&gt;|Stage reaches review| S7[Compute Preparedness Score - pure Python, no model]
+    LL[(Firestore - labor_laws)] -.Legal fee cap.-&gt; S7
+    FX[(Firestore - rates_cache)] -.Live FX.-&gt; S7
+
+    S7 --&gt;|Step 7| S8[Generate 90-Day Plan - Reasoning tier, structured]
+    BL[(Firestore - cost_baselines)] -.Cost of living.-&gt; S8
+    RX[Remittance Engine - cheapest provider] -.Corridor price.-&gt; S8
+
+    S8 --&gt;|Step 8| S9[Validate Every Figure - derivable from inputs]
+    S9 --&gt;|Step 9| S10[Translate Narrative - Classification tier, numbers untouched]
+    S10 --&gt;|Step 10| S11[Render PDF - weasyprint]
+
+    S11 --&gt; R[Score + Plan + PDF link]
+    R --&gt; U
+
+    S11 -.Save plan.-&gt; PL[(Firestore - users coach_plans)]
+    S11 -.Upload PDF.-&gt; ST[(Cloud Storage - plan PDFs)]
+    S11 -.Plan targets as goals.-&gt; FP[(Firestore - financial_profile)]
+
+    subgraph CHK[Check-In Reminders - Daily Cron]
+        CRON[Cloud Scheduler] --&gt; CJ[send-coach-checkins endpoint - IAM]
+        CJ --&gt;|Plans at day 30 60 90| DUE[Find Due Plans - once per milestone]
+        DUE --&gt;|Push| FCM[Firebase Cloud Messaging]
+        DUE --&gt;|Write| NT[(users notifications)]
+        FCM --&gt; U
+        U --&gt;|Opens the link - 3 fixed-choice answers| CK[Answer Check-In - PUT plans checkins milestone]
+        CK -.First answers kept, written by field path.-&gt; PL
+    end
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    class S3,S4,S6,S8,S10 gemini
+    class CS,CTR,LL,FX,BL,PL,ST,FP,NT data
+</pre></div>
+                <h3 class="diagram-title">Scam Check</h3>
+                <div class="mermaid-wrap"><pre class="mermaid">
+%% Behind the feature flag "scam".
+flowchart LR
+    U([Worker])
+
+    U --&gt;|1 - Paste text or upload screenshot| API[Cloud Run API - api v2 scam]
+
+    API --&gt;|Step 1| S1[Verify Auth + require_flag scam + Rate Limit 20 per hour]
+    S1 --&gt;|Text path| S3
+    S1 --&gt;|Image path - Step 2| S2[Resize + Read Message and Sender - Extraction tier, vision]
+    S2 --&gt;|Image discarded| S3[Redact PII + Normalise + SHA-256 of text and language]
+
+    S3 --&gt;|Step 3| S4{Verdict Cached?}
+    S4 --&gt;|Hit - zero Gemini calls| R
+
+    S4 --&gt;|Miss - Step 4| S5[Extract Indicators - URLs phones lookalike domains, never fetched]
+    S5 --&gt;|Step 5| S6[Classify Message - Classification tier, structured ScamVerdict]
+    TAX[(Firestore - scam_taxonomy)] -.Grounding.-&gt; S6
+
+    S5 --&gt;|Step 6, parallel| S7[Embed Message - Embedding model, 768-number vector]
+    S7 --&gt; S8[Vector Search - scam_patterns + report_embeddings]
+    PAT[(Firestore - scam_patterns)] -.Known templates.-&gt; S8
+    RE[(Firestore - report_embeddings)] -.Radar reports.-&gt; S8
+
+    S6 --&gt;|is_scam true - Step 7| S9[Explain Tactics + Safe Next Steps - Reasoning tier]
+    S6 --&gt;|is_scam false| S10[Short Reassurance + General Tip - Classification tier]
+
+    S9 --&gt; R[Verdict Card + Explainer + Similar Scams]
+    S10 --&gt; R
+    S8 --&gt; R
+    R --&gt; U
+
+    R -.Save redacted check.-&gt; SC[(Firestore - users scam_checks)]
+
+    U --&gt;|Warn other workers| RP[POST report - idempotent per check]
+    SC --&gt; RP
+    RP --&gt;|Anonymised, no raw text| RR[(Firestore - radar_reports)]
+    RR -.Enters Radar pipeline.-&gt; RAD[Exploitation Radar clustering + alerts]
+
+    subgraph STATS[Weekly Counts - Daily Cron]
+        CRN[Cloud Scheduler scam-stats] --&gt; AGS[aggregate-scam-stats endpoint]
+        AGS --&gt;|Counts only, no text| SST[(Firestore - scam_stats)]
+    end
+    SC -.Checks of the last two weeks.-&gt; AGS
+
+    classDef gemini fill:#EA4335,stroke:#c5221f,color:#fff
+    classDef data fill:#34A853,stroke:#188038,color:#fff
+    class S2,S6,S7,S9,S10 gemini
+    class TAX,PAT,RE,SC,RR,SST data
+</pre></div>
+            </div>
+        </section>
+
+        <section class="section">
             <div class="section-inner">
                 <p class="section-tag">Trust &amp; safety</p>
                 <h2 class="section-title">Built to Be Trusted</h2>
@@ -385,7 +763,19 @@
                     <div class="feature-item"><i class='bx bx-rocket'></i><div><h5>Merging to main deploys</h5><p>Backend CI, Frontend CI and Data scripts CI run on every pull request with coverage gates. The backend builds an image, pushes it to Artifact Registry, deploys Cloud Run and checks <code>/health</code>. The frontend builds and deploys Firebase Hosting, and rules and scheduler jobs have their own workflows. Nobody holds a cloud key.</p></div></div>
                     <div class="feature-item"><i class='bx bx-undo'></i><div><h5>Three rollback levers</h5><p>Switch the feature flag off, redeploy the previous Cloud Run revision, or roll back the Hosting release.</p></div></div>
                 </div>
-                <p class="desc" style="margin-top:2rem">Built by Devam, Aditya and Pranjal for the Google Cloud AI Builder Cup 2026, under the google-ai-builder-cup organisation. Released as v2.0.0 under the MIT license.</p>
+
+            </div>
+        </section>
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Team</p>
+                <h2 class="section-title">Built by a Team of Three</h2>
+                <p class="desc">NomadFinance is a group project, built for the Google Cloud AI Builder Cup 2026 under the google-ai-builder-cup organisation. Released as v2.0.0 under the MIT license.</p>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>Devam</strong><span>Team member</span></div>
+                    <div class="stat-card"><strong>Aditya</strong><span>Team member</span></div>
+                    <div class="stat-card"><strong>Pranjal</strong><span>Team member</span></div>
+                </div>
             </div>
         </section>
     </main>
@@ -397,5 +787,61 @@
             <p class="footer-copy">&copy; 2026 Pranjal Parmar. All rights reserved.</p>
         </div>
     </footer>
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "base",
+            securityLevel: "strict",
+            flowchart: { useMaxWidth: false, htmlLabels: true },
+            themeVariables: {
+                background: "#16151f", primaryColor: "#1c1b28", primaryTextColor: "#f3f3f7",
+                primaryBorderColor: "#4b4a66", secondaryColor: "#1c1b28", tertiaryColor: "#100f1a",
+                lineColor: "#8d8ca3", textColor: "#f3f3f7", clusterBkg: "#100f1a", clusterBorder: "#3a3950",
+                edgeLabelBackground: "#16151f", fontFamily: "Inter, sans-serif", fontSize: "14px"
+            }
+        });
+        await mermaid.run({ querySelector: "pre.mermaid" });
+
+        document.querySelectorAll(".mermaid-wrap").forEach((wrap, index) => {
+            const svg = wrap.querySelector("svg");
+            if (!svg) return;
+            const vb = svg.viewBox.baseVal;
+            const natural = vb && vb.width ? vb.width : svg.getBoundingClientRect().width;
+            svg.removeAttribute("style");
+            svg.removeAttribute("height");
+            let zoom = 1;
+            const apply = (z) => {
+                zoom = Math.min(Math.max(z, 0.1), 2);
+                svg.setAttribute("width", Math.round(natural * zoom));
+                label.textContent = Math.round(zoom * 100) + "%";
+            };
+            const fit = () => Math.min(1, (wrap.clientWidth - 40) / natural);
+            const bar = document.createElement("div");
+            bar.className = "diagram-tools";
+            const label = document.createElement("span");
+            const mk = (text, title, fn) => {
+                const b = document.createElement("button");
+                b.type = "button"; b.textContent = text; b.title = title; b.setAttribute("aria-label", title);
+                b.addEventListener("click", fn); bar.appendChild(b);
+            };
+            mk("\u2212", "Zoom out", () => apply(zoom / 1.25));
+            mk("+", "Zoom in", () => apply(zoom * 1.25));
+            mk("Fit", "Fit to width", () => { apply(fit()); wrap.scrollTo(0, 0); });
+            mk("Open", "Open the full-size diagram in a new tab", () => {
+                const blob = new Blob([svg.outerHTML.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" ')], { type: "image/svg+xml" });
+                window.open(URL.createObjectURL(blob), "_blank", "noopener");
+            });
+            bar.appendChild(label);
+            wrap.parentElement.insertBefore(bar, wrap);
+            apply(index === 0 ? fit() : Math.max(fit(), 0.55));
+
+            let drag = null;
+            wrap.addEventListener("pointerdown", (e) => { drag = { x: e.clientX, y: e.clientY, l: wrap.scrollLeft, t: wrap.scrollTop }; wrap.classList.add("grabbing"); });
+            window.addEventListener("pointerup", () => { drag = null; wrap.classList.remove("grabbing"); });
+            window.addEventListener("pointermove", (e) => { if (!drag) return; wrap.scrollLeft = drag.l - (e.clientX - drag.x); wrap.scrollTop = drag.t - (e.clientY - drag.y); });
+            wrap.addEventListener("wheel", (e) => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); apply(zoom * (e.deltaY < 0 ? 1.1 : 0.9)); } }, { passive: false });
+        });
+    </script>
 </body>
 </html>

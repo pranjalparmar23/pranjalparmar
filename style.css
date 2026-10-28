@@ -1339,76 +1339,58 @@ p a:hover{
     line-height: 1.5;
     color: var(--text-muted);
 }
-.arch{
-    display: grid;
-    gap: 1rem;
-    margin-top: 2.5rem;
+.diagram-title{
+    font-family: "Sora", sans-serif;
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin: 3rem 0 1rem;
 }
-.arch-layer{
+.mermaid-wrap{
     background: var(--surface);
     border: .1rem solid var(--border-color);
     border-radius: 1.2rem;
-    padding: 1.6rem 2rem;
+    padding: 2rem;
+    overflow: auto;
+    max-height: 75vh;
+    cursor: grab;
 }
-.arch-layer.ai{ border-color: rgba(34,211,238,.45); }
-.arch-layer.data{ border-color: rgba(124,92,255,.5); }
-.arch-layer h5{
-    font-family: "Sora", sans-serif;
-    font-size: 1.5rem;
-    color: var(--white-color);
-    margin-bottom: .3rem;
-}
-.arch-layer .sub{
-    font-size: 1.25rem;
+.mermaid-wrap.grabbing{ cursor: grabbing; user-select: none; }
+.mermaid-wrap pre.mermaid{
+    margin: 0;
+    background: transparent;
+    font-size: 1.3rem;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    white-space: normal;
+    width: max-content;
 }
-.arch-chips{
-    display: flex;
-    flex-wrap: wrap;
-    gap: .8rem;
-}
-.arch-chips span{
-    padding: .6rem 1.1rem;
-    border-radius: .8rem;
-    background: var(--bg-alt);
-    border: .1rem solid var(--border-color);
-    font-size: 1.25rem;
-    color: var(--white-color);
-}
-.arch-chips span em{
+.mermaid-wrap pre.mermaid svg{
     display: block;
-    font-style: normal;
-    font-size: 1.1rem;
+    max-width: none;
+    height: auto;
+}
+.diagram-tools{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: .8rem;
+}
+.diagram-tools button{
+    min-width: 3.4rem;
+    height: 3.2rem;
+    padding: 0 1.2rem;
+    border-radius: .8rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    color: var(--white-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.diagram-tools button:hover{ border-color: var(--accent-2); }
+.diagram-tools span{
+    margin-left: .6rem;
+    font-size: 1.25rem;
     color: var(--text-muted);
 }
-.arch-arrow{
-    text-align: center;
-    color: var(--accent-2);
-    font-size: 1.8rem;
-    line-height: 1;
-}
-.arch-side{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-    gap: 1rem;
-}
-.flow-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    font-size: 1.35rem;
-}
-.flow-table th, .flow-table td{
-    text-align: left;
-    padding: 1rem 1.2rem;
-    border-bottom: .1rem solid var(--border-color);
-    color: var(--text-muted);
-    vertical-align: top;
-}
-.flow-table th{ color: var(--white-color); font-weight: 600; }
-.flow-table td:first-child{ color: var(--white-color); white-space: nowrap; }
-.table-wrap{ overflow-x: auto; }
 @media (max-width: 860px){
     .pillar-row{ grid-template-columns: 1fr; gap: 1.5rem; }
     .pillar-row:nth-of-type(even) .shot{ order: 0; }
