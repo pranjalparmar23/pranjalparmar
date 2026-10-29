@@ -1386,3 +1386,5 @@ p a:hover{
     .shot-grid, .shot-grid.shot-phones{ grid-template-columns: 1fr; }
     .shot-grid.shot-phones .shot{ max-width: 28rem; margin: 0 auto; }
 }
+
+.shot.shot-wide{ grid-column: 1 / -1; width: 100%; max-width: 72rem; margin: 0 auto; }
