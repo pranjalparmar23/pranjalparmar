@@ -1339,57 +1339,25 @@ p a:hover{
     line-height: 1.5;
     color: var(--text-muted);
 }
-.diagram-title{
-    font-family: "Sora", sans-serif;
-    font-size: 1.8rem;
-    color: var(--white-color);
-    margin: 3rem 0 1rem;
-}
-.mermaid-wrap{
-    background: var(--surface);
+.diagram-fig{
+    margin-top: 2.5rem;
+    background: #ffffff;
     border: .1rem solid var(--border-color);
     border-radius: 1.2rem;
-    padding: 2rem;
-    overflow: auto;
-    max-height: 75vh;
-    cursor: grab;
+    overflow: hidden;
 }
-.mermaid-wrap.grabbing{ cursor: grabbing; user-select: none; }
-.mermaid-wrap pre.mermaid{
-    margin: 0;
-    background: transparent;
-    font-size: 1.3rem;
-    color: var(--text-muted);
-    white-space: normal;
-    width: max-content;
-}
-.mermaid-wrap pre.mermaid svg{
+.diagram-fig a{ display: block; cursor: zoom-in; }
+.diagram-fig img{
     display: block;
-    max-width: none;
+    width: 100%;
     height: auto;
 }
-.diagram-tools{
-    display: flex;
-    align-items: center;
-    gap: .6rem;
-    margin-bottom: .8rem;
-}
-.diagram-tools button{
-    min-width: 3.4rem;
-    height: 3.2rem;
-    padding: 0 1.2rem;
-    border-radius: .8rem;
-    background: var(--surface);
-    border: .1rem solid var(--border-color);
-    color: var(--white-color);
+.diagram-fig figcaption{
+    padding: 1rem 1.5rem;
     font-size: 1.3rem;
-    cursor: pointer;
-}
-.diagram-tools button:hover{ border-color: var(--accent-2); }
-.diagram-tools span{
-    margin-left: .6rem;
-    font-size: 1.25rem;
-    color: var(--text-muted);
+    color: #4b4a5e;
+    background: #f3f3f7;
+    border-top: .1rem solid #e1e1ea;
 }
 @media (max-width: 860px){
     .pillar-row{ grid-template-columns: 1fr; gap: 1.5rem; }
