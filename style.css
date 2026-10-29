@@ -1340,7 +1340,9 @@ p a:hover{
     color: var(--text-muted);
 }
 .diagram-fig{
-    margin-top: 2.5rem;
+    width: 100%;
+    max-width: 90rem;
+    margin: 2.5rem auto 0;
     background: #ffffff;
     border: .1rem solid var(--border-color);
     border-radius: 1.2rem;
