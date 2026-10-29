@@ -190,26 +190,9 @@
             <div class="section-inner">
                 <p class="section-tag">System design</p>
                 <h2 class="section-title">Architecture</h2>
-                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API keeps its data in Firestore, asks Gemini to read, sort, translate and explain, and lets Cloud Scheduler run the background jobs. Every route checks the caller's Firebase sign-in first. Dashed outlines mark modules that ship behind a feature flag.</p>
+                <p class="desc">A React PWA on Firebase Hosting talks to a Python FastAPI service on Cloud Run. The API keeps its data in Firestore, asks Gemini to read, sort, translate and explain, and lets Cloud Scheduler run the background jobs. Every route checks the caller's Firebase sign-in first.</p>
                 <figure class="diagram-fig">
-                    <a href="../images/nomadfinance/system-architecture.png" target="_blank" rel="noopener" title="Open full size">
-                        <img src="../images/nomadfinance/system-architecture.png" alt="NomadFinance complete system architecture: frontend, backend, services, Gemini AI layer and Firestore data layer" loading="lazy">
-                    </a>
-                    <figcaption>Complete system architecture. Click to open full size. Dashed outlines are modules shipped behind a feature flag.</figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-inner">
-                <p class="section-tag">Pillars working together</p>
-                <h2 class="section-title">Cross-Pillar Data Flow</h2>
-                <p class="desc">The pillars feed each other. A flow into Exploitation Radar is always anonymous: no account id and no raw message. Solid lines are v1.0 flows that are always on; dotted lines involve a flag-gated v2.0 module.</p>
-                <figure class="diagram-fig">
-                    <a href="../images/nomadfinance/cross-pillar-data-flow.png" target="_blank" rel="noopener" title="Open full size">
-                        <img src="../images/nomadfinance/cross-pillar-data-flow.png" alt="Cross-pillar data flow between Contract Shield, Exploitation Radar, Remittance X-Ray, Financial Coach, Scam Analyzer and Financial Identity" loading="lazy">
-                    </a>
-                    <figcaption>Cross-pillar data flow. Click to open full size. Solid lines are always on; dotted lines involve a flag-gated module.</figcaption>
+                    <img src="../images/nomadfinance/architecture.webp" alt="NomadFinance architecture: a migrant worker reaches Firebase Hosting, the React PWA and Firebase Auth, then Cloud Run FastAPI with middleware, API v1 and API v2 and services, backed by the Gemini client with four tiers, Firestore, Cloud Scheduler, Cloud Storage, Secret Manager and external data sources" loading="lazy">
                 </figure>
             </div>
         </section>
@@ -232,7 +215,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Coverage</p>
                 <h2 class="section-title">Where It Works</h2>
@@ -245,7 +228,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="section-inner">
                 <p class="section-tag">Quality</p>
                 <h2 class="section-title">By the Numbers</h2>
@@ -264,7 +247,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
@@ -286,7 +269,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="section-inner">
                 <p class="section-tag">Delivery</p>
                 <h2 class="section-title">Decisions, Testing and Deployment</h2>
