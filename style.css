@@ -1365,3 +1365,24 @@ p a:hover{
     .pillar-row{ grid-template-columns: 1fr; gap: 1.5rem; }
     .pillar-row:nth-of-type(even) .shot{ order: 0; }
 }
+
+.shot-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.shot-subtitle{
+    font-family: "Sora", sans-serif;
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin: 4rem 0 0;
+}
+.shot-grid.shot-phones{
+    grid-template-columns: repeat(2, minmax(0, 28rem));
+    justify-content: center;
+}
+@media (max-width: 700px){
+    .shot-grid, .shot-grid.shot-phones{ grid-template-columns: 1fr; }
+    .shot-grid.shot-phones .shot{ max-width: 28rem; margin: 0 auto; }
+}
