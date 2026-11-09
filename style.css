@@ -1564,3 +1564,22 @@ p a:hover{
     margin: 0 auto;
 }
 .section .shot-subtitle + .feature-list{ margin-top: 1.6rem; }
+
+/* description before screenshot */
+.pillar-row.text-first{ grid-template-columns: 1fr 1.15fr; }
+.pillar-row.text-first:nth-of-type(even) .shot,
+.pillar-row.text-first:nth-of-type(even) .diagram-fig,
+.pillar-row.text-first:nth-of-type(even) .shot-grid{ order: 0; }
+.shot-grid.result-graphs{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; align-items: stretch; }
+.shot-grid.result-graphs .diagram-fig{ margin-top: 0; }
+.shot-grid.result-graphs .diagram-fig img{ background: #fff; }
+.shot-grid.result-graphs .diagram-fig figcaption{ font-size: 1.2rem; }
+@media (max-width: 860px){
+    .pillar-row.text-first{ grid-template-columns: 1fr; }
+    .shot-grid.result-graphs{ grid-template-columns: 1fr; }
+}
+.shot-grid.result-graphs .diagram-fig{ display: flex; flex-direction: column; max-width: none; margin: 0; }
+.shot-grid.result-graphs .diagram-fig img{ height: 34rem; width: 100%; object-fit: contain; padding: 1rem; background: #fff; }
+.shot-grid.result-graphs .diagram-fig{ flex: 1; }
+.graph-item{ display: flex; flex-direction: column; }
+.graph-note{ margin-top: 1rem; font-size: 1.4rem; line-height: 1.6; color: var(--text-muted); text-align: center; }

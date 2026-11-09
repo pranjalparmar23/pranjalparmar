@@ -69,17 +69,7 @@
                 <h2 class="section-title">How It Works</h2>
                 <p class="desc">The idea is simple: show the classifier a picture of steel and let it do the inspecting.</p>
 
-                <div class="pillar-row">
-                <div class="shot-grid shot-stack">
-                    <figure class="shot">
-                        <img src="../images/steel-manufacturing/classifier-defective.png" alt="Streamlit classifier showing an image marked as defective" loading="lazy">
-                        <figcaption>Upload an image, press Predict, and the result appears below.</figcaption>
-                    </figure>
-                    <figure class="shot">
-                        <img src="../images/steel-manufacturing/classifier-non-defective.png" alt="Streamlit classifier showing an image marked as non-defective" loading="lazy">
-                        <figcaption>A clean steel strip: the answer is non-defective.</figcaption>
-                    </figure>
-                </div>
+                <div class="pillar-row text-first">
                     <div class="pillar-copy">
                         <p class="section-tag">Step 1 and 2</p>
                         <h3>Upload and Get a Clear Answer</h3>
@@ -91,6 +81,16 @@
                             <li>Behind the scenes it uses the trained ResNet50 model</li>
                         </ul>
                     </div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/classifier-defective.png" alt="Streamlit classifier showing an image marked as defective" loading="lazy">
+                        <figcaption>Upload an image, press Predict, and the result appears below.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/classifier-non-defective.png" alt="Streamlit classifier showing an image marked as non-defective" loading="lazy">
+                        <figcaption>A clean steel strip: the answer is non-defective.</figcaption>
+                    </figure>
+                </div>
                 </div>
             </div>
         </section>
@@ -202,14 +202,16 @@
                     <div class="stat-card"><strong>87%</strong><span>CNN: close behind and the most balanced</span></div>
                     <div class="stat-card"><strong>76%</strong><span>ResUNet: built to outline defects, so it scores lower on the yes or no test</span></div>
                 </div>
-                <figure class="diagram-fig arch-fig">
-                    <img src="../images/steel-manufacturing/model-comparison.png" alt="Chart comparing precision, recall, F1 score and accuracy of ResNet50, ResUNet and CNN" loading="lazy">
-                    <figcaption>Fig 5.2.1: the three models compared on precision, recall, F1 score and accuracy.</figcaption>
-                </figure>
-                <figure class="diagram-fig arch-fig">
-                    <img src="../images/steel-manufacturing/accuracy-comparison.png" alt="Chart comparing the accuracy of ResNet50, ResUNet and CNN" loading="lazy">
-                    <figcaption>Fig 5.2.2: accuracy of each model. ResNet50 is highest at 88%, then CNN at 87% and ResUNet at 76%.</figcaption>
-                </figure>
+                <div class="shot-grid result-graphs">
+                    <div class="graph-item">
+                        <figure class="diagram-fig"><img src="../images/steel-manufacturing/model-comparison.png" alt="Chart comparing precision, recall, F1 score and accuracy of ResNet50, ResUNet and CNN" loading="lazy"></figure>
+                        <p class="graph-note">Precision, recall, F1 score and accuracy of the three models side by side.</p>
+                    </div>
+                    <div class="graph-item">
+                        <figure class="diagram-fig"><img src="../images/steel-manufacturing/accuracy-comparison.png" alt="Chart comparing the accuracy of ResNet50, ResUNet and CNN" loading="lazy"></figure>
+                        <p class="graph-note">Overall accuracy of each model: ResNet50 88%, CNN 87% and ResUNet 76%.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -223,11 +225,7 @@
                     <figcaption>The project approach: 12,997 steel images flow through data processing and the three models, and defects are reported to the manufacturer.</figcaption>
                 </figure>
                 <p class="desc" style="margin-top:2rem">Three more diagrams, each explained below, show the same system from different angles.</p>
-                <div class="pillar-row">
-                    <figure class="diagram-fig">
-                        <img src="../images/steel-manufacturing/use-case.png" alt="Use case diagram: a data scientist gathers data, chooses algorithms and trains models, and a web developer builds the website and integrates the model" loading="lazy">
-                        <figcaption>Use case diagram.</figcaption>
-                    </figure>
+                <div class="pillar-row text-first">
                     <div class="pillar-copy">
                         <p class="section-tag">Diagram 2</p>
                         <h3>Who Does What</h3>
@@ -239,12 +237,12 @@
                             <li>Together they turn a trained model into a working web app</li>
                         </ul>
                     </div>
-                </div>
-                <div class="pillar-row">
-                    <figure class="diagram-fig tall">
-                        <img src="../images/steel-manufacturing/activity.jpg" alt="Activity diagram of the workflow from collecting images to showing the prediction" loading="lazy">
-                        <figcaption>Activity diagram.</figcaption>
+                    <figure class="diagram-fig">
+                        <img src="../images/steel-manufacturing/use-case.png" alt="Use case diagram: a data scientist gathers data, chooses algorithms and trains models, and a web developer builds the website and integrates the model" loading="lazy">
+                        <figcaption>Use case diagram.</figcaption>
                     </figure>
+                </div>
+                <div class="pillar-row text-first">
                     <div class="pillar-copy">
                         <p class="section-tag">Diagram 3</p>
                         <h3>The Workflow</h3>
@@ -256,12 +254,12 @@
                             <li>The saved model is plugged into the Streamlit classifier</li>
                         </ul>
                     </div>
-                </div>
-                <div class="pillar-row">
-                    <figure class="diagram-fig">
-                        <img src="../images/steel-manufacturing/sequence.png" alt="Sequence diagram of uploading a picture, training the model, evaluating it and delivering the trained model" loading="lazy">
-                        <figcaption>Sequence diagram.</figcaption>
+                    <figure class="diagram-fig tall">
+                        <img src="../images/steel-manufacturing/activity.jpg" alt="Activity diagram of the workflow from collecting images to showing the prediction" loading="lazy">
+                        <figcaption>Activity diagram.</figcaption>
                     </figure>
+                </div>
+                <div class="pillar-row text-first">
                     <div class="pillar-copy">
                         <p class="section-tag">Diagram 4</p>
                         <h3>Training and Delivery</h3>
@@ -273,6 +271,10 @@
                             <li>The same flow lets the models be retrained with new data</li>
                         </ul>
                     </div>
+                    <figure class="diagram-fig">
+                        <img src="../images/steel-manufacturing/sequence.png" alt="Sequence diagram of uploading a picture, training the model, evaluating it and delivering the trained model" loading="lazy">
+                        <figcaption>Sequence diagram.</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -280,19 +282,70 @@
         <section class="section">
             <div class="section-inner">
                 <p class="section-tag">The build journey</p>
-                <h2 class="section-title">How It Was Built</h2>
-                <p class="desc">From first reading to a published paper, in five steps over roughly ten months.</p>
-                <div class="feature-list">
-                    <div class="feature-item"><i class='bx bx-images'></i><div><h5>1. Collect the images</h5><p>12,997 steel images, 7,095 with defects and 5,902 without. Most defective images had one defect, some had two, and one had three.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-slider-alt'></i><div><h5>2. Prepare the images</h5><p>Images were resized and normalised, and the data was split into training, validation and test sets.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>3. Train three models</h5><p>CNN, ResNet50 and ResUNet were trained, tuned and retrained until their accuracy was acceptable.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-bar-chart-alt-2'></i><div><h5>4. Check the results</h5><p>Each model was tested on images it had never seen and compared on accuracy, precision and recall.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-world'></i><div><h5>5. Build the website</h5><p>A Django site was built around a Streamlit classifier that loads the ResNet50 model, with SQLite for stored data.</p></div></div>
+                <h2 class="section-title">Phase by Phase</h2>
+                <p class="desc">The project was built in ten phases over roughly ten months, from the first literature survey in July to the published paper in April. The images were collected and prepared alongside the model work: 12,997 steel images, 7,095 with defects and 5,902 without.</p>
+                <div class="phase-grid">
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 1</span><span class="status-pill done">Complete</span></div>
+                        <h4>Literature Survey</h4>
+                        <p class="phase-weeks">July</p>
+                        <p>Read existing research on steel defect detection to understand what had already been tried and where the gaps were.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 2</span><span class="status-pill done">Complete</span></div>
+                        <h4>Research Papers</h4>
+                        <p class="phase-weeks">August</p>
+                        <p>Studied and worked through research papers to shape the approach and prepare for writing our own.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 3</span><span class="status-pill done">Complete</span></div>
+                        <h4>Choosing the Tech Stack</h4>
+                        <p class="phase-weeks">September</p>
+                        <p>Decided on Python, TensorFlow, Keras, PyTorch, Streamlit and Django as the tools for the project.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 4</span><span class="status-pill done">Complete</span></div>
+                        <h4>Building the Models</h4>
+                        <p class="phase-weeks">September to October</p>
+                        <p>Developed and trained the three models: ResUNet, CNN and ResNet50.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 5</span><span class="status-pill done">Complete</span></div>
+                        <h4>Building the Frontend</h4>
+                        <p class="phase-weeks">October to November</p>
+                        <p>Designed the website pages: sign-up, login, About, Services and Contact.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 6</span><span class="status-pill done">Complete</span></div>
+                        <h4>Connecting the Database</h4>
+                        <p class="phase-weeks">November to December</p>
+                        <p>Connected the website to a SQLite database for user accounts and contact messages.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 7</span><span class="status-pill done">Complete</span></div>
+                        <h4>Writing the Research Paper</h4>
+                        <p class="phase-weeks">December to February</p>
+                        <p>Documented the method, results and comparison of the three models in a research paper.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 8</span><span class="status-pill done">Complete</span></div>
+                        <h4>Improving Model Accuracy</h4>
+                        <p class="phase-weeks">February to March</p>
+                        <p>Tuned and retrained the models to raise their accuracy.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 9</span><span class="status-pill done">Complete</span></div>
+                        <h4>Updating the Website with ResNet50</h4>
+                        <p class="phase-weeks">March to April</p>
+                        <p>Connected the best model, ResNet50, to the Streamlit classifier so the website gives live predictions.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 10</span><span class="status-pill done">Complete</span></div>
+                        <h4>Completion and Publication</h4>
+                        <p class="phase-weeks">April</p>
+                        <p>Finalised all features and published the paper at ICETS 2025.</p>
+                    </div>
                 </div>
-                <figure class="diagram-fig arch-fig">
-                    <img src="../images/steel-manufacturing/project-timeline.png" alt="Project timeline from July to April covering literature survey, research papers, technology choice, model development, frontend, database, accuracy updates and publication" loading="lazy">
-                    <figcaption>Fig 3.7.1: the project timeline, from the literature survey in July to the published paper in April.</figcaption>
-                </figure>
             </div>
         </section>
 
