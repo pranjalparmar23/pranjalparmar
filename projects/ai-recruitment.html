@@ -21,60 +21,362 @@
             <div class="section-inner">
                 <span class="category-badge">GenAI</span>
                 <h1>AI Recruitment and Multi-Agent Interview Preparation Platform</h1>
-                <p class="hero-desc">A full-stack AI platform with two flows: candidates get resume ATS scoring, skill-gap analysis, a personalized learning roadmap and an AI mock interview coach, while recruiters get automatic JD analysis, candidate ranking and hiring recommendations. Independent LangGraph agents orchestrate the workflows with a RAG retrieval layer over ChromaDB — running entirely on local, free-tier infrastructure.</p>
+                <p class="hero-desc">An AI platform that helps people get hired and helps companies hire. Candidates upload a resume, see how well it fits a job, get a learning plan and practise with an AI interviewer. Recruiters upload a job description and get candidates ranked by fit, tailored interview questions and a hiring suggestion. A work in progress, built phase by phase, and this page grows with it.</p>
                 <div class="tech-used">
-                    <span>REACT</span><span>TYPESCRIPT</span><span>VITE</span><span>TAILWIND CSS</span><span>FASTAPI</span><span>PYTHON</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>CHROMADB</span><span>POSTGRESQL</span><span>REDIS</span><span>GROQ</span><span>DOCKER</span>
+                    <span>REACT</span><span>TYPESCRIPT</span><span>TAILWIND CSS</span><span>FASTAPI</span><span>PYTHON</span><span>LANGCHAIN</span><span>LANGGRAPH</span><span>GROQ</span><span>CHROMADB</span><span>POSTGRESQL</span><span>REDIS</span><span>DOCKER</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/pranjalparmar23/ai-talent-hub" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
                 </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/ai-recruitment/candidate-workspace.png" alt="The candidate workspace showing an uploaded resume and a target role ready to analyse" loading="lazy">
+                    <figcaption>The candidate workspace: a resume and a target role, ready to be analysed together.</figcaption>
+                </figure>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">Recruitment today runs on two disconnected experiences — candidates guessing what a resume needs, and recruiters manually sifting through applications. This platform builds a single system for both sides of the table. Candidates upload a resume and get an ATS match score, a skill-gap breakdown against a target job description, a personalized weekly learning roadmap, and a conversational AI mock interview coach. Recruiters upload a job description and get structured requirement extraction, an auto-ranked candidate pool, targeted interview questions per candidate, and a HIRE / CONSIDER / REJECT recommendation with reasoning.</p>
-                <p class="desc">Both flows are orchestrated by independent LangGraph state machines that coordinate specialized LLM agents, a RAG retrieval layer backed by ChromaDB, and a PostgreSQL + Redis data layer — deliberately built to run locally with no paid cloud services required.</p>
+                <p class="section-tag">Project status</p>
+                <h2 class="section-title">Where It Stands</h2>
+                <p class="desc">The platform is built in 14 phases. The first six are complete and cover everything you see in the screenshots below. The remaining eight add fresh sourced knowledge, voice interviews, support for every role, quality checks, security, monitoring, a design refresh and going live. Last updated November 2026.</p>
+                <div class="phase-progress" role="img" aria-label="6 of 14 phases complete, 78 of 235 tasks done">
+                    <div class="phase-progress-bar"><span style="width:33%"></span></div>
+                    <div class="phase-progress-legend"><b>33%</b> of tasks done &middot; <b>6 of 14</b> phases complete</div>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>6 of 14</strong><span>Phases complete, from foundation to recruiter tools and groundwork for fresh sourced knowledge</span></div>
+                    <div class="stat-card"><strong>78 of 235</strong><span>Tasks done, with 2 more in progress</span></div>
+                    <div class="stat-card"><strong>2 journeys</strong><span>One for candidates preparing for jobs and one for recruiters hiring talent</span></div>
+                    <div class="stat-card"><strong>10+ AI agents</strong><span>Specialised helpers that read resumes, score fit, plan learning, interview and recommend</span></div>
+                </div>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">Key Features</h2>
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why It Exists</h2>
+                <p class="desc">Hiring is two lonely experiences. Candidates guess what a resume needs and walk into interviews unprepared, while recruiters sift through piles of applications by hand. This platform puts both sides in one place.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Resume Parsing &amp; ATS Scoring</h5><p>Groq's llama-3.3-70b-versatile extracts structured resume data and scores it against a target job description using keyword density analysis.</p></div>
+                    <div class="feature-item"><i class='bx bx-user'></i><div><h5>For candidates</h5><p>Find out how your resume really fits a job, what to learn next, and practise interviews for the company and role you want.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-group'></i><div><h5>For recruiters</h5><p>See candidates ranked by fit, get interview questions tailored to each one, and a clear suggestion with reasons.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>A person always decides</h5><p>Scores and recommendations help a person decide. They never make the decision.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-wallet'></i><div><h5>Free to run</h5><p>Built to run on free-tier services, so anyone can try it without a cloud bill.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">For candidates</p>
+                <h2 class="section-title">The Candidate Journey</h2>
+                <p class="desc">From a PDF resume to a ready-to-go plan. Everything below is shown with a sample candidate on the running platform.</p>
+
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/candidate-workspace.png" alt="Candidate workspace with a resume and a target role selected" loading="lazy">
+                    <figcaption>The workspace: a resume and a target role, ready to analyse.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 1</p>
+                        <h3>Your Workspace</h3>
+                        <p class="q">Where do I begin?</p>
+                        <p>Upload a resume as a PDF and it is read automatically. Add the job you are aiming for, pair the two and start the analysis.</p>
+                        <ul>
+                            <li>Name, skills, experience and education pulled from the resume</li>
+                            <li>Paste in any job description as a target role</li>
+                            <li>One tap to analyse the pairing</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Skill Gap Analysis &amp; Learning Roadmap</h5><p>Side-by-side comparison of candidate skills vs. JD requirements, feeding a RAG-powered weekly learning plan with curated resources.</p></div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/ats-score.png" alt="Match score out of 100 with matched and missing skills and recommendations" loading="lazy">
+                    <figcaption>The match score, with matched and missing skills and tips.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 2</p>
+                        <h3>Match Score</h3>
+                        <p class="q">How well does this resume fit this job?</p>
+                        <p>A score out of 100 for how closely the resume matches the job, with a short plain-language verdict.</p>
+                        <ul>
+                            <li>Skills that match and skills that are missing, as clear tags</li>
+                            <li>Practical suggestions for improving the resume</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>AI Mock Interview Coach</h5><p>A conversational agent runs company and role-specific mock interviews, then scores technical depth, communication, and problem-solving.</p></div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/skill-gap.png" alt="Skill gap showing the skills you have and the skills you need" loading="lazy">
+                    <figcaption>Skill gap: what the resume has and what the role asks for.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 3</p>
+                        <h3>Skill Gap</h3>
+                        <p class="q">What do I have, and what do I still need?</p>
+                        <p>A side-by-side view of the skills you already have and the ones the role asks for, with an honest read on how big the gap is.</p>
+                        <ul>
+                            <li>Matched skills and skills to learn, clearly separated</li>
+                            <li>An estimate of how long the gap could take to close</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>JD Analysis &amp; Candidate Ranking</h5><p>Extracts structured requirements from a job description and auto-ranks the candidate pool by fit score with a per-dimension breakdown.</p></div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/learning-plan.png" alt="Week-by-week learning plan with study tasks and resources" loading="lazy">
+                    <figcaption>A week-by-week learning plan.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 4</p>
+                        <h3>Learning Plan</h3>
+                        <p class="q">What should I do next, week by week?</p>
+                        <p>A weekly plan built from the skill gap, with the hours each week needs and resources for every skill to learn.</p>
+                        <ul>
+                            <li>Week-by-week cards, each with a clear focus</li>
+                            <li>Hands-on tasks and resource links</li>
+                            <li>Total time at a glance</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Hiring Recommendation Engine</h5><p>Produces a HIRE / CONSIDER / REJECT decision with a confidence score and the reasoning behind it.</p></div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/interview-setup.png" alt="Mock interview setup with company and role choices" loading="lazy">
+                    <figcaption>Choose a company and a role. Six questions, asked one at a time.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 5</p>
+                        <h3>Mock Interview Coach</h3>
+                        <p class="q">Can I practise before the real thing?</p>
+                        <p>Pick a company and a role and an AI interviewer asks six questions, one at a time, adapting to each answer.</p>
+                        <ul>
+                            <li>Choose a company and a role, or type your own</li>
+                            <li>Six questions, asked one at a time</li>
+                            <li>A scored report at the end</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Multi-Agent Orchestration</h5><p>Independent LangGraph state machines coordinate specialized agents — Interview, Evaluation, Memory, and Retriever — over a shared RAG layer.</p></div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/interview-chat.png" alt="Mock interview chat with the AI interviewer asking questions and the candidate answering" loading="lazy">
+                    <figcaption>The interview chat: one question at a time, each following up on the last answer.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 6</p>
+                        <h3>The Interview</h3>
+                        <p class="q">What is it like?</p>
+                        <p>It feels like a real conversation. The interviewer reads each answer before choosing the next question.</p>
+                        <ul>
+                            <li>Questions chosen for the company and role you picked</li>
+                            <li>Each question follows from your last answer</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/interview-feedback.png" alt="Interview feedback report with scores" loading="lazy">
+                    <figcaption>The feedback report with scores for how the interview went.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 7</p>
+                        <h3>Interview Feedback</h3>
+                        <p class="q">How did I do?</p>
+                        <p>At the end you get a scored report that shows where you were strong and what to work on next.</p>
+                        <ul>
+                            <li>An overall score out of 10, with a breakdown for communication, technical knowledge, problem solving and confidence</li>
+                            <li>What worked, and what to work on next</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">For recruiters</p>
+                <h2 class="section-title">The Recruiter Journey</h2>
+                <p class="desc">From a job description to a shortlist with reasons. The sample candidates below are fictional.</p>
+
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/recruiter-dashboard.png" alt="Recruiter dashboard listing open roles" loading="lazy">
+                    <figcaption>The recruiter dashboard: every open role in one place.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 1</p>
+                        <h3>Open Roles</h3>
+                        <p class="q">Where do I start?</p>
+                        <p>Upload a job description as a PDF or text and it becomes an open role. The platform reads it and pulls out the skills and experience it asks for.</p>
+                        <ul>
+                            <li>PDF, text or markdown, up to 5 MB</li>
+                            <li>Open a role to rank candidates against it</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/candidate-rankings.png" alt="Candidates ranked by fit for a role with skills, experience and meaning scores" loading="lazy">
+                    <figcaption>Candidates ranked by fit, with a breakdown for each.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 2</p>
+                        <h3>Candidate Ranking</h3>
+                        <p class="q">Who fits best?</p>
+                        <p>Every candidate is scored against the role and sorted best first, with a short reason and a breakdown you can read at a glance.</p>
+                        <ul>
+                            <li>Skills, experience and overall meaning each scored</li>
+                            <li>Matched and missing skills shown as tags</li>
+                            <li>Mock interview scores appear next to the match score</li>
+                            <li>Filter to the top 5, 10 or more</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                <figure class="shot">
+                    <img src="../images/ai-recruitment/candidate-detail.png" alt="Candidate detail with tailored interview questions and a hiring recommendation" loading="lazy">
+                    <figcaption>A candidate in detail: tailored questions and a hiring suggestion.</figcaption>
+                </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 3</p>
+                        <h3>Questions and Recommendation</h3>
+                        <p class="q">What should I ask, and what should I decide?</p>
+                        <p>Open a candidate to see interview questions built around their gaps and a clear suggestion of hire, consider or reject, with a confidence level, strengths, risks and the reasoning behind it.</p>
+                        <ul>
+                            <li>Suggested interview questions, each with why to ask it</li>
+                            <li>Hire, consider or reject, with strengths and risks</li>
+                            <li>The verdict comes from fixed scoring rules and the explanation is written by AI, so a person always makes the final call</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">System design</p>
+                <h2 class="section-title">How It Fits Together</h2>
+                <p class="desc">A candidate portal and a recruiter dashboard sit on top of one backend. Two guided flows, one for candidates and one for recruiters, hand work to a team of specialised AI agents, which use a knowledge library and a database for everything they need.</p>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/ai-recruitment/architecture.jpg" alt="Simplified architecture of the platform: frontend portals, backend, guided flows, AI agents and data storage" loading="lazy">
+                    <figcaption>Simplified architecture of the platform.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">Phase by Phase</h2>
+                <p class="desc">The platform is being built in 14 phases over about 37 weeks. Completed phases are done and working; planned phases show what comes next. This list is updated as each phase moves forward.</p>
+                <h3 class="shot-subtitle">Completed</h3>
+                <div class="phase-grid">
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 1</span><span class="status-pill done">Complete</span></div>
+                        <h4>Foundation &amp; Infrastructure</h4>
+                        <p class="phase-weeks">Weeks 1–3 &middot; 15 of 15 tasks done</p>
+                        <p>Laid the groundwork: a safe home for the code with automatic checks on every change, the databases and file storage, secure sign-up and login, and the first screens.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 2</span><span class="status-pill done">Complete</span></div>
+                        <h4>Knowledge Library</h4>
+                        <p class="phase-weeks">Weeks 4–5 &middot; 10 of 10 tasks done</p>
+                        <p>Gave the AI a reference library to look things up in, covering interview experiences, learning resources, company interview patterns, data-structure notes and behavioural questions, so answers rest on real material.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 3</span><span class="status-pill done">Complete</span></div>
+                        <h4>Candidate Journey</h4>
+                        <p class="phase-weeks">Weeks 6–8 &middot; 14 of 14 tasks done</p>
+                        <p>Candidates can upload a resume and have it read automatically, get a match score against a job, see their skill gaps and receive a weekly learning plan.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 4</span><span class="status-pill done">Complete</span></div>
+                        <h4>Interview Coach</h4>
+                        <p class="phase-weeks">Weeks 9–10 &middot; 10 of 10 tasks done</p>
+                        <p>A practice interviewer for companies like Amazon, Google and Meta that asks questions, follows up on answers and scores communication and technical depth.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 5</span><span class="status-pill done">Complete</span></div>
+                        <h4>Recruiter Journey</h4>
+                        <p class="phase-weeks">Weeks 11–12 &middot; 14 of 14 tasks done</p>
+                        <p>Recruiters upload a job description, see candidates ranked by fit, get tailored interview questions for each and a hire, consider or reject suggestion with reasons.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 6</span><span class="status-pill done">Complete</span></div>
+                        <h4>Skills &amp; Trusted Sources Foundation</h4>
+                        <p class="phase-weeks">Weeks 13–14 &middot; 15 of 15 tasks done</p>
+                        <p>Behind-the-scenes groundwork for the next stage: a controlled, safe way for the AI to fetch fresh reference material from vetted outside sources, with security checks and a fallback so the app keeps working if a source is down.</p>
+                    </div>
+                </div>
+                <h3 class="shot-subtitle">Coming next</h3>
+                <div class="phase-grid">
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 7</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Fresh, Sourced Knowledge</h4>
+                        <p class="phase-weeks">Weeks 15–17 &middot; 16 tasks planned</p>
+                        <p>Replace the fixed library with content collected from vetted sources, with licences recorded, regular refreshes and visible sources on roadmaps and interview references.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 8</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Voice Interview</h4>
+                        <p class="phase-weeks">Weeks 18–19 &middot; 17 tasks planned</p>
+                        <p>The AI speaks its questions and candidates can answer out loud, with feedback on pace, filler words and pauses. Typing always stays available, and audio comes with privacy and consent.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 9</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Every Role, Every User</h4>
+                        <p class="phase-weeks">Weeks 20–22 &middot; 18 tasks planned</p>
+                        <p>Interviews and learning plans for technical and non-technical roles at any level, a path for freshers and career changers, accessibility checks, fairness checks and a first extra language.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 10</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Quality Scorecard</h4>
+                        <p class="phase-weeks">Weeks 23–25 &middot; 19 tasks planned</p>
+                        <p>Test sets and pass marks for every AI feature, including fairness checks, so a change that makes answers worse is caught before it ships.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 11</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Security &amp; AI Safety</h4>
+                        <p class="phase-weeks">Weeks 26–28 &middot; 24 tasks planned</p>
+                        <p>Check the platform against the industry list of top AI risks, add protective guardrails, harden resume and audio handling, and let candidates choose whether recruiters can see them.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 12</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Monitoring &amp; Insights</h4>
+                        <p class="phase-weeks">Weeks 29–30 &middot; 22 tasks planned</p>
+                        <p>Track how the platform is used and how healthy it is, from active users and journeys to AI quality, speed and cost, with dashboards, alerts and clear steps for when something breaks.</p>
+                    </div>
+                    <div class="phase-card todo">
+                        <div class="phase-top"><span class="phase-num">Phase 13</span><span class="status-pill todo">Planned</span></div>
+                        <h4>Design Refresh</h4>
+                        <p class="phase-weeks">Weeks 31–34 &middot; 21 tasks planned</p>
+                        <p>Redesign every screen with one consistent look, make it work well on phones, tablets and desktops, and test it with real people.</p>
+                    </div>
+                    <div class="phase-card active">
+                        <div class="phase-top"><span class="phase-num">Phase 14</span><span class="status-pill active">In progress</span></div>
+                        <h4>Go Live</h4>
+                        <p class="phase-weeks">Weeks 35–37 &middot; 20 tasks, 2 in progress</p>
+                        <p>Put it online for real: production setup, secure web address, managed databases, load and security testing, an admin dashboard and a final sign-off. Usage limits and structured logging are already under way.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Trust &amp; safety</p>
+                <h2 class="section-title">Built to Be Trusted</h2>
+                <p class="desc">Hiring decisions affect people, so the plan puts safety and fairness alongside features.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-user-check'></i><div><h5>People stay in charge</h5><p>Scores and recommendations are advice. A person makes every hiring decision.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-lock-alt'></i><div><h5>Secure sign-in</h5><p>Passwords are stored securely and sessions use short-lived login tokens, with separate candidate and recruiter roles.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-wifi-off'></i><div><h5>Keeps working when a source is down</h5><p>Outside reference sources only add extra detail. If one is unavailable, interviews and learning plans still work.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-balance'></i><div><h5>Fairness and privacy are planned work</h5><p>Upcoming phases add fairness checks, an AI security review against the industry's top risks, and a candidate choice over whether recruiters can see them.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
@@ -86,48 +388,11 @@
                     <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
                     <div class="skill-tile"><svg class="skill-svg" style="color:#2DD4BF" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"/></svg><p>LangChain</p></div>
                     <div class="skill-tile"><i class='bx bx-sitemap' style="color:#38BDF8"></i><p>LangGraph</p></div>
+                    <div class="skill-tile"><i class='bx bx-bolt-circle' style="color:#F55036"></i><p>Groq</p></div>
                     <div class="skill-tile"><i class='bx bx-vector' style="color:#A855F7"></i><p>ChromaDB</p></div>
                     <div class="skill-tile"><i class='bx bxl-postgresql' style="color:#4A90D9"></i><p>PostgreSQL</p></div>
-                    <div class="skill-tile"><svg class="skill-svg" style="color:#DC382D" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></svg><p>Redis</p></div>
+                    <div class="skill-tile"><i class='bx bxs-data' style="color:#DC382D"></i><p>Redis</p></div>
                     <div class="skill-tile"><i class='bx bxl-docker' style="color:#2496ED"></i><p>Docker</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">System Design</p>
-                <h2 class="section-title">Architecture</h2>
-                <p class="desc">A React (Vite + TypeScript + Tailwind + TanStack Query) frontend talks to a FastAPI backend exposing <code>/api/auth</code>, <code>/api/candidate</code>, <code>/api/recruiter</code> and <code>/api/admin</code> routes behind JWT middleware, rate limiting, and logging. Two independent LangGraph state machines drive the core flows:</p>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-git-branch'></i>
-                        <div><h5>Candidate Graph</h5><p>parse_resume &rarr; ats_check &rarr; skill_gap_analysis &rarr; generate_roadmap</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-git-branch'></i>
-                        <div><h5>Recruiter Graph</h5><p>analyze_jd &rarr; match_candidates &rarr; rank_candidates</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-layer'></i>
-                        <div><h5>Shared Agent Layer</h5><p>InterviewAgent, EvaluationAgent, and a Redis-backed MemoryAgent, plus a RetrieverAgent querying 5 ChromaDB collections via local sentence-transformers embeddings.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-data'></i>
-                        <div><h5>Data Layer</h5><p>PostgreSQL 16 (async via SQLAlchemy 2.0 + asyncpg) for persistent data, Redis 7 for sessions/cache, local filesystem for uploads.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-inner">
-                <p class="section-tag">Documentation</p>
-                <h2 class="section-title">Screenshots &amp; Development Phases</h2>
-                <div class="placeholder-card">
-                    <i class='bx bx-image-alt'></i>
-                    <h4>Screenshots and phase-by-phase breakdown coming soon</h4>
-                    <p>Product screenshots and a detailed development timeline for this project are being added.</p>
                 </div>
             </div>
         </section>
