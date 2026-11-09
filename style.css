@@ -1388,3 +1388,81 @@ p a:hover{
 }
 
 .shot.shot-wide{ grid-column: 1 / -1; width: 100%; max-width: 72rem; margin: 0 auto; }
+
+/* Phase-by-phase project journey */
+.phase-progress{ margin: 2rem 0 0; }
+.phase-progress-bar{
+    height: 1rem;
+    border-radius: 1rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    overflow: hidden;
+}
+.phase-progress-bar span{
+    display: block;
+    height: 100%;
+    border-radius: 1rem;
+    background: var(--gradient);
+}
+.phase-progress-legend{
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+}
+.phase-progress-legend b{ color: var(--white-color); }
+.phase-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.phase-card{
+    padding: 2.2rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.2rem;
+    transition: .3s;
+}
+.phase-card:hover{ border-color: var(--accent); }
+.phase-card.done{ border-left: .4rem solid #34d399; }
+.phase-card.active{ border-left: .4rem solid #fbbf24; }
+.phase-card.todo{ border-left: .4rem solid var(--border-color); }
+.phase-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.phase-num{
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    font-weight: 600;
+}
+.status-pill{
+    padding: .3rem 1.1rem;
+    border-radius: 5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.status-pill.done{ background: rgba(52,211,153,.14); color: #34d399; }
+.status-pill.active{ background: rgba(251,191,36,.14); color: #fbbf24; }
+.status-pill.todo{ background: rgba(141,140,163,.14); color: var(--text-muted); }
+.phase-card h4{
+    font-family: "Sora", sans-serif;
+    font-size: 1.9rem;
+    color: var(--white-color);
+    margin-bottom: .4rem;
+}
+.phase-weeks{
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+.phase-card p:last-child{
+    font-size: 1.45rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+.diagram-fig.arch-fig{ max-width: 70rem; }
