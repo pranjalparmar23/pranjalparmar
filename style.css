@@ -1570,7 +1570,7 @@ p a:hover{
 .pillar-row.text-first:nth-of-type(even) .shot,
 .pillar-row.text-first:nth-of-type(even) .diagram-fig,
 .pillar-row.text-first:nth-of-type(even) .shot-grid{ order: 0; }
-.shot-grid.result-graphs{ grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 80rem; margin-left: auto; margin-right: auto; align-items: start; }
+.shot-grid.result-graphs{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; align-items: stretch; }
 .shot-grid.result-graphs .diagram-fig{ margin-top: 0; }
 .shot-grid.result-graphs .diagram-fig img{ background: #fff; }
 .shot-grid.result-graphs .diagram-fig figcaption{ font-size: 1.2rem; }
@@ -1578,4 +1578,6 @@ p a:hover{
     .pillar-row.text-first{ grid-template-columns: 1fr; }
     .shot-grid.result-graphs{ grid-template-columns: 1fr; }
 }
-.shot-grid.result-graphs .diagram-fig img{ height: 22rem; width: 100%; object-fit: contain; }
+.shot-grid.result-graphs .diagram-fig{ display: flex; flex-direction: column; max-width: none; margin: 0; }
+.shot-grid.result-graphs .diagram-fig img{ height: 34rem; width: 100%; object-fit: contain; padding: 1rem; background: #fff; }
+.shot-grid.result-graphs .diagram-fig figcaption{ flex: 1; }
