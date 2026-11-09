@@ -21,51 +21,193 @@
             <div class="section-inner">
                 <span class="category-badge">AI-ML</span>
                 <h1>Steel Manufacturing Defects</h1>
-                <p class="hero-desc">A deep learning pipeline that automates steel defect detection — classifying, segmenting, and localizing manufacturing flaws across nearly 13,000 images to move quality control from slow manual inspection to fast, automated analysis.</p>
+                <p class="hero-desc">An AI system that looks at a picture of a steel surface and tells you whether it is defective, and where the defect is. Built as a B.Tech project by a team of three and published as a research paper at ICETS 2025.</p>
                 <div class="tech-used">
-                    <span>DJANGO</span><span>STREAMLIT</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>IMAGE PROCESSING</span><span>SQLITE</span>
+                    <span>PYTHON</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>TENSORFLOW</span><span>OPENCV</span><span>DJANGO</span><span>STREAMLIT</span><span>SQLITE</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#publications" class="btn btn-outline"><i class='bx bxs-file-pdf'></i> Read the Published Paper</a>
+                </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/steel-manufacturing/classifier-defective.png" alt="The steel defect classifier website showing an uploaded steel image and the result: the image is defective" loading="lazy">
+                    <figcaption>The classifier: upload a steel image and get an answer in one click.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">At a glance</p>
+                <h2 class="section-title">The Project in Numbers</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>12,997 images</strong><span>Steel images used to teach the AI, 7,095 with defects and 5,902 without</span></div>
+                    <div class="stat-card"><strong>88%</strong><span>Best accuracy, reached by the ResNet50 model</span></div>
+                    <div class="stat-card"><strong>3 AI models</strong><span>Working together to decide, outline and locate defects</span></div>
+                    <div class="stat-card"><strong>ICETS 2025</strong><span>Published as a research paper at an international conference</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why It Exists</h2>
+                <p class="desc">Steel is made under changing conditions: different raw materials, different processes and a changing environment. That is how flaws such as cracks, inclusions and uneven thickness creep in. If they are caught late, a whole batch can be wasted.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-time-five'></i><div><h5>Manual inspection is slow</h5><p>People checking steel by eye cannot keep up with a busy production line.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-search-alt'></i><div><h5>Small flaws get missed</h5><p>In our paper, traditional manual inspection had less than 70% accuracy, so tiny defects slip through.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Problems are found too late</h5><p>A defect found after delivery means rework, rejected products and unhappy customers.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-recycle'></i><div><h5>Waste adds up</h5><p>Every bad batch wastes material, energy and time, which hurts both profit and the environment.</p></div></div>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">Steel production is highly sensitive to changes in raw materials, process, and environment, which routinely introduces flaws like fractures, inclusions, and uneven thickness. Traditional manual inspection catches less than 70% of these defects and is too slow for high-volume manufacturing lines. This project builds an ML-based detection pipeline — combining CNN, ResUNet, and ResNet50 — trained on 12,997 real steel images to classify, segment, and localize defects automatically.</p>
-                <p class="desc">This project is also the subject of a published research paper, <a href="../index.html#publications">"Automated Detection of Steel Manufacturing Defects Using Machine Learning Techniques"</a>, presented at ICETS 2025.</p>
+                <p class="section-tag">What it does</p>
+                <h2 class="section-title">How It Works</h2>
+                <p class="desc">The idea is simple: show the system a picture of steel and let it do the inspecting. Three steps, from upload to answer.</p>
+
+                <div class="pillar-row">
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/classifier-defective.png" alt="Classifier showing an image marked as defective" loading="lazy">
+                        <figcaption>Upload an image, press Predict, and the result appears below.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/classifier-non-defective.png" alt="Classifier showing an image marked as non-defective" loading="lazy">
+                        <figcaption>A clean steel strip: the answer is non-defective.</figcaption>
+                    </figure>
+                </div>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 1 and 2</p>
+                        <h3>Upload and Get a Clear Answer</h3>
+                        <p class="q">Is this steel good or bad?</p>
+                        <p>Drag in a photo of a steel surface and press Predict. The website replies with a plain answer: defective or non-defective.</p>
+                        <ul>
+                            <li>Works with JPG, JPEG and PNG images</li>
+                            <li>The answer comes back in seconds</li>
+                            <li>No technical knowledge needed</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                <div class="shot-grid shot-phones">
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/dataset-samples.png" alt="Six sample steel strips from the dataset" loading="lazy">
+                        <figcaption>Steel strips from the dataset.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/defects-highlighted.png" alt="The same steel strips with the defect areas highlighted in green" loading="lazy">
+                        <figcaption>The AI marks the defect areas in green.</figcaption>
+                    </figure>
+                </div>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 3</p>
+                        <h3>See Where the Defect Is</h3>
+                        <p class="q">Where exactly is the problem?</p>
+                        <p>Beyond a yes or no, the system can outline the defect area on the steel surface, so a person knows exactly where to look.</p>
+                        <ul>
+                            <li>Defect areas highlighted in green on the image</li>
+                            <li>Helps teams decide on a fix quickly</li>
+                            <li>Defects can be cracks, inclusions or uneven thickness</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">Key Features</h2>
+                <p class="section-tag">The website</p>
+                <h2 class="section-title">A Simple Website Around the AI</h2>
+                <p class="desc">The AI sits inside a small website, so anyone can use it from a browser. It has everything a real product site needs: accounts, information pages and a contact form.</p>
+                <div class="shot-grid three">
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/signup.png" alt="Sign-up page with username and password fields" loading="lazy">
+                        <figcaption>Sign up: create an account with a username and a strong password.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/login.png" alt="Login page with username and password fields" loading="lazy">
+                        <figcaption>Login: sign in to use the classifier.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/about.png" alt="About Us page describing the team and its services" loading="lazy">
+                        <figcaption>About: who we are and what we do.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/services.png" alt="Services page listing defect identification and quality assurance" loading="lazy">
+                        <figcaption>Services: what the platform offers.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/contact.png" alt="Contact Us page with name, email, phone and message fields" loading="lazy">
+                        <figcaption>Contact: visitors can send a message to the team.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">How It Was Built</h2>
+                <p class="desc">From raw images to a working website, in five steps.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Binary Defect Classification</h5><p>A CNN model classifies steel images as defective or non-defective with 87% accuracy.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Image Segmentation</h5><p>ResUNet segments defect regions using Run-Length Encoding (RLE) for precise mask generation.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Defect Localization</h5><p>ResNet50 pinpoints the exact location of a defect on the steel surface with 88% accuracy.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Streamlit Upload Interface</h5><p>A simple web interface lets manufacturers upload an image and get an instant defect analysis.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Large-Scale Training Data</h5><p>Trained and validated on 12,997 labeled steel images spanning varied lighting, surface types, and textures.</p></div>
-                    </div>
+                    <div class="feature-item"><i class='bx bx-images'></i><div><h5>1. Collect the images</h5><p>12,997 steel images, 7,095 with defects and 5,902 without. Most defective images had one defect, some had two, and one had three.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-slider-alt'></i><div><h5>2. Prepare the images</h5><p>Images were resized and cleaned, and defect areas were marked in a compact format called Run Length Encoding, so the AI could learn exactly where flaws are.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>3. Teach three AI models</h5><p>One model decides defective or not, one outlines the defect area, and one pinpoints where the defect is.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-bar-chart-alt-2'></i><div><h5>4. Check how well they work</h5><p>Each model was tested on images it had never seen, then compared on accuracy, precision and recall.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-world'></i><div><h5>5. Put it on a website</h5><p>The best model was connected to a simple website so anyone can upload an image and get an answer.</p></div></div>
+                </div>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/steel-manufacturing/approach.png" alt="Proposed approach: data source, data collection, data processing, categorising defects with CNN, ResNet50 and ResUNet, then handing results to the manufacturer" loading="lazy">
+                    <figcaption>The project approach, from data to the manufacturer.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Results</p>
+                <h2 class="section-title">How Well Does It Work?</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>88%</strong><span>ResNet50: the most accurate, and the model that pinpoints where a defect is</span></div>
+                    <div class="stat-card"><strong>87%</strong><span>CNN: close behind, and the most balanced between defective and clean images</span></div>
+                    <div class="stat-card"><strong>76%</strong><span>ResUNet: built to outline defect areas, so it scores lower on the yes or no test</span></div>
+                </div>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/steel-manufacturing/model-comparison.png" alt="Chart comparing precision, recall, F1 score and accuracy of ResNet50, ResUNet and CNN" loading="lazy">
+                    <figcaption>The three models compared on precision, recall, F1 score and accuracy.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Why it matters</p>
+                <h2 class="section-title">Impact</h2>
+                <p class="desc">Catching defects early changes what happens on the factory floor.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-money'></i><div><h5>Lower costs</h5><p>Less rework, fewer rejected batches and less downtime.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-check-shield'></i><div><h5>Consistent quality</h5><p>Every image is checked the same way, so only good steel reaches customers.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-user-voice'></i><div><h5>People do higher-value work</h5><p>Skilled staff move from repetitive checking to improving the process.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-leaf'></i><div><h5>Less waste</h5><p>Early detection means less wasted material and a smaller carbon footprint, supporting sustainable manufacturing.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-refresh'></i><div><h5>Keeps improving</h5><p>The models can be retrained with new production data so they stay accurate over time.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-expand'></i><div><h5>Ready to grow</h5><p>Built from open-source tools, so it can scale to more production lines and higher-resolution images.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">What comes next</p>
+                <h2 class="section-title">Future Work</h2>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-transfer'></i><div><h5>Transfer learning</h5><p>Start from models already trained on huge image collections, so rare defects can be spotted with less data and time.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-bolt-circle'></i><div><h5>Real-time checking</h5><p>Use graphics-card acceleration so defects are flagged instantly on a live production line.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-show'></i><div><h5>Explainable AI</h5><p>Show which parts of an image led to a decision, so engineers can trust and improve the system.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-bulb'></i><div><h5>Adaptive lighting</h5><p>Adjust lighting automatically so photos stay clear in changing conditions and fewer defects are missed.</p></div></div>
                 </div>
             </div>
         </section>
@@ -75,50 +217,21 @@
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
                 <div class="skills-grid">
-                    <div class="skill-tile"><i class='bx bxl-django' style="color:#2CA55D"></i><p>Django</p></div>
-                    <div class="skill-tile"><i class='bx bxl-python' style="color:#FF4B4B"></i><p>Streamlit</p></div>
                     <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                    <div class="skill-tile"><i class='bx bx-brain' style="color:#FF6F00"></i><p>TensorFlow</p></div>
+                    <div class="skill-tile"><i class='bx bx-network-chart' style="color:#D00000"></i><p>Keras</p></div>
+                    <div class="skill-tile"><i class='bx bx-sitemap' style="color:#EE4C2C"></i><p>PyTorch</p></div>
+                    <div class="skill-tile"><i class='bx bx-camera' style="color:#5C3EE8"></i><p>OpenCV</p></div>
+                    <div class="skill-tile"><i class='bx bx-layer' style="color:#38BDF8"></i><p>ResNet50 and ResUNet</p></div>
+                    <div class="skill-tile"><i class='bx bxl-django' style="color:#2CA55D"></i><p>Django</p></div>
+                    <div class="skill-tile"><i class='bx bx-bar-chart-alt-2' style="color:#FE4B4B"></i><p>Streamlit</p></div>
                     <div class="skill-tile"><i class='bx bxs-data' style="color:#4C8EDA"></i><p>SQLite</p></div>
+                    <div class="skill-tile"><i class='bx bx-cloud' style="color:#F9AB00"></i><p>Google Colab</p></div>
                 </div>
+                <p class="desc" style="margin-top:2rem">Built by Sakina Mala, Pranjal Parmar and Keyush Thumar as a B.Tech (Information Technology) project at K. J. Somaiya Institute of Technology, University of Mumbai (2024-25), under the guidance of Dr. Mansing Rathod. The work is also published as "Automated Detection of Steel Manufacturing Defects Using Machine Learning Techniques" at ICETS 2025.</p>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">System Design</p>
-                <h2 class="section-title">Architecture</h2>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-data'></i>
-                        <div><h5>1. Data Ingestion</h5><p>12,997 steel images collected and labeled as defective / non-defective.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-git-branch'></i>
-                        <div><h5>2. Classification</h5><p>CNN model classifies each image as defective or non-defective.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-layer'></i>
-                        <div><h5>3. Segmentation</h5><p>ResUNet segments the defect region using Run-Length Encoding.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-target-lock'></i>
-                        <div><h5>4. Localization</h5><p>ResNet50 detects the precise defect location for manufacturer review via the Streamlit interface.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-inner">
-                <p class="section-tag">Documentation</p>
-                <h2 class="section-title">Screenshots &amp; Development Phases</h2>
-                <div class="placeholder-card">
-                    <i class='bx bx-image-alt'></i>
-                    <h4>Screenshots and phase-by-phase breakdown coming soon</h4>
-                    <p>Product screenshots and a detailed development timeline for this project are being added.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">

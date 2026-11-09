@@ -1466,3 +1466,13 @@ p a:hover{
     color: var(--text-muted);
 }
 .diagram-fig.arch-fig{ max-width: 70rem; }
+
+/* Steel Manufacturing Defects page */
+.shot-grid.shot-stack{ grid-template-columns: 1fr; margin-top: 0; }
+.shot-grid.three{ grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px){
+    .shot-grid.three{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px){
+    .shot-grid.three{ grid-template-columns: 1fr; }
+}
