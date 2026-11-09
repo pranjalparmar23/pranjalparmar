@@ -21,17 +21,17 @@
             <div class="section-inner">
                 <span class="category-badge">AI-ML</span>
                 <h1>Steel Manufacturing Defects</h1>
-                <p class="hero-desc">An AI system that looks at a picture of a steel surface and tells you whether it is defective, and where the defect is. Built as a B.Tech project by a team of three and published as a research paper at ICETS 2025.</p>
+                <p class="hero-desc">A deep learning project that looks at a picture of a steel surface and tells you whether it is defective. Three models were trained and compared, and the best one powers a Streamlit classifier inside a Django website. Built as a B.Tech project by a team of three and published as a research paper at ICETS 2025.</p>
                 <div class="tech-used">
-                    <span>PYTHON</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>TENSORFLOW</span><span>OPENCV</span><span>DJANGO</span><span>STREAMLIT</span><span>SQLITE</span>
+                    <span>PYTHON</span><span>RESNET50</span><span>CNN</span><span>RESUNET</span><span>TENSORFLOW</span><span>PYTORCH</span><span>OPENCV</span><span>STREAMLIT</span><span>DJANGO</span><span>SQLITE</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/pranjalparmar23/steel-manufacturing-defects" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#publications" class="btn btn-outline"><i class='bx bxs-file-pdf'></i> Read the Published Paper</a>
                 </div>
                 <figure class="shot shot-hero">
-                    <img src="../images/steel-manufacturing/classifier-defective.png" alt="The steel defect classifier website showing an uploaded steel image and the result: the image is defective" loading="lazy">
-                    <figcaption>The classifier: upload a steel image and get an answer in one click.</figcaption>
+                    <img src="../images/steel-manufacturing/classifier-defective.png" alt="The Streamlit classifier showing an uploaded steel image and the result: the image is defective" loading="lazy">
+                    <figcaption>The Streamlit classifier: upload a steel image and get an answer in one click.</figcaption>
                 </figure>
             </div>
         </section>
@@ -41,9 +41,9 @@
                 <p class="section-tag">At a glance</p>
                 <h2 class="section-title">The Project in Numbers</h2>
                 <div class="stat-grid">
-                    <div class="stat-card"><strong>12,997 images</strong><span>Steel images used to teach the AI, 7,095 with defects and 5,902 without</span></div>
+                    <div class="stat-card"><strong>12,997 images</strong><span>Steel images used for training and testing, 7,095 with defects and 5,902 without</span></div>
                     <div class="stat-card"><strong>88%</strong><span>Best accuracy, reached by the ResNet50 model</span></div>
-                    <div class="stat-card"><strong>3 AI models</strong><span>Working together to decide, outline and locate defects</span></div>
+                    <div class="stat-card"><strong>3 models</strong><span>ResNet50, CNN and ResUNet, trained and compared</span></div>
                     <div class="stat-card"><strong>ICETS 2025</strong><span>Published as a research paper at an international conference</span></div>
                 </div>
             </div>
@@ -67,16 +67,16 @@
             <div class="section-inner">
                 <p class="section-tag">What it does</p>
                 <h2 class="section-title">How It Works</h2>
-                <p class="desc">The idea is simple: show the system a picture of steel and let it do the inspecting. Three steps, from upload to answer.</p>
+                <p class="desc">The idea is simple: show the classifier a picture of steel and let it do the inspecting.</p>
 
                 <div class="pillar-row">
                 <div class="shot-grid shot-stack">
                     <figure class="shot">
-                        <img src="../images/steel-manufacturing/classifier-defective.png" alt="Classifier showing an image marked as defective" loading="lazy">
+                        <img src="../images/steel-manufacturing/classifier-defective.png" alt="Streamlit classifier showing an image marked as defective" loading="lazy">
                         <figcaption>Upload an image, press Predict, and the result appears below.</figcaption>
                     </figure>
                     <figure class="shot">
-                        <img src="../images/steel-manufacturing/classifier-non-defective.png" alt="Classifier showing an image marked as non-defective" loading="lazy">
+                        <img src="../images/steel-manufacturing/classifier-non-defective.png" alt="Streamlit classifier showing an image marked as non-defective" loading="lazy">
                         <figcaption>A clean steel strip: the answer is non-defective.</figcaption>
                     </figure>
                 </div>
@@ -84,34 +84,11 @@
                         <p class="section-tag">Step 1 and 2</p>
                         <h3>Upload and Get a Clear Answer</h3>
                         <p class="q">Is this steel good or bad?</p>
-                        <p>Drag in a photo of a steel surface and press Predict. The website replies with a plain answer: defective or non-defective.</p>
+                        <p>The classifier page is built with Streamlit. Drag in a photo of a steel surface, press Predict, and it replies with a plain answer: defective or non-defective.</p>
                         <ul>
-                            <li>Works with JPG, JPEG and PNG images</li>
-                            <li>The answer comes back in seconds</li>
-                            <li>No technical knowledge needed</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="pillar-row">
-                <div class="shot-grid shot-phones">
-                    <figure class="shot">
-                        <img src="../images/steel-manufacturing/dataset-samples.png" alt="Six sample steel strips from the dataset" loading="lazy">
-                        <figcaption>Steel strips from the dataset.</figcaption>
-                    </figure>
-                    <figure class="shot">
-                        <img src="../images/steel-manufacturing/defects-highlighted.png" alt="The same steel strips with the defect areas highlighted in green" loading="lazy">
-                        <figcaption>The AI marks the defect areas in green.</figcaption>
-                    </figure>
-                </div>
-                    <div class="pillar-copy">
-                        <p class="section-tag">Step 3</p>
-                        <h3>See Where the Defect Is</h3>
-                        <p class="q">Where exactly is the problem?</p>
-                        <p>Beyond a yes or no, the system can outline the defect area on the steel surface, so a person knows exactly where to look.</p>
-                        <ul>
-                            <li>Defect areas highlighted in green on the image</li>
-                            <li>Helps teams decide on a fix quickly</li>
-                            <li>Defects can be cracks, inclusions or uneven thickness</li>
+                            <li>Accepts JPG, JPEG and PNG images</li>
+                            <li>The answer appears right below the image</li>
+                            <li>Behind the scenes it uses the trained ResNet50 model</li>
                         </ul>
                     </div>
                 </div>
@@ -121,8 +98,8 @@
         <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">The website</p>
-                <h2 class="section-title">A Simple Website Around the AI</h2>
-                <p class="desc">The AI sits inside a small website, so anyone can use it from a browser. It has everything a real product site needs: accounts, information pages and a contact form.</p>
+                <h2 class="section-title">A Django Website With a Streamlit Classifier</h2>
+                <p class="desc">The project is a small website built with Django, which handles sign-up, login, the information pages and the contact form, with a SQLite database behind it. The classifier page you saw above is a Streamlit app that sits inside the site.</p>
                 <div class="shot-grid three">
                     <figure class="shot">
                         <img src="../images/steel-manufacturing/signup.png" alt="Sign-up page with username and password fields" loading="lazy">
@@ -150,40 +127,176 @@
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">The build journey</p>
-                <h2 class="section-title">How It Was Built</h2>
-                <p class="desc">From raw images to a working website, in five steps.</p>
+                <p class="section-tag">The models</p>
+                <h2 class="section-title">Three Models, Three Jobs</h2>
+                <p class="desc">Instead of betting on one approach, the team trained three different deep learning models on the same images and compared them. Each is described below, with its test results. "Group 0" and "Group 1" are the two classes the models learned to separate.</p>
+                <div class="model-card">
+                    <div class="model-top"><span class="model-badge">Decides yes or no</span><span class="model-acc">87% accuracy</span></div>
+                    <h3>CNN (Convolutional Neural Network)</h3>
+                    <p class="q">The balanced all-rounder</p>
+                    <p class="model-lead">A CNN is the classic way for a computer to recognise images. Its first layers pick out simple things like edges and textures, its middle layers combine them into bigger patterns, and its last layers decide which group the image belongs to.</p>
+                    <ul>
+                        <li>Used as the benchmark model: simple, fast and dependable</li>
+                        <li>Scores were similar in both groups, so it does not lean toward one answer</li>
+                        <li>Can be outperformed by deeper models on very subtle patterns</li>
+                    </ul>
+                    <div class="table-wrap"><table class="report-table"><thead><tr><th>Group</th><th>Precision</th><th>Recall</th><th>F1 score</th><th>Images tested</th></tr></thead><tbody><tr><td>0</td><td>0.88</td><td>0.84</td><td>0.86</td><td>879</td></tr><tr><td>1</td><td>0.87</td><td>0.90</td><td>0.89</td><td>1,071</td></tr></tbody></table></div>
+                </div>
+                <div class="model-card">
+                    <div class="model-top"><span class="model-badge">Pinpoints defects</span><span class="model-acc">88% accuracy</span></div>
+                    <h3>ResNet50 (Residual Network, 50 layers)</h3>
+                    <p class="q">The most accurate model, used in the website</p>
+                    <p class="model-lead">ResNet50 is a 50-layer network with shortcut connections, so information can skip ahead instead of getting lost in a very deep stack. It starts from a version already trained on millions of everyday photos, then learns what steel defects look like on top of that.</p>
+                    <ul>
+                        <li>Handles noisy images and complicated surface textures well</li>
+                        <li>The Streamlit classifier loads this model to give its answer</li>
+                        <li>Photos are resized to a fixed size and scaled before the model sees them</li>
+                    </ul>
+                    <div class="table-wrap"><table class="report-table"><thead><tr><th>Group</th><th>Precision</th><th>Recall</th><th>F1 score</th><th>Images tested</th></tr></thead><tbody><tr><td>0</td><td>1.00</td><td>0.73</td><td>0.84</td><td>882</td></tr><tr><td>1</td><td>0.82</td><td>1.00</td><td>0.90</td><td>1,054</td></tr></tbody></table></div>
+                </div>
+                <div class="model-card">
+                    <div class="model-top"><span class="model-badge">Outlines the defect</span><span class="model-acc">76% accuracy</span></div>
+                    <h3>ResUNet (Residual U-Net)</h3>
+                    <p class="q">The model that draws the defect area</p>
+                    <p class="model-lead">ResUNet joins two ideas. A ResNet half studies the image and collects what matters, and a U-Net half rebuilds the picture at full size, so the output is a mask that paints over the defective area. Defect locations were stored in a compact format called Run Length Encoding.</p>
+                    <ul>
+                        <li>Built for outlining defects, not just giving a yes or no</li>
+                        <li>Leans toward catching defects, which is why its recall is high for group 1</li>
+                        <li>Its lower overall score reflects that different job</li>
+                    </ul>
+                    <div class="table-wrap"><table class="report-table"><thead><tr><th>Group</th><th>Precision</th><th>Recall</th><th>F1 score</th><th>Images tested</th></tr></thead><tbody><tr><td>0</td><td>0.90</td><td>0.52</td><td>0.66</td><td>1,178</td></tr><tr><td>1</td><td>0.71</td><td>0.95</td><td>0.81</td><td>1,422</td></tr></tbody></table></div>
+                <div class="shot-grid shot-phones">
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/dataset-samples.png" alt="Six sample steel strips from the dataset" loading="lazy">
+                        <figcaption>Steel strips from the dataset.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/steel-manufacturing/defects-highlighted.png" alt="The same steel strips with the defect areas highlighted in green" loading="lazy">
+                        <figcaption>ResUNet output while developing: defect areas in green.</figcaption>
+                    </figure>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Reading the scores</p>
+                <h2 class="section-title">What the Numbers Mean</h2>
+                <p class="desc">Four simple measures were used to judge each model.</p>
                 <div class="feature-list">
-                    <div class="feature-item"><i class='bx bx-images'></i><div><h5>1. Collect the images</h5><p>12,997 steel images, 7,095 with defects and 5,902 without. Most defective images had one defect, some had two, and one had three.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-slider-alt'></i><div><h5>2. Prepare the images</h5><p>Images were resized and cleaned, and defect areas were marked in a compact format called Run Length Encoding, so the AI could learn exactly where flaws are.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>3. Teach three AI models</h5><p>One model decides defective or not, one outlines the defect area, and one pinpoints where the defect is.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-bar-chart-alt-2'></i><div><h5>4. Check how well they work</h5><p>Each model was tested on images it had never seen, then compared on accuracy, precision and recall.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-world'></i><div><h5>5. Put it on a website</h5><p>The best model was connected to a simple website so anyone can upload an image and get an answer.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-target-lock'></i><div><h5>Accuracy</h5><p>Out of all images, how many were labelled correctly.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-check-double'></i><div><h5>Precision</h5><p>When the model says "defective", how often it is right.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-radar'></i><div><h5>Recall</h5><p>Out of all truly defective images, how many the model caught.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-git-compare'></i><div><h5>F1 score</h5><p>A single score that balances precision and recall, useful when one group has fewer images than the other.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Results</p>
+                <h2 class="section-title">How Well Does It Work?</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>88%</strong><span>ResNet50: the most accurate</span></div>
+                    <div class="stat-card"><strong>87%</strong><span>CNN: close behind and the most balanced</span></div>
+                    <div class="stat-card"><strong>76%</strong><span>ResUNet: built to outline defects, so it scores lower on the yes or no test</span></div>
                 </div>
                 <figure class="diagram-fig arch-fig">
-                    <img src="../images/steel-manufacturing/approach.png" alt="Proposed approach: data source, data collection, data processing, categorising defects with CNN, ResNet50 and ResUNet, then handing results to the manufacturer" loading="lazy">
-                    <figcaption>The project approach, from data to the manufacturer.</figcaption>
+                    <img src="../images/steel-manufacturing/model-comparison.png" alt="Chart comparing precision, recall, F1 score and accuracy of ResNet50, ResUNet and CNN" loading="lazy">
+                    <figcaption>Fig 5.2.1: the three models compared on precision, recall, F1 score and accuracy.</figcaption>
+                </figure>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/steel-manufacturing/accuracy-comparison.png" alt="Chart comparing the accuracy of ResNet50, ResUNet and CNN" loading="lazy">
+                    <figcaption>Fig 5.2.2: accuracy of each model. ResNet50 is highest at 88%, then CNN at 87% and ResUNet at 76%.</figcaption>
                 </figure>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Results</p>
-                <h2 class="section-title">How Well Does It Work?</h2>
-                <div class="stat-grid">
-                    <div class="stat-card"><strong>88%</strong><span>ResNet50: the most accurate, and the model that pinpoints where a defect is</span></div>
-                    <div class="stat-card"><strong>87%</strong><span>CNN: close behind, and the most balanced between defective and clean images</span></div>
-                    <div class="stat-card"><strong>76%</strong><span>ResUNet: built to outline defect areas, so it scores lower on the yes or no test</span></div>
-                </div>
+                <p class="section-tag">Architecture</p>
+                <h2 class="section-title">How the System Fits Together</h2>
+                <p class="desc">The project follows one path from raw images to a decision a manufacturer can use. Images are collected, prepared, sorted by the models, and the result goes to the manufacturer.</p>
                 <figure class="diagram-fig arch-fig">
-                    <img src="../images/steel-manufacturing/model-comparison.png" alt="Chart comparing precision, recall, F1 score and accuracy of ResNet50, ResUNet and CNN" loading="lazy">
-                    <figcaption>The three models compared on precision, recall, F1 score and accuracy.</figcaption>
+                    <img src="../images/steel-manufacturing/approach.png" alt="Proposed approach: data source, data collection, data processing, categorising defects with CNN, ResNet50 and ResUNet, then handing results to the manufacturer" loading="lazy">
+                    <figcaption>The project approach: 12,997 steel images flow through data processing and the three models, and defects are reported to the manufacturer.</figcaption>
                 </figure>
+                <p class="desc" style="margin-top:2rem">Three more diagrams, each explained below, show the same system from different angles.</p>
+                <div class="pillar-row">
+                    <figure class="diagram-fig">
+                        <img src="../images/steel-manufacturing/use-case.png" alt="Use case diagram: a data scientist gathers data, chooses algorithms and trains models, and a web developer builds the website and integrates the model" loading="lazy">
+                        <figcaption>Use case diagram.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Diagram 2</p>
+                        <h3>Who Does What</h3>
+                        <p class="q">Which roles built the system?</p>
+                        <p>Two roles shared the work. The data scientist gathers the data, decides the algorithms and how to validate them, and trains and tests the models. The web developer builds the website, connects the finished model to it and uses it on new data.</p>
+                        <ul>
+                            <li>Data scientist: data, algorithms, training and testing</li>
+                            <li>Web developer: website and model integration</li>
+                            <li>Together they turn a trained model into a working web app</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                    <figure class="diagram-fig tall">
+                        <img src="../images/steel-manufacturing/activity.jpg" alt="Activity diagram of the workflow from collecting images to showing the prediction" loading="lazy">
+                        <figcaption>Activity diagram.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Diagram 3</p>
+                        <h3>The Workflow</h3>
+                        <p class="q">What happens, step by step?</p>
+                        <p>The workflow starts with collecting and preparing images, then splitting them for training, validation and testing. ResNet50 is built and trained, and its accuracy is checked. If the accuracy is not good enough, the model is tuned and retrained. Once it passes, it is saved and connected to the Streamlit app, where an uploaded image gets its prediction.</p>
+                        <ul>
+                            <li>Images are resized and normalised first</li>
+                            <li>A model is only saved once its accuracy is acceptable</li>
+                            <li>The saved model is plugged into the Streamlit classifier</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pillar-row">
+                    <figure class="diagram-fig">
+                        <img src="../images/steel-manufacturing/sequence.png" alt="Sequence diagram of uploading a picture, training the model, evaluating it and delivering the trained model" loading="lazy">
+                        <figcaption>Sequence diagram.</figcaption>
+                    </figure>
+                    <div class="pillar-copy">
+                        <p class="section-tag">Diagram 4</p>
+                        <h3>Training and Delivery</h3>
+                        <p class="q">How does a model get trained and handed over?</p>
+                        <p>A picture is uploaded and the processed data goes to the training service, which trains the model. The data then goes to the evaluation service, which scores it and sends the results back. Only then is the trained model delivered.</p>
+                        <ul>
+                            <li>Training and evaluation are separate steps</li>
+                            <li>Every model is checked before it is delivered</li>
+                            <li>The same flow lets the models be retrained with new data</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">How It Was Built</h2>
+                <p class="desc">From first reading to a published paper, in five steps over roughly ten months.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-images'></i><div><h5>1. Collect the images</h5><p>12,997 steel images, 7,095 with defects and 5,902 without. Most defective images had one defect, some had two, and one had three.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-slider-alt'></i><div><h5>2. Prepare the images</h5><p>Images were resized and normalised, and the data was split into training, validation and test sets.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>3. Train three models</h5><p>CNN, ResNet50 and ResUNet were trained, tuned and retrained until their accuracy was acceptable.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-bar-chart-alt-2'></i><div><h5>4. Check the results</h5><p>Each model was tested on images it had never seen and compared on accuracy, precision and recall.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-world'></i><div><h5>5. Build the website</h5><p>A Django site was built around a Streamlit classifier that loads the ResNet50 model, with SQLite for stored data.</p></div></div>
+                </div>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/steel-manufacturing/project-timeline.png" alt="Project timeline from July to April covering literature survey, research papers, technology choice, model development, frontend, database, accuracy updates and publication" loading="lazy">
+                    <figcaption>Fig 3.7.1: the project timeline, from the literature survey in July to the published paper in April.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Why it matters</p>
                 <h2 class="section-title">Impact</h2>
@@ -194,20 +307,7 @@
                     <div class="feature-item"><i class='bx bx-user-voice'></i><div><h5>People do higher-value work</h5><p>Skilled staff move from repetitive checking to improving the process.</p></div></div>
                     <div class="feature-item"><i class='bx bx-leaf'></i><div><h5>Less waste</h5><p>Early detection means less wasted material and a smaller carbon footprint, supporting sustainable manufacturing.</p></div></div>
                     <div class="feature-item"><i class='bx bx-refresh'></i><div><h5>Keeps improving</h5><p>The models can be retrained with new production data so they stay accurate over time.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-expand'></i><div><h5>Ready to grow</h5><p>Built from open-source tools, so it can scale to more production lines and higher-resolution images.</p></div></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">What comes next</p>
-                <h2 class="section-title">Future Work</h2>
-                <div class="feature-list">
-                    <div class="feature-item"><i class='bx bx-transfer'></i><div><h5>Transfer learning</h5><p>Start from models already trained on huge image collections, so rare defects can be spotted with less data and time.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-bolt-circle'></i><div><h5>Real-time checking</h5><p>Use graphics-card acceleration so defects are flagged instantly on a live production line.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-show'></i><div><h5>Explainable AI</h5><p>Show which parts of an image led to a decision, so engineers can trust and improve the system.</p></div></div>
-                    <div class="feature-item"><i class='bx bx-bulb'></i><div><h5>Adaptive lighting</h5><p>Adjust lighting automatically so photos stay clear in changing conditions and fewer defects are missed.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-expand'></i><div><h5>Ready to grow</h5><p>Built from free, open-source tools, so it can scale to more production lines and higher-resolution images.</p></div></div>
                 </div>
             </div>
         </section>
@@ -216,17 +316,27 @@
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
-                <div class="skills-grid">
-                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
-                    <div class="skill-tile"><i class='bx bx-brain' style="color:#FF6F00"></i><p>TensorFlow</p></div>
-                    <div class="skill-tile"><i class='bx bx-network-chart' style="color:#D00000"></i><p>Keras</p></div>
-                    <div class="skill-tile"><i class='bx bx-sitemap' style="color:#EE4C2C"></i><p>PyTorch</p></div>
-                    <div class="skill-tile"><i class='bx bx-camera' style="color:#5C3EE8"></i><p>OpenCV</p></div>
-                    <div class="skill-tile"><i class='bx bx-layer' style="color:#38BDF8"></i><p>ResNet50 and ResUNet</p></div>
-                    <div class="skill-tile"><i class='bx bxl-django' style="color:#2CA55D"></i><p>Django</p></div>
-                    <div class="skill-tile"><i class='bx bx-bar-chart-alt-2' style="color:#FE4B4B"></i><p>Streamlit</p></div>
-                    <div class="skill-tile"><i class='bx bxs-data' style="color:#4C8EDA"></i><p>SQLite</p></div>
-                    <div class="skill-tile"><i class='bx bx-cloud' style="color:#F9AB00"></i><p>Google Colab</p></div>
+                <p class="desc">Everything is open source, so there is no licensing cost. Here is what each tool did in this project.</p>
+                <h3 class="shot-subtitle">Building and training the models</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bxl-python'></i><div><h5>Python</h5><p>The language behind the whole project: data preparation, model training and the web apps.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>TensorFlow and Keras</h5><p>Built and trained the ResNet50 model, and load it inside the Streamlit classifier.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-chip'></i><div><h5>PyTorch</h5><p>Used to train the CNN and ResUNet models, with GPU support to speed training up.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-camera'></i><div><h5>OpenCV and scikit-image</h5><p>Image processing: reading, resizing, cleaning and preparing steel images.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-math'></i><div><h5>NumPy, pandas and scikit-learn</h5><p>Handling the image data, splitting it for training and testing, and producing the classification reports.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-line-chart'></i><div><h5>Matplotlib and Seaborn</h5><p>Drew the comparison charts and the defect highlights.</p></div></div>
+                </div>
+                <h3 class="shot-subtitle">The website</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-bar-chart-alt-2'></i><div><h5>Streamlit</h5><p>The classifier page: upload an image, press Predict and see the result.</p></div></div>
+                    <div class="feature-item"><i class='bx bxl-django'></i><div><h5>Django</h5><p>The website around it: sign-up, login, the About, Services and Contact pages.</p></div></div>
+                    <div class="feature-item"><i class='bx bxs-data'></i><div><h5>SQLite</h5><p>A lightweight database that stores user accounts and contact messages.</p></div></div>
+                </div>
+                <h3 class="shot-subtitle">Tools and platforms</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-cloud'></i><div><h5>Google Colab</h5><p>Free cloud notebooks with graphics cards, used to train the models faster.</p></div></div>
+                    <div class="feature-item"><i class='bx bxs-edit-alt'></i><div><h5>Visual Studio Code</h5><p>The editor used to write and debug the website and scripts.</p></div></div>
+                    <div class="feature-item"><i class='bx bxl-github'></i><div><h5>Git and GitHub</h5><p>Version control for the code and the trained models.</p></div></div>
                 </div>
                 <p class="desc" style="margin-top:2rem">Built by Sakina Mala, Pranjal Parmar and Keyush Thumar as a B.Tech (Information Technology) project at K. J. Somaiya Institute of Technology, University of Mumbai (2024-25), under the guidance of Dr. Mansing Rathod. The work is also published as "Automated Detection of Steel Manufacturing Defects Using Machine Learning Techniques" at ICETS 2025.</p>
             </div>

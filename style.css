@@ -1476,3 +1476,91 @@ p a:hover{
 @media (max-width: 700px){
     .shot-grid.three{ grid-template-columns: 1fr; }
 }
+
+/* Model cards and report tables (Steel Manufacturing Defects) */
+.model-card{
+    margin-top: 3rem;
+    padding: 2.6rem;
+    background: var(--surface);
+    border: .1rem solid var(--border-color);
+    border-radius: 1.4rem;
+}
+.model-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.model-badge{
+    padding: .4rem 1.4rem;
+    border-radius: 5rem;
+    background: rgba(124,92,255,.14);
+    color: var(--accent-2);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.model-acc{
+    font-family: "Sora", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.model-card h3{
+    font-family: "Sora", sans-serif;
+    font-size: 2.2rem;
+    color: var(--white-color);
+    margin-bottom: .6rem;
+}
+.model-card .q{ color: var(--accent-2); font-style: italic; margin-bottom: 1rem; font-size: 1.5rem; }
+.model-lead{ font-size: 1.55rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 1.2rem; }
+.model-card ul{ margin-bottom: 1.6rem; }
+.model-card li{
+    position: relative;
+    padding-left: 1.6rem;
+    margin-bottom: .5rem;
+    font-size: 1.45rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+.model-card li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background: var(--accent-2);
+}
+.table-wrap{ overflow-x: auto; }
+.report-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.35rem;
+}
+.report-table th, .report-table td{
+    text-align: left;
+    padding: 1rem 1.2rem;
+    border-bottom: .1rem solid var(--border-color);
+    color: var(--text-muted);
+}
+.report-table th{ color: var(--white-color); font-weight: 600; }
+.report-table td:first-child{ color: var(--white-color); }
+.model-card .shot-grid{ margin-top: 2rem; }
+.shot-grid.three.arch-three{ margin-top: 2.5rem; align-items: start; }
+.shot-grid.arch-three .diagram-fig{ margin-top: 0; }
+.shot-grid.arch-three .diagram-fig img{ background: #fff; }
+.shot-grid.arch-three .diagram-fig figcaption{ font-size: 1.2rem; }
+
+.diagram-fig.tall img{
+    width: auto;
+    max-width: 100%;
+    max-height: 62rem;
+    margin: 0 auto;
+}
+.section .shot-subtitle + .feature-list{ margin-top: 1.6rem; }
