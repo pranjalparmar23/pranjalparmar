@@ -21,74 +21,285 @@
             <div class="section-inner">
                 <span class="category-badge">AI-ML</span>
                 <h1>Brain Tumor Detection System</h1>
-                <p class="hero-desc">A web-based Brain Tumor Detection System leveraging a Convolutional Neural Network model, allowing users to upload MRI scan images and personal details via a web interface for automated classification.</p>
+                <p class="hero-desc">A web-based system that looks at an MRI scan of the brain and tells you whether a tumor is present. A deep learning model (a CNN) does the checking, and a website lets people sign up, upload a scan and see the result. Built as a third-year B.Tech minor project by a team of four.</p>
                 <div class="tech-used">
-                    <span>MERN</span><span>CNN</span><span>IMAGE PROCESSING</span><span>TAILWIND CSS</span>
+                    <span>PYTHON</span><span>CNN</span><span>TENSORFLOW</span><span>KERAS</span><span>FLASK</span><span>OPENCV</span><span>REACT</span><span>MONGODB</span><span>EXPRESS</span><span>NODE.JS</span><span>BOOTSTRAP</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/Vaishali021103/BrainTumor-Classification-DL" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
                 </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/brain-tumor/detection.png" alt="The brain tumor classifier page with an uploaded MRI scan and the result: Yes Brain Tumor" loading="lazy">
+                    <figcaption>The detection page: upload an MRI scan and get a result.</figcaption>
+                </figure>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">This project presents a web-based Brain Tumor Detection System leveraging a Convolutional Neural Network model to classify MRI scans. The system allows users to upload MRI scan images along with personal details via a web interface, making an ML-driven diagnostic aid accessible through a standard browser rather than specialized software.</p>
+                <p class="section-tag">At a glance</p>
+                <h2 class="section-title">The Project in Numbers</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>98.25%</strong><span>Accuracy of the CNN model on test images</span></div>
+                    <div class="stat-card"><strong>10 epochs</strong><span>Training rounds the model needed</span></div>
+                    <div class="stat-card"><strong>2 results</strong><span>Tumor present or no tumor, for every scan</span></div>
+                    <div class="stat-card"><strong>13 weeks</strong><span>From choosing the topic to the final presentation</span></div>
+                </div>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">Key Features</h2>
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why It Exists</h2>
+                <p class="desc">Brain tumors are hard to spot early, because early symptoms are vague and reading a scan takes specialised skill. This project explores how a computer can help by giving a quick first check on an MRI scan. It is a learning project and a decision aid, not a medical device, and a doctor always makes the diagnosis.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>MRI Scan Upload</h5><p>A simple interface for uploading MRI scan images directly from the browser.</p></div>
+                    <div class="feature-item"><i class='bx bx-time-five'></i><div><h5>Early detection is hard</h5><p>Tumors often show no clear symptoms in their early stages, and the scan reading can be slow and varies from one person to another.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-map-pin'></i><div><h5>Expertise is not everywhere</h5><p>Specialist diagnostic skills are limited in remote and underserved areas. A website puts a first check within reach of more people.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-bullseye'></i><div><h5>Accuracy matters</h5><p>Missing a tumor or raising a false alarm both have real costs, so the model was tested carefully on scans it had not seen.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-lock-alt'></i><div><h5>Patient data is sensitive</h5><p>Privacy was set as a goal from the start. Accounts sit behind sign-in with MongoDB authentication, and patient details are kept with each result.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">What it does</p>
+                <h2 class="section-title">How It Works</h2>
+                <p class="desc">The idea is simple: give the model an MRI scan and let it check for signs of a tumor.</p>
+
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 1 and 2</p>
+                        <h3>Sign Up, Upload a Scan, Get an Answer</h3>
+                        <p class="q">Is a tumor present?</p>
+                        <p>A user creates an account, then uploads an MRI scan on the detection page. The scan is resized and cleaned up, and the model replies with a plain result: Yes Brain Tumor or No Brain Tumor.</p>
+                        <ul>
+                            <li>Accounts for patients and doctors</li>
+                            <li>Works from a normal web browser, with nothing to install</li>
+                            <li>The result shows right below the uploaded scan</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>CNN-Based Classification</h5><p>A Convolutional Neural Network model classifies uploaded scans for tumor presence.</p></div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/brain-tumor/register.png" alt="Sign-up page asking for name, email, password, role, gender and a photo" loading="lazy">
+                        <figcaption>Sign up: a name, email, password, role (patient or doctor) and a profile photo.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/brain-tumor/detection.png" alt="Detection page showing an uploaded MRI scan and the result Yes Brain Tumor" loading="lazy">
+                        <figcaption>Detection: pick a scan, and the result appears right under the image.</figcaption>
+                    </figure>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The website</p>
+                <h2 class="section-title">A Website Around the Model</h2>
+                <p class="desc">Two parts make up the system. A website built with the MERN stack (MongoDB, Express, React and Node.js) takes care of the home page, accounts and sign-in. The detection page is a small Flask app that loads the trained model. The report also describes an admin view where healthcare providers can see patient details and results.</p>
+                <div class="shot-grid">
+                    <figure class="shot">
+                        <img src="../images/brain-tumor/home.png" alt="Home page of the website with a headline and doctors" loading="lazy">
+                        <figcaption>Home: the landing page, with options to log in or register.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/brain-tumor/register.png" alt="Sign-up page with name, email, password, role, gender and photo upload" loading="lazy">
+                        <figcaption>Register: create an account as a patient or a doctor.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">The model</p>
+                <h2 class="section-title">The CNN, in Plain Words</h2>
+                <p class="desc">The brain of the project is a Convolutional Neural Network, or CNN. It is a kind of deep learning model made for pictures.</p>
+                <div class="model-card">
+                    <div class="model-top"><span class="model-badge">Decides yes or no</span><span class="model-acc">98.25% accuracy</span></div>
+                    <h3>CNN (Convolutional Neural Network)</h3>
+                    <p class="q">Learns what a tumor looks like from labelled scans</p>
+                    <p class="model-lead">A CNN studies an image in layers. The first layers pick out simple things such as edges and brightness. Later layers combine them into bigger shapes, and the last layers decide which group the scan belongs to. Here the two groups are "tumor" and "no tumor".</p>
+                    <ul>
+                        <li>Trained on labelled MRI scans, with 80% used for training and 20% held back for testing</li>
+                        <li>Every scan is resized to 64 by 64 pixels and its values are scaled before the model sees it</li>
+                        <li>Three rounds of pattern-finding layers, followed by a decision layer that gives the final answer</li>
+                        <li>A dropout step during training helps it avoid memorising the training scans</li>
+                        <li>Trained for 10 rounds, using batches of 16 scans at a time</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">Reading the scores</p>
+                <h2 class="section-title">Results and What They Mean</h2>
+                <p class="desc">The model was checked on scans it had not seen during training. These are the scores from the project report.</p>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>98.25%</strong><span>Accuracy: out of all scans, how many were labelled correctly</span></div>
+                    <div class="stat-card"><strong>97.70%</strong><span>Precision: when the model says "tumor", how often it is right</span></div>
+                    <div class="stat-card"><strong>96.12%</strong><span>Recall: out of all scans with a tumor, how many it caught</span></div>
+                    <div class="stat-card"><strong>97.34%</strong><span>F1 score: one score that balances precision and recall</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Architecture</p>
+                <h2 class="section-title">How the System Fits Together</h2>
+                <p class="desc">The path is the same for every scan. Images come from the dataset, are cleaned and prepared, then outlined and measured so the important features stand out. The CNN classifies them, and the result is shown.</p>
+                <figure class="diagram-fig arch-fig">
+                    <img src="../images/brain-tumor/architecture.png" alt="Architecture: input database, image processing, segmentation, feature extraction, CNN classification and result" loading="lazy">
+                    <figcaption>The project architecture, from the scan database to the result.</figcaption>
+                </figure>
+                <p class="desc" style="margin-top:2rem">Two more diagrams show how the people and the parts of the system relate to each other.</p>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Diagram 2</p>
+                        <h3>Who Uses What</h3>
+                        <p class="q">Who does what in the system?</p>
+                        <p>Two kinds of people use the system. The doctor and the patient both work through the web interface and the MRI scan. The doctor also works with the CNN model, and both of them see the tumor detection result.</p>
+                        <ul>
+                            <li>Patients upload their scans</li>
+                            <li>Doctors work with the model and its results</li>
+                            <li>Both see the detection result</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Patient Detail Capture</h5><p>Captures relevant personal details alongside each scan for record-keeping.</p></div>
+                    <figure class="diagram-fig">
+                        <img src="../images/brain-tumor/use-case.png" alt="Use case diagram: a doctor and a patient interacting with the web interface, MRI scanned image, CNN model and tumor detection" loading="lazy">
+                        <figcaption>Use case diagram.</figcaption>
+                    </figure>
+                </div>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Diagram 3</p>
+                        <h3>How the Parts Connect</h3>
+                        <p class="q">What are the building blocks?</p>
+                        <p>The model selects and prepares the dataset, trains itself and is then evaluated. The training data is loaded from train and test folders, and each image is resized in a preprocessing step. A doctor compiles the model and gets the predicted tumor, and the user supplies an MRI image and reads back the prediction and its accuracy.</p>
+                        <ul>
+                            <li>Dataset loaded from train and test folders</li>
+                            <li>Images are resized before training</li>
+                            <li>The finished model is used to predict on new scans</li>
+                        </ul>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Responsive Web Interface</h5><p>Built on the MERN stack with a Tailwind CSS front end, accessible from any device.</p></div>
+                    <figure class="diagram-fig">
+                        <img src="../images/brain-tumor/class-diagram.png" alt="Class diagram: model, doctor, user, data preprocessing, load dataset and importing libraries" loading="lazy">
+                        <figcaption>Class diagram.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">Phase by Phase</h2>
+                <p class="desc">The project took 13 weeks, in ten phases, from picking the topic to the final presentation.</p>
+                <div class="phase-grid">
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 1</span><span class="status-pill done">Complete</span></div>
+                        <h4>Choosing the Topic</h4>
+                        <p class="phase-weeks">Weeks 1 to 2</p>
+                        <p>Proposed ideas, shortlisted three project statements, and finalised brain tumor detection.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 2</span><span class="status-pill done">Complete</span></div>
+                        <h4>Research</h4>
+                        <p class="phase-weeks">Week 3</p>
+                        <p>Read IEEE research papers on brain tumor detection to see what had been tried and where the gaps were.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 3</span><span class="status-pill done">Complete</span></div>
+                        <h4>Collecting the Dataset</h4>
+                        <p class="phase-weeks">Week 4</p>
+                        <p>Gathered MRI scans and studied the data to understand what the model would learn from.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 4</span><span class="status-pill done">Complete</span></div>
+                        <h4>Choosing the Tech Stack</h4>
+                        <p class="phase-weeks">Week 5</p>
+                        <p>Finalised the algorithm and the tools: Python, TensorFlow and Keras for the model, and the MERN stack for the site.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 5</span><span class="status-pill done">Complete</span></div>
+                        <h4>Training and Testing</h4>
+                        <p class="phase-weeks">Weeks 6 to 7</p>
+                        <p>Built the CNN model, trained it on the dataset and tested how well it worked.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 6</span><span class="status-pill done">Complete</span></div>
+                        <h4>Building the Website</h4>
+                        <p class="phase-weeks">Week 8</p>
+                        <p>Started working on the website: home page, sign-up and sign-in.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 7</span><span class="status-pill done">Complete</span></div>
+                        <h4>Connecting the Backend</h4>
+                        <p class="phase-weeks">Week 9</p>
+                        <p>Connected the backend to the website so accounts and results could be stored.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 8</span><span class="status-pill done">Complete</span></div>
+                        <h4>Expert Advice</h4>
+                        <p class="phase-weeks">Week 10</p>
+                        <p>Met doctors and medical professionals to get feedback on the idea and the system.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 9</span><span class="status-pill done">Complete</span></div>
+                        <h4>Fixing and Integrating</h4>
+                        <p class="phase-weeks">Weeks 11 to 12</p>
+                        <p>Resolved errors and integrated the trained model with the website.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 10</span><span class="status-pill done">Complete</span></div>
+                        <h4>Documentation</h4>
+                        <p class="phase-weeks">Week 13</p>
+                        <p>Prepared the synopsis and the final presentation.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Behind the project</p>
+                <h2 class="section-title">What We Read First</h2>
+                <p class="desc">Before building anything the team studied published research on brain tumor detection. The main ideas that shaped the project:</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-brain'></i><div><h5>Deep learning works well on scans</h5><p>Studies show CNNs can find and outline brain tumors in MRI images across different tumor types and imaging settings.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-layer'></i><div><h5>Several models were considered</h5><p>Papers using YOLO, VGG-based networks and R-CNN variants gave ideas for what else could be used.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-error-circle'></i><div><h5>Gaps worth noting</h5><p>Many studies do not explain how a model reaches its answer, and often overlook patient data privacy and real-world clinical checks.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-first-aid'></i><div><h5>Doctors stay in charge</h5><p>The system is meant to support medical staff with a first look, never to replace their judgement.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
                 <div class="skills-grid">
+                    <div class="skill-tile"><i class='bx bxl-python' style="color:#3776AB"></i><p>Python</p></div>
+                    <div class="skill-tile"><i class='bx bx-brain' style="color:#FF6F00"></i><p>TensorFlow</p></div>
+                    <div class="skill-tile"><i class='bx bx-network-chart' style="color:#D00000"></i><p>Keras</p></div>
+                    <div class="skill-tile"><i class='bx bx-brain' style="color:#2DD4BF"></i><p>CNN</p></div>
+                    <div class="skill-tile"><i class='bx bx-camera' style="color:#5C3EE8"></i><p>OpenCV</p></div>
+                    <div class="skill-tile"><i class='bx bx-server' style="color:#FFFFFF"></i><p>Flask</p></div>
                     <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React</p></div>
                     <div class="skill-tile"><i class='bx bxl-mongodb' style="color:#47A248"></i><p>MongoDB</p></div>
-                    <div class="skill-tile"><i class='bx bxl-tailwind-css' style="color:#38BDF8"></i><p>Tailwind CSS</p></div>
-                    <div class="skill-tile"><i class='bx bx-server' style="color:#8d8ca3"></i><p>Node.js / Express</p></div>
+                    <div class="skill-tile"><i class='bx bx-server' style="color:#8CC84B"></i><p>Express</p></div>
+                    <div class="skill-tile"><i class='bx bxl-nodejs' style="color:#6DA55F"></i><p>Node.js</p></div>
+                    <div class="skill-tile"><i class='bx bxl-bootstrap' style="color:#8511FA"></i><p>Bootstrap</p></div>
                 </div>
+                <p class="desc" style="margin-top:2rem">Built by Pranjal Parmar, Piyush Pingalkar, Harsh Sarda and Vaishali Sirimalla as a third-year B.Tech (Information Technology) minor project at K. J. Somaiya Institute of Technology, University of Mumbai (2023-24), under the guidance of Dr. Harsh Namdev Bhor. Harsh worked on UI/UX and the backend, Vaishali on the model and data, Piyush on integration and deployment, and Pranjal on testing, validation and documentation.</p>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">Documentation</p>
-                <h2 class="section-title">Architecture, Screenshots &amp; Development Phases</h2>
-                <div class="placeholder-card">
-                    <i class='bx bx-image-alt'></i>
-                    <h4>Full case study coming soon</h4>
-                    <p>Detailed architecture, product screenshots, and a phase-by-phase development breakdown for this project are being added.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
