@@ -19,49 +19,190 @@
         <section class="project-hero-detail">
             <div class="hero-glow"></div>
             <div class="section-inner">
-                <span class="category-badge">MERN Stack</span>
+                <span class="category-badge">MERN</span>
                 <h1>Doctor's Appointment System</h1>
-                <p class="hero-desc">A responsive, user-friendly web application for scheduling doctor appointments, letting patients see real-time doctor availability with full register and login functionality.</p>
+                <p class="hero-desc">docTalk is a doctor appointment booking website. Patients find a doctor, read their profile, see when they are available and book an appointment, while doctors get their own account and dashboard. It is a work in progress, built stage by stage by following a six-part MERN tutorial series. Four stages are done and two are under way, and this page grows with them.</p>
                 <div class="tech-used">
-                    <span>MERN</span><span>CNN</span><span>TAILWIND CSS</span>
+                    <span>REACT</span><span>TAILWIND CSS</span><span>NODE.JS</span><span>EXPRESS</span><span>MONGODB</span><span>JWT</span><span>CLOUDINARY</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/bhumi2123/Doctor-s-Appointment-Booking-and-Management-" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
+                </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/doctors-appointment/home.png" alt="The docTalk home page with the headline We help patients live a healthy, longer life and a Request an Appointment button" loading="lazy">
+                    <figcaption>The docTalk home page.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Project status</p>
+                <h2 class="section-title">Where It Stands</h2>
+                <p class="desc">The project follows a six-part tutorial series, one part at a time. The first four parts are finished and working, and parts five and six are being built now. Last updated November 2026.</p>
+                <div class="phase-progress" role="img" aria-label="4 of 6 stages complete, 2 in progress">
+                    <div class="phase-progress-bar"><span style="width:67%"></span></div>
+                    <div class="phase-progress-legend"><b>4 of 6</b> stages complete &middot; <b>2</b> in progress</div>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>4 of 6</strong><span>Stages complete: the pages, the back end, and connecting the two</span></div>
+                    <div class="stat-card"><strong>2 in progress</strong><span>The doctor dashboard with search and reviews, and payments with booking</span></div>
+                    <div class="stat-card"><strong>2 account types</strong><span>Patients and doctors, each with their own sign-up and sign-in</span></div>
+                    <div class="stat-card"><strong>MERN</strong><span>MongoDB, Express, React and Node.js, styled with Tailwind CSS</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why It Exists</h2>
+                <p class="desc">Booking a doctor is still slow in many places. This project brings the whole flow online, from finding a doctor to paying and keeping a record.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-time-five'></i><div><h5>Booking should not take a phone call</h5><p>Finding a doctor and fixing a time usually means calling around. A website lets a patient do it in a few clicks.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-calendar-check'></i><div><h5>See availability first</h5><p>A patient can see a doctor's profile, ticket price and available days and times before deciding to book.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-id-card'></i><div><h5>One place for both sides</h5><p>Patients get an account to keep track of their appointments, and doctors get their own account to manage theirs.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>Signed-in access only where it matters</h5><p>Account pages are protected, so only the right person can open their own profile and appointments.</p></div></div>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">Developed as a responsive and user-friendly web application for scheduling doctor appointments using the React framework, this system lets patients visibly see whether a doctor is available or not before booking. Register and login functionalities round out a complete, self-serve appointment booking experience.</p>
+                <p class="section-tag">What is built</p>
+                <h2 class="section-title">The Pages That Work Today</h2>
+                <p class="desc">These pages are finished and running. The screenshots below were taken from the real app, running on a test database.</p>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Built</p>
+                        <h3>Find a Doctor and Read Their Profile</h3>
+                        <p class="q">Who can I book, and when are they free?</p>
+                        <p>The Find a Doctor page lists doctors as cards with their photo, specialty, rating and hospital. Opening a doctor shows an About tab and a Feedback tab, their education and experience, the ticket price, and the days and times they are available.</p>
+                        <ul>
+                            <li>Doctor cards with specialty, rating and number of patients</li>
+                            <li>A profile page with About and Feedback tabs</li>
+                            <li>Ticket price and available time slots in a side panel</li>
+                            <li>The doctors shown are sample data for now, until the live doctor list is connected in stage 5</li>
+                        </ul>
+                    </div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/doctors-appointment/find-a-doctor.png" alt="The Find a Doctor page with a search bar and doctor cards" loading="lazy">
+                        <figcaption>Find a Doctor: a search bar and a card for each doctor.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/doctors-appointment/doctor-details.png" alt="A doctor profile with specialty, rating, about, education, experience, ticket price and available time slots" loading="lazy">
+                        <figcaption>A doctor&#x27;s profile, with price and time slots on the right.</figcaption>
+                    </figure>
+                </div>
+                </div>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Built</p>
+                        <h3>Sign Up and Sign In</h3>
+                        <p class="q">How do I get an account?</p>
+                        <p>A new user chooses whether they are a patient or a doctor, fills in their name, email, password and gender, and can upload a profile photo. After that they sign in with their email and password.</p>
+                        <ul>
+                            <li>Separate patient and doctor accounts</li>
+                            <li>Profile photos stored with Cloudinary</li>
+                            <li>Passwords are stored in a scrambled (hashed) form, never as plain text</li>
+                            <li>A signed-in session that lasts 15 days</li>
+                        </ul>
+                    </div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/doctors-appointment/register.png" alt="The sign-up page with name, email, password, patient or doctor choice, gender and photo upload" loading="lazy">
+                        <figcaption>Sign up as a patient or a doctor, with a profile photo.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/doctors-appointment/login.png" alt="The login page with email and password" loading="lazy">
+                        <figcaption>Login: email and password.</figcaption>
+                    </figure>
+                </div>
+                </div>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Built</p>
+                        <h3>Home and Services</h3>
+                        <p class="q">What does the site offer?</p>
+                        <p>The home page greets visitors with a clear call to book, explains how it works, and highlights the services, the doctors, common questions and patient testimonials. A Services page lists the areas of care, and a Contact page lets visitors get in touch.</p>
+                        <ul>
+                            <li>Landing page with how-it-works, doctors, FAQ and testimonials</li>
+                            <li>A Services page and a Contact page</li>
+                            <li>A layout that adjusts to phones and desktops</li>
+                        </ul>
+                    </div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/doctors-appointment/services.png" alt="The Services page listing six medical services" loading="lazy">
+                        <figcaption>Services: six areas of care.</figcaption>
+                    </figure>
+                </div>
+                </div>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">Key Features</h2>
+                <p class="section-tag">Behind the scenes</p>
+                <h2 class="section-title">The Back End</h2>
+                <p class="desc">A Node.js and Express server stores everything in MongoDB and decides who is allowed to do what.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Real-Time Doctor Availability</h5><p>Patients can see at a glance whether a doctor is currently available.</p></div>
+                    <div class="feature-item"><i class='bx bx-lock-alt'></i><div><h5>Accounts and sign-in</h5><p>Registering, logging in and checking who is who, with scrambled (hashed) passwords and a signed login token.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-first-aid'></i><div><h5>Doctors</h5><p>Looking up all doctors or one doctor, and letting a doctor update or delete their own profile.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-star'></i><div><h5>Reviews</h5><p>Patients can leave a review and a rating for a doctor, and anyone can read them.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-user-circle'></i><div><h5>Patient accounts</h5><p>A patient can view and update their profile and see the doctors they have booked.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-data'></i><div><h5>The database</h5><p>MongoDB stores users, doctors, reviews and bookings.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-shield-quarter'></i><div><h5>Role-based access</h5><p>Some actions are limited to patients, others to doctors, so each person only sees what is theirs.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">Stage by Stage</h2>
+                <p class="desc">The work is split into six stages, one for each part of the series. This list is updated as each stage moves forward.</p>
+                <div class="phase-grid">
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Stage 1</span><span class="status-pill done">Complete</span></div>
+                        <h4>Landing Pages</h4>
+                        <p class="phase-weeks">Tutorial part 1</p>
+                        <p>Set up the project and built the home page: navigation, hero, how it works, about, services, features, doctors, FAQ, testimonials and footer.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Appointment Scheduling</h5><p>A straightforward interface for booking and managing appointments.</p></div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Stage 2</span><span class="status-pill done">Complete</span></div>
+                        <h4>Pages and Styling</h4>
+                        <p class="phase-weeks">Tutorial part 2</p>
+                        <p>Built the rest of the interface in React and Tailwind CSS: the doctor list, doctor profile, sign-up, login, services and contact pages.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Register &amp; Login</h5><p>Full account creation and authentication flow for patients.</p></div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Stage 3</span><span class="status-pill done">Complete</span></div>
+                        <h4>The Back End</h4>
+                        <p class="phase-weeks">Tutorial part 3</p>
+                        <p>Built the Node.js, Express and MongoDB server with sign-up, login, doctors, reviews, user accounts and role-based access using JWT.</p>
                     </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Responsive Design</h5><p>Styled with Tailwind CSS for a clean experience on any device.</p></div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Stage 4</span><span class="status-pill done">Complete</span></div>
+                        <h4>Connecting Front and Back</h4>
+                        <p class="phase-weeks">Tutorial part 4</p>
+                        <p>Connected the website to the server: fetching data, shared sign-in state, protected pages and the patient account area.</p>
+                    </div>
+                    <div class="phase-card active">
+                        <div class="phase-top"><span class="phase-num">Stage 5</span><span class="status-pill active">In progress</span></div>
+                        <h4>Doctor Dashboard, Search and Reviews</h4>
+                        <p class="phase-weeks">Tutorial part 5</p>
+                        <p>Building the doctor dashboard, working search, the review system, and making the home, doctor list and doctor profile pages show live data. The dashboard layout, the review form and the search box are in place, and wiring them to live data is under way.</p>
+                    </div>
+                    <div class="phase-card active">
+                        <div class="phase-top"><span class="phase-num">Stage 6</span><span class="status-pill active">In progress</span></div>
+                        <h4>Payments and Booking</h4>
+                        <p class="phase-weeks">Tutorial part 6</p>
+                        <p>Adding Stripe checkout so a patient can pay for an appointment, saving the booking once the payment succeeds, and showing it in their account. The payment flow has been studied and the Book Appointment button is ready to be wired up.</p>
                     </div>
                 </div>
+                <p class="desc" style="margin-top:2rem">The project follows the <a href="https://www.youtube.com/playlist?list=PLfhDYRr-FofmvuICA63cUD1vo7MuY-t3g" target="_blank" rel="noopener">MERN Stack Projects tutorial series by Coding With Muhib</a> on YouTube, whose doctor appointment project is split into six parts. We are working through it one part at a time.</p>
             </div>
         </section>
 
@@ -71,24 +212,17 @@
                 <h2 class="section-title">Tech Stack</h2>
                 <div class="skills-grid">
                     <div class="skill-tile"><i class='bx bxl-react' style="color:#61DAFB"></i><p>React</p></div>
-                    <div class="skill-tile"><i class='bx bxl-mongodb' style="color:#47A248"></i><p>MongoDB</p></div>
                     <div class="skill-tile"><i class='bx bxl-tailwind-css' style="color:#38BDF8"></i><p>Tailwind CSS</p></div>
-                    <div class="skill-tile"><i class='bx bx-server' style="color:#8d8ca3"></i><p>Node.js / Express</p></div>
+                    <div class="skill-tile"><i class='bx bxl-nodejs' style="color:#6DA55F"></i><p>Node.js</p></div>
+                    <div class="skill-tile"><i class='bx bx-server' style="color:#FFFFFF"></i><p>Express</p></div>
+                    <div class="skill-tile"><i class='bx bxl-mongodb' style="color:#47A248"></i><p>MongoDB</p></div>
+                    <div class="skill-tile"><i class='bx bx-key' style="color:#F7DF1E"></i><p>JWT</p></div>
+                    <div class="skill-tile"><i class='bx bx-cloud-upload' style="color:#3448C5"></i><p>Cloudinary</p></div>
                 </div>
+                <p class="desc" style="margin-top:2rem">Built by Bhumika Baria, Pranjal Parmar, Niyati Sawant and Vaishali Sirimalla.</p>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">Documentation</p>
-                <h2 class="section-title">Architecture, Screenshots &amp; Development Phases</h2>
-                <div class="placeholder-card">
-                    <i class='bx bx-image-alt'></i>
-                    <h4>Full case study coming soon</h4>
-                    <p>Detailed architecture, product screenshots, and a phase-by-phase development breakdown for this project are being added.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
