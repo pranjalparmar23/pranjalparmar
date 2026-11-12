@@ -21,47 +21,174 @@
             <div class="section-inner">
                 <span class="category-badge">Web Development</span>
                 <h1>College Siksha</h1>
-                <p class="hero-desc">A website built with HTML, CSS, and PHP that showcases courses and colleges available across India and abroad, with full register and login functionality.</p>
+                <p class="hero-desc">A college predictor website. A student enters their board percentage and entrance exam scores, and the site tells them which well-known engineering colleges they may be eligible to apply to. Inspired by the College Shiksha education portal and built with PHP, HTML, CSS and Bootstrap.</p>
                 <div class="tech-used">
-                    <span>HTML</span><span>CSS</span><span>PHP</span>
+                    <span>PHP</span><span>HTML</span><span>CSS</span><span>BOOTSTRAP</span><span>MYSQL</span>
                 </div>
                 <div class="project-hero-actions">
                     <a href="https://github.com/pranjalparmar23/college-shiksha" class="btn btn-primary" target="_blank" rel="noopener"><i class='bx bxl-github'></i> View on GitHub</a>
                     <a href="../index.html#projects" class="btn btn-outline">Back to Projects</a>
                 </div>
+                <figure class="shot shot-hero">
+                    <img src="../images/college-siksha/home.png" alt="The College Siksha home page with the College Predictor form asking for board percentage and entrance exam scores" loading="lazy">
+                    <figcaption>The home page: the College Predictor form.</figcaption>
+                </figure>
             </div>
         </section>
 
         <section class="section">
             <div class="section-inner">
-                <p class="section-tag">Overview</p>
-                <h2 class="section-title">Project Overview</h2>
-                <p class="desc">College Siksha was designed as a website using HTML and CSS that shows courses and colleges available in India and abroad, with register and login functionalities. A dynamic backend built in PHP handles user registration, login, and other interactive functionality, making it a complete early full-stack project from the ground up.</p>
+                <p class="section-tag">At a glance</p>
+                <h2 class="section-title">The Project in Numbers</h2>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>5 scores</strong><span>Board percentage plus JEE, BITS, SRMJEEE and VITEEE scores</span></div>
+                    <div class="stat-card"><strong>5 college groups</strong><span>IITs, NITs, BITS, SRM and VIT</span></div>
+                    <div class="stat-card"><strong>3 pages</strong><span>The predictor home page, a login and sign-up page, and an About page</span></div>
+                    <div class="stat-card"><strong>PHP + MySQL</strong><span>PHP does the work on the server, and MySQL stores user accounts</span></div>
+                </div>
             </div>
         </section>
 
         <section class="section section-alt">
             <div class="section-inner">
-                <p class="section-tag">Capabilities</p>
-                <h2 class="section-title">Key Features</h2>
+                <p class="section-tag">The problem</p>
+                <h2 class="section-title">Why It Exists</h2>
+                <p class="desc">After the board exams and the entrance tests, students are left with a pile of scores and a simple question: where can I apply? The answer is spread across many college websites, each with its own cut-offs. This project puts the basic check in one place.</p>
                 <div class="feature-list">
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Course &amp; College Directory</h5><p>Browse courses and colleges available across India and abroad.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>User Registration &amp; Login</h5><p>Full account creation and authentication for site visitors.</p></div>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-check-circle'></i>
-                        <div><h5>Dynamic PHP Backend</h5><p>Handles registration, login, and other interactive functionality server-side.</p></div>
-                    </div>
+                    <div class="feature-item"><i class='bx bx-question-mark'></i><div><h5>Too many cut-offs</h5><p>Each college group publishes its own score requirements, which is a lot for a student to track at once.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-calculator'></i><div><h5>A quick first answer</h5><p>Enter your scores once and see at a glance which colleges are worth a closer look.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-user-check'></i><div><h5>Accounts for visitors</h5><p>Students can create an account and log in, so the site can recognise who is using it.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-info-circle'></i><div><h5>A guide, not a guarantee</h5><p>The result is a first indication based on simple score rules. Real admissions depend on each college's official process.</p></div></div>
                 </div>
             </div>
         </section>
 
         <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">What it does</p>
+                <h2 class="section-title">How It Works</h2>
+                <p class="desc">The idea is simple: type in your scores and let the site check them against the college rules.</p>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Step 1 and 2</p>
+                        <h3>Enter Your Scores, See Your Colleges</h3>
+                        <p class="q">Where can I apply?</p>
+                        <p>On the home page a student types in their board percentage and their JEE score, and can add scores for BITS, SRMJEEE and VITEEE if they took those exams. After pressing Submit, a &quot;Predicted College&quot; list appears right under the form.</p>
+                        <ul>
+                            <li>Board percentage and JEE score are required</li>
+                            <li>The other three exam scores are optional</li>
+                            <li>Results appear instantly, on the same page</li>
+                        </ul>
+                    </div>
+                <div class="shot-grid shot-stack">
+                    <figure class="shot">
+                        <img src="../images/college-siksha/home.png" alt="The College Predictor form with empty fields for board percentage and the four entrance scores" loading="lazy">
+                        <figcaption>Enter your board percentage and entrance scores.</figcaption>
+                    </figure>
+                    <figure class="shot">
+                        <img src="../images/college-siksha/result.png" alt="The Predicted College result listing the colleges the student is eligible to apply to" loading="lazy">
+                        <figcaption>Press Submit and the predicted colleges appear below the form.</figcaption>
+                    </figure>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The logic</p>
+                <h2 class="section-title">How the Prediction Works</h2>
+                <p class="desc">There is no machine learning here. The site follows clear, simple rules. First it makes a combined score for the IITs and NITs, where the board percentage counts for 60% and the JEE score, converted to a percentage of 360, counts for 40%. The other colleges look at their own exam score directly. A board percentage below 60 means the site tells the student that colleges will not accept their application.</p>
+                <div class="table-wrap"><table class="report-table"><thead><tr><th>College group</th><th>Score used</th><th>Eligible when</th></tr></thead><tbody>
+                    <tr><td>IITs</td><td>Combined score</td><td>Above 87</td></tr>
+                    <tr><td>NITs</td><td>Combined score</td><td>Above 60 (and up to 87)</td></tr>
+                    <tr><td>BITS</td><td>BITS score</td><td>Above 280</td></tr>
+                    <tr><td>SRM</td><td>SRMJEEE score</td><td>Above 140</td></tr>
+                    <tr><td>VIT</td><td>VITEEE score</td><td>Above 80</td></tr>
+                </tbody></table></div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">Accounts</p>
+                <h2 class="section-title">Login and Sign Up</h2>
+                <p class="desc">Visitors can create an account and log in. Accounts are stored in a MySQL database, and the signed-in username is shown in the top bar, next to the Logout link.</p>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">Accounts</p>
+                        <h3>Sign In to the Site</h3>
+                        <p class="q">How do visitors get in?</p>
+                        <p>The login form takes a username and password. New visitors choose Sign Up and set a username and password, and the site checks that the two passwords match before saving the account.</p>
+                        <ul>
+                            <li>Login and sign-up on a single page</li>
+                            <li>Accounts stored in a MySQL database</li>
+                            <li>The username appears in the top bar once signed in</li>
+                        </ul>
+                    </div>
+                    <figure class="shot">
+                        <img src="../images/college-siksha/login.png" alt="The College Siksha login page with username and password fields and a sign up link" loading="lazy">
+                        <figcaption>The login page, with a Sign Up option under the form.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
+                <p class="section-tag">The site</p>
+                <h2 class="section-title">Pages and Features</h2>
+                <p class="desc">Three pages, all sharing the same top bar with the site name and links.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-home'></i><div><h5>Home and predictor</h5><p>The College Predictor form and its result, with a short quote on education at the top.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-log-in'></i><div><h5>Login and Sign Up</h5><p>Account creation and sign-in, backed by a MySQL database.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-info-circle'></i><div><h5>About Us</h5><p>A page about the College Shiksha portal and the kind of help it gives students.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-devices'></i><div><h5>Responsive design</h5><p>Built with Bootstrap so the layout adjusts to different screen sizes.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-inner">
+                <p class="section-tag">The build journey</p>
+                <h2 class="section-title">Phase by Phase</h2>
+                <p class="desc">The project was built in five phases, from the first pages in May 2023 to the finished write-up in March 2025.</p>
+                <div class="phase-grid">
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 1</span><span class="status-pill done">Complete</span></div>
+                        <h4>Designing the Pages</h4>
+                        <p class="phase-weeks">May 2023</p>
+                        <p>Created the HTML and CSS for the home page, the login page and the About page, and the shared top bar.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 2</span><span class="status-pill done">Complete</span></div>
+                        <h4>Building the Predictor</h4>
+                        <p class="phase-weeks">May 2023</p>
+                        <p>Wrote the PHP that reads the scores, applies the college rules and prints the predicted colleges.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 3</span><span class="status-pill done">Complete</span></div>
+                        <h4>Adding Accounts</h4>
+                        <p class="phase-weeks">May 2023</p>
+                        <p>Added login and sign-up pages that store and check users in a MySQL database.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 4</span><span class="status-pill done">Complete</span></div>
+                        <h4>Making It Look Right</h4>
+                        <p class="phase-weeks">March 2024</p>
+                        <p>Refined the styling of the home and login pages.</p>
+                    </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 5</span><span class="status-pill done">Complete</span></div>
+                        <h4>Writing It Up</h4>
+                        <p class="phase-weeks">March 2025</p>
+                        <p>Added a README explaining the features, the college rules and how to run it with XAMPP.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
@@ -69,21 +196,13 @@
                     <div class="skill-tile"><i class='bx bxl-html5' style="color:#E34F26"></i><p>HTML5</p></div>
                     <div class="skill-tile"><i class='bx bxl-css3' style="color:#1572B6"></i><p>CSS3</p></div>
                     <div class="skill-tile"><i class='bx bxl-php' style="color:#8892BF"></i><p>PHP</p></div>
+                    <div class="skill-tile"><i class='bx bxl-bootstrap' style="color:#8511FA"></i><p>Bootstrap</p></div>
+                    <div class="skill-tile"><i class='bx bxs-data' style="color:#4479A1"></i><p>MySQL</p></div>
+                    <div class="skill-tile"><i class='bx bx-server' style="color:#FB7A24"></i><p>XAMPP</p></div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="section-inner">
-                <p class="section-tag">Documentation</p>
-                <h2 class="section-title">Architecture, Screenshots &amp; Development Phases</h2>
-                <div class="placeholder-card">
-                    <i class='bx bx-image-alt'></i>
-                    <h4>Full case study coming soon</h4>
-                    <p>Detailed architecture, product screenshots, and a phase-by-phase development breakdown for this project are being added.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
