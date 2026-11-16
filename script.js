@@ -96,7 +96,7 @@ if(contactForm){
         formStatus.className = 'form-status';
         formStatus.textContent = '';
 
-        emailjs.send('service_mb9qdl8', 'template_dipcxnp', params)
+        emailjs.send('service_hqunmsw', 'template_dipcxnp', params)
             .then(() => {
                 formStatus.textContent = 'Thanks! Your message has been sent. I will get back to you soon.';
                 formStatus.classList.add('success');
