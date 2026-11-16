@@ -459,7 +459,7 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact-form">
+                    <form id="contact-form" class="contact-form">
                         <h3>Let's Connect Together!</h3>
                         <div class="field-box">
                             <input type="text" id="name" name="name" placeholder="Full Name" required>
@@ -469,7 +469,8 @@
                             <textarea name="message" id="message" placeholder="Your Message" required></textarea>
                         </div>
                         <div class="contact-btn">
-                            <button type="submit" onclick="sendMail()" class="btn btn-primary">Send Message</button>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
                         </div>
                     </form>
                 </div>

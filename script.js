@@ -76,12 +76,40 @@ filterBtns.forEach(btn => {
     });
 });
 
-function sendMail(){
-    let parms = {
-        name : document.getElementById("name").value,
-        email : document.getElementById("email").value,
-        subject : document.getElementById("subject").value,
-        message : document.getElementById("message").value,
-    }
-    emailjs.send("service_mb9qdl8","template_dipcxnp",parms).then(alert("Email Sent!!"));
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if(contactForm){
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const params = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            number: document.getElementById('number').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+
+        emailjs.send('service_mb9qdl8', 'template_dipcxnp', params)
+            .then(() => {
+                formStatus.textContent = 'Thanks! Your message has been sent. I will get back to you soon.';
+                formStatus.classList.add('success');
+                contactForm.reset();
+            })
+            .catch((err) => {
+                console.error('EmailJS error:', err);
+                formStatus.textContent = 'Sorry, the message could not be sent. Please email me directly at pranjal23parmar@gmail.com.';
+                formStatus.classList.add('error');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+    });
 }
