@@ -40,14 +40,14 @@
             <div class="section-inner">
                 <p class="section-tag">Project status</p>
                 <h2 class="section-title">Where It Stands</h2>
-                <p class="desc">The platform is built in 14 phases. The first six are complete and cover everything you see in the screenshots below. The remaining eight add fresh sourced knowledge, voice interviews, support for every role, quality checks, security, monitoring, a design refresh and going live. Last updated November 2026.</p>
-                <div class="phase-progress" role="img" aria-label="6 of 14 phases complete, 78 of 235 tasks done">
-                    <div class="phase-progress-bar"><span style="width:33%"></span></div>
-                    <div class="phase-progress-legend"><b>33%</b> of tasks done &middot; <b>6 of 14</b> phases complete</div>
+                <p class="desc">The platform is built in 14 phases. The first seven are complete: the candidate and recruiter journeys, and now a library of trusted, credited reference material that the learning plans and interviews draw on. The remaining seven add voice interviews, support for every role, quality checks, security, monitoring, a design refresh and going live. Last updated November 2026.</p>
+                <div class="phase-progress" role="img" aria-label="7 of 14 phases complete, 94 of 235 tasks done">
+                    <div class="phase-progress-bar"><span style="width:40%"></span></div>
+                    <div class="phase-progress-legend"><b>40%</b> of tasks done &middot; <b>7 of 14</b> phases complete</div>
                 </div>
                 <div class="stat-grid">
-                    <div class="stat-card"><strong>6 of 14</strong><span>Phases complete, from foundation to recruiter tools and groundwork for fresh sourced knowledge</span></div>
-                    <div class="stat-card"><strong>78 of 235</strong><span>Tasks done, with 2 more in progress</span></div>
+                    <div class="stat-card"><strong>7 of 14</strong><span>Phases complete, from foundation to recruiter tools and a trusted knowledge library</span></div>
+                    <div class="stat-card"><strong>94 of 235</strong><span>Tasks done, with 2 more in progress</span></div>
                     <div class="stat-card"><strong>2 journeys</strong><span>One for candidates preparing for jobs and one for recruiters hiring talent</span></div>
                     <div class="stat-card"><strong>10+ AI agents</strong><span>Specialised helpers that read resumes, score fit, plan learning, interview and recommend</span></div>
                 </div>
@@ -254,6 +254,64 @@
 
         <section class="section">
             <div class="section-inner">
+                <p class="section-tag">New in phase 7</p>
+                <h2 class="section-title">A Trusted Knowledge Library</h2>
+                <p class="desc">Learning plans and interviews used to rest on a small fixed set of notes with no record of where they came from. Phase 7 replaced it with a library built from trusted public sources, where every piece of material has its source, its licence and a credit line attached.</p>
+                <div class="stat-grid">
+                    <div class="stat-card"><strong>4 sources</strong><span>The Tech Interview Handbook, roadmap.sh, official documentation and freeCodeCamp</span></div>
+                    <div class="stat-card"><strong>108 links</strong><span>Checked learning pages, each with a short description we wrote ourselves</span></div>
+                    <div class="stat-card"><strong>956 passages</strong><span>Short pieces of reference material that interviews and plans can draw on</span></div>
+                    <div class="stat-card"><strong>63 test cases</strong><span>Written to catch it if a change makes results worse</span></div>
+                </div>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">What you see</p>
+                        <h3>Learning Plans With Their Sources</h3>
+                        <p class="q">Where did this advice come from?</p>
+                        <p>Each week of a learning plan now links to real learning pages, such as the official AWS and Kubernetes guides, and a Sources list at the end names every page used and gives the credit it needs. If nothing reviewed matched a skill, the plan says so plainly instead of pretending.</p>
+                        <ul>
+                            <li>Links come only from pages the library actually found, never invented ones</li>
+                            <li>Official documentation is preferred when two pages are close in relevance</li>
+                            <li>Sources are listed with their site and credit line</li>
+                        </ul>
+                    </div>
+                    <figure class="shot">
+                        <img src="../images/ai-recruitment/phase7-learning-plan.png" alt="A learning plan with weekly tasks and tags naming the reviewed pages each week draws on" loading="lazy">
+                        <figcaption>A learning plan: each week names the reviewed pages it draws on.</figcaption>
+                    </figure>
+                </div>
+                <div class="pillar-row text-first">
+                    <div class="pillar-copy">
+                        <p class="section-tag">At the end of the plan</p>
+                        <h3>A Credited Sources List</h3>
+                        <p class="q">Who deserves the credit?</p>
+                        <p>The pages a plan relies on are listed at the bottom with their site and a credit line. For link-only sources, nothing is copied: the library keeps only the link and a one-line description we wrote.</p>
+                        <ul>
+                            <li>Open-licence material is credited as its licence requires</li>
+                            <li>Link-only sources are labelled "no content is copied"</li>
+                            <li>Only normal web links are clickable, for safety</li>
+                        </ul>
+                    </div>
+                    <figure class="shot">
+                        <img src="../images/ai-recruitment/phase7-sources.png" alt="The end of a learning plan showing the Sources list with each page, its site and credit line" loading="lazy">
+                        <figcaption>The Sources list at the end of a plan.</figcaption>
+                    </figure>
+                </div>
+                <h3 class="shot-subtitle">How the library is kept good</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class='bx bx-check-shield'></i><div><h5>Licence check</h5><p>Nothing is stored unless its licence is recorded and allows it. Material with an unclear or restrictive licence is refused, and restricted sources are used as links only.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-time-five'></i><div><h5>Stays fresh</h5><p>Every page has an expiry date and is re-checked when the library is refreshed, so stale material drops out.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-link'></i><div><h5>Dead links are removed</h5><p>Learning links are checked on every refresh, and a page the site says is gone is taken out.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-search-alt'></i><div><h5>Smarter search</h5><p>The search skips weak matches, avoids returning near-copies of the same idea, and can narrow by subject, role and level.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-info-circle'></i><div><h5>Honest when nothing matches</h5><p>If the library has nothing relevant, the answer comes from general knowledge and is clearly labelled as not based on reviewed sources. It never shows made-up sources.</p></div></div>
+                    <div class="feature-item"><i class='bx bx-trash'></i><div><h5>Old notes retired</h5><p>The earlier fixed notes had no recorded source, so they were removed once the new library had been tested.</p></div></div>
+                </div>
+                <p class="desc" style="margin-top:2rem">Tuning against the test cases made searches more precise (about 62% of results relevant before, 77% after) and raised the learning-plan checks passed from 22 to 24 of 26. Two weak spots are known and on the list: very short names like "k8s" are not understood yet, and skills outside software can still get unrelated links. Both belong with the work on supporting every role in a later phase.</p>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="section-inner">
                 <p class="section-tag">System design</p>
                 <h2 class="section-title">How It Fits Together</h2>
                 <p class="desc">A candidate portal and a recruiter dashboard sit on top of one backend. Two guided flows, one for candidates and one for recruiters, hand work to a team of specialised AI agents, which use a knowledge library and a database for everything they need.</p>
@@ -264,7 +322,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="section-inner">
                 <p class="section-tag">The build journey</p>
                 <h2 class="section-title">Phase by Phase</h2>
@@ -307,15 +365,15 @@
                         <p class="phase-weeks">Weeks 13–14 &middot; 15 of 15 tasks done</p>
                         <p>Behind-the-scenes groundwork for the next stage: a controlled, safe way for the AI to fetch fresh reference material from vetted outside sources, with security checks and a fallback so the app keeps working if a source is down.</p>
                     </div>
+                    <div class="phase-card done">
+                        <div class="phase-top"><span class="phase-num">Phase 7</span><span class="status-pill done">Complete</span></div>
+                        <h4>Fresh, Sourced Knowledge</h4>
+                        <p class="phase-weeks">Weeks 15–17 &middot; 16 of 16 tasks done</p>
+                        <p>Replaced the fixed library with reference material from trusted sources, with licences checked, credit given and regular refreshes. Learning plans now link only to real pages, show where they came from, and say so when nothing reviewed matched.</p>
+                    </div>
                 </div>
                 <h3 class="shot-subtitle">Coming next</h3>
                 <div class="phase-grid">
-                    <div class="phase-card todo">
-                        <div class="phase-top"><span class="phase-num">Phase 7</span><span class="status-pill todo">Planned</span></div>
-                        <h4>Fresh, Sourced Knowledge</h4>
-                        <p class="phase-weeks">Weeks 15–17 &middot; 16 tasks planned</p>
-                        <p>Replace the fixed library with content collected from vetted sources, with licences recorded, regular refreshes and visible sources on roadmaps and interview references.</p>
-                    </div>
                     <div class="phase-card todo">
                         <div class="phase-top"><span class="phase-num">Phase 8</span><span class="status-pill todo">Planned</span></div>
                         <h4>Voice Interview</h4>
@@ -362,7 +420,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="section-inner">
                 <p class="section-tag">Trust &amp; safety</p>
                 <h2 class="section-title">Built to Be Trusted</h2>
@@ -376,7 +434,7 @@
             </div>
         </section>
 
-        <section class="section section-alt">
+        <section class="section">
             <div class="section-inner">
                 <p class="section-tag">Under the hood</p>
                 <h2 class="section-title">Tech Stack</h2>
